@@ -13,6 +13,9 @@
   }
 }
 
+/* //////////////// Header, header logo, and navigation //////////////// */
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +39,66 @@
     transform: rotate(360deg);
   }
 }
+
+.headerMenu {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.headerMenu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 10rem;
+}
+
+.headerMenu a {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  font-weight: bold;
+  color: #002868;
+  font-size: 1.5rem;
+}
+
+.headerMenu a:hover {
+  color: #BF0A30;
+  text-decoration: underline;
+  text-decoration-color: #FFD700;
+}
+
+.headerMenu a:active {
+  text-decoration: underline;
+  text-decoration-color: #FFD700;
+}
+
+.NomNoms-logo {
+  height: 50vh;
+}
+
+/* //////////////// Restaurant and restaraunt side bar //////////////// */
+
+.restaurantContent {
+  width: 100%;
+}
+
+.restaurant-sideBar {
+  justify-content: left;
+  border: 2px;
+  border-color: #002868;
+  width: 30%;
+}
+
+.restaurant-sideBar li {
+  list-style-type: none;
+}
+
+.restaurantDescriptions {
+  width: 70%;
+  justify-content: right;
+}
+
+

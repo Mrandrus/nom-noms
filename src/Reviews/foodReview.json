@@ -1,0 +1,147 @@
+[
+  {
+    "Restaurant": "The Regional",
+    "Cuisine": "American",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$$-$$$",
+    "Content": "",
+    "Id": 1,
+    "Blog": "default text here"
+  },
+  {
+    "Restaurant": "Henry's Pub",
+    "Cuisine": "American, Pub",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$-$$$",
+    "Content": "",
+    "Id": 2
+  },
+  {
+    "Restaurant": "Bowl Izakaya",
+    "Cuisine": "Japanese",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 3
+  },
+  {
+    "Restaurant": "Saigon Grill III",
+    "Cuisine": "Vietnamese",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 4
+  },
+  {
+    "Restaurant": "Lucile's",
+    "Cuisine": "Cajun",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 5
+  },
+  {
+    "Restaurant": "Pizza Casbah",
+    "Cuisine": "Italian",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 6
+  },
+  {
+    "Restaurant": "Krazy Karl's",
+    "Cuisine": "Italian",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 7
+  },
+  {
+    "Restaurant": "Smokin Fins",
+    "Cuisine": "American, Sea Food",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 16
+  },
+  {
+    "Restaurant": "Origins",
+    "Cuisine": "Italian",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 8
+  },
+  {
+    "Restaurant": "Bai Tong",
+    "Cuisine": "Thai",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 9
+  },
+  {
+    "Restaurant": "Choice City",
+    "Cuisine": "American, Sandwiches",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 10
+  },
+  {
+    "Restaurant": "Himalayan Curry & Kebob",
+    "Cuisine": "Indian",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 11
+  },
+  {
+    "Restaurant": "Mt. Everest Cafe",
+    "Cuisine": "Nepalese",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 12
+  },
+  {
+    "Restaurant": "The Original Pancake House",
+    "Cuisine": "American, Sea Food",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 13
+  },
+  {
+    "Restaurant": "El Pueblito",
+    "Cuisine": "Mexican",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 14
+  },
+  {
+    "Restaurant": "Jim's Wings",
+    "Cuisine": "American, Pub",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 15
+  }
+]
