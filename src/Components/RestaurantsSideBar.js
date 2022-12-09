@@ -1,8 +1,10 @@
-import jsonReviewData from "../Reviews/foodReview.json"
+import jsonReviewData from "../Reviews/foodReview.json";
 import React, { Component, useState } from "react";
 import "../App.css";
 
 const RestaurantsSideBar = () => {
+  const [restaurantsSelected, setRestaurantsSelected] = useState([]);
+
 
   //const [count, setCount] = useState(0)
   // constructor(props) {
@@ -23,91 +25,105 @@ const RestaurantsSideBar = () => {
   //     })
   // }
 
-  const [blogTitles, setBlogTitles] = useState([""])
+  const [blogTitles, setBlogTitles] = useState([""]);
   //setBlogTitles = JSON.parse(jsonReviewData.Restaurant)
 
-
   const removeDupes = (arr, key) => {
-    const data = [...new Map(arr.map(item=> [item[key], item])).values()]
-    return data
-  }
+    const data = [...new Map(arr.map((item) => [item[key], item])).values()];
+    return data;
+  };
 
   const findDupes = (arr, key) => {
-    arr.filter((keys, index) => arr.indexOf(key) !== index)
-  }
+    arr.filter((keys, index) => arr.indexOf(key) !== index);
+  };
 
+  const count = {};
+  jsonReviewData.forEach((element) => {
+    count[element.Cuisine] = (count[element.Cuisine] || 0) + 1;
+  });
 
- const count = {}
- jsonReviewData.forEach(element => {
-    count[element.Cuisine] = (count[element.Cuisine] || 0) + 1
- });
+  console.log(count);
 
-
- console.log(count)
-
-  const arr1 = removeDupes(jsonReviewData, 'Cuisine')
-  const dupies = findDupes(jsonReviewData, 'Cuisine')
+  const arr1 = removeDupes(jsonReviewData, "Cuisine");
+  const dupies = findDupes(jsonReviewData, "Cuisine");
   //console.log("Poops", dupies)
 
   arr1.sort((a, b) => {
-    let textA = a.Cuisine.toUpperCase()
-    let textB = b.Cuisine.toUpperCase()
-    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0
-  })
+    let textA = a.Cuisine.toUpperCase();
+    let textB = b.Cuisine.toUpperCase();
+    return textA < textB ? -1 : textA > textB ? 1 : 0;
+  });
   //const arr2 = logDupes(jsonReviewData, 'Cuisine')
   // for (let i = 0; i < arr1.length; i++) {
   //   arr1[i] = arr1.push(count[i])
   // }
 
   function RestaurantData(props) {
-    return <li onClick={(e) => console.log(e.target.value)}>{props.Restaurant}</li>
+    return (
+      <li onClick={(e) => console.log(e.target.value)}>{props.Restaurant}</li>
+    );
   }
 
   function ChooseData() {
-    const listItems = jsonReviewData.map((object) =>
-    <RestaurantData key={object.Id.toString()} value={object} />
-  )
+    const listItems = jsonReviewData.map((object) => (
+      <RestaurantData key={object.Id.toString()} value={object} />
+    ));
     return (
       <ul>
         <li>{listItems.Cuisine}</li>
       </ul>
-    )
-}
+    );
+  }
 
-function showResties(props) {
-  const obby = []
-  return (
-    <div className="content">
-      <ul>
-        <li>{props.Cuisine}</li>
-      </ul>
-    </div>
-  ) 
-}
-
-
-  console.log(jsonReviewData)
-  console.log("Cuisine Array", ChooseData())
-
+  function showResties(props) {
+    const obby = [];
     return (
-      <div className="restaurant-content">
-        <div className="restaurant-sideBar">
-          <ul>
-            {arr1.map((p) => (
-              <li key={p.Id}>
-                <a>{p.Cuisine}</a>
-              </li>
-            ))}
-          </ul>
-          <p>here</p>
-        </div>
-        <div className="restaurant-titles">
-          <p>pee</p>
-        </div>
+      <div className="content">
+        <ul>
+          <li>{props.Cuisine}</li>
+        </ul>
       </div>
     );
-  
-}
+  }
 
+  console.log(jsonReviewData);
+  console.log("Cuisine Array", ChooseData());
+  function getRestaurants(cuisine) {
+    console.log(cuisine);
+    const arr = [];
+
+    jsonReviewData.forEach((r, i) => {
+      if (r.Cuisine == cuisine) {
+        arr.push(r);
+      }
+    });
+
+    console.log("push version", arr);
+    setRestaurantsSelected(arr);
+  }
+
+  return (
+    <div className="restaurant-content">
+      <div className="restaurant-sideBar">
+        <ul>
+          {arr1.map((p) => (
+            <li key={p.Id}>
+              <button onClick={() => getRestaurants(p.Cuisine)}>
+                {p.Cuisine}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <p>here</p>
+      </div>
+
+      <div className="restaurant-titles">
+        {restaurantsSelected.map((r, i) => {
+          return <div key={`restaurant_id_${r.id}_${i}`}>{r.Restaurant}</div>;
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default RestaurantsSideBar;
