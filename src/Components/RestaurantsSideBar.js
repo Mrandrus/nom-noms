@@ -88,6 +88,7 @@ const RestaurantsSideBar = () => {
 
   console.log(jsonReviewData);
   console.log("Cuisine Array", ChooseData());
+  
   function getRestaurants(cuisine) {
     console.log(cuisine);
     const arr = [];
@@ -119,7 +120,13 @@ const RestaurantsSideBar = () => {
 
       <div className="restaurant-titles">
         {restaurantsSelected.map((r, i) => {
-          return <div key={`restaurant_id_${r.id}_${i}`}>{r.Restaurant}</div>;
+          return (
+            <div key={`restaurant_id_${r.id}_${i}`}>
+              <h1>{r.Restaurant}</h1>
+              <p>{r.City}</p>
+              <p>{r.Cuisine}</p>
+            </div>
+        )
         })}
       </div>
     </div>
