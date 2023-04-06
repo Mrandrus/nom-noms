@@ -152,43 +152,42 @@ const Restaurants = () => {
                     onClick={() => getReview(r.Id)}
                   >
                     <Link
-                                    to="/Reviews"
-                                    state={{
-                                      restaurant: r.Restaurant,
-                                      cuisine: r.Cuisine,
-                                      city: r.City,
-                                      id: r.Id,
-                                      outsidePic: r.ImageOutside,
-                                      foodPic: r.FoodImages,
-                                      blogIntro: r.BlogIntro
-                                    }}
-                                  >
-                    <div className="rest-img">
-                      <img
-                        src={r.ImageOutside}
-                        alt={`${r.Restaurant}-image`}
-                        height={100}
-                        width={200}
-                      />
-                    </div>
-                    <div className="rest-stuff">
-                      <h1
-                        className={`title_of_rest_${r.Id}`}
-                        style={{ color: "#002868", marginBottom: "5px" }}
-                      >
-                        {r.Restaurant}
-                      </h1>
-                      <hr className="rest-line-divider" />
-                      <a>{r.City}</a>
-                      <br />
-                      <a>{r.Cuisine}</a>
-                      <br />
-                      {/* </Link> */}
-                      <a>{r.BlogIntro}</a>
-                      <br />
-                    </div>
+                      to="/Reviews"
+                      state={{
+                        restaurant: r.Restaurant,
+                        cuisine: r.Cuisine,
+                        city: r.City,
+                        id: r.Id,
+                        outsidePic: r.ImageOutside,
+                        foodPic: r.FoodImages,
+                        blogIntro: r.BlogIntro,
+                      }}
+                    >
+                      <div className="rest-img">
+                        <img
+                          src={r.ImageOutside}
+                          alt={`${r.Restaurant}-image`}
+                          height={100}
+                          width={200}
+                        />
+                      </div>
+                      <div className="rest-stuff">
+                        <h1
+                          className={`title_of_rest_${r.Id}`}
+                          style={{ color: "#002868", marginBottom: "5px" }}
+                        >
+                          {r.Restaurant}
+                        </h1>
+                        <hr className="rest-line-divider" />
+                        <a>{r.City}</a>
+                        <br />
+                        <a>{r.Cuisine}</a>
+                        <br />
+                        {/* </Link> */}
+                        <a>{r.BlogIntro}</a>
+                        <br />
+                      </div>
                     </Link>
-
                   </div>
                 );
               })}
@@ -212,43 +211,43 @@ const Restaurants = () => {
                     onClick={() => getReview(r.Id)}
                   >
                     <Link
-                                    to={`/Reviews/${r.Restaurant}`}
-                                    state={{
-                                      restaurant: r.Restaurant,
-                                      cuisine: r.Cuisine,
-                                      city: r.City,
-                                      id: r.Id,
-                                      outsidePic: r.ImageOutside,
-                                      foodPic: r.FoodImages,
-                                      blogIntro: r.BlogIntro
-                                    }}
-                                  >
-                    <div className="rest-img">
-                      <img
-                        src={r.ImageOutside}
-                        alt={`${r.Restaurant}-image`}
-                        height={100}
-                        width={200}
-                      />
-                    </div>
-                    <div className="rest-stuff">
-                      <h1
-                        className={`title_of_rest_${r.id}`}
-                        style={{ color: "#002868", marginBottom: "5px" }}
-                      >
-                        {r.Restaurant}
-                      </h1>
-                      <hr className="rest-line-divider" />
-                      <a>{r.City}</a>
-                      <br />
-                      <a>{r.Cuisine}</a>
-                      <br />
-                      {/* </Link> */}
-                      <a>{r.BlogIntro}</a>
-                      <br />
-                    </div>
+                      // to={`/Reviews/${r.Restaurant}`}
+                      to={`/Reviews`}
+                      state={{
+                        restaurant: r.Restaurant,
+                        cuisine: r.Cuisine,
+                        city: r.City,
+                        id: r.Id,
+                        outsidePic: r.ImageOutside,
+                        foodPic: r.FoodImages,
+                        blogIntro: r.BlogIntro,
+                      }}
+                    >
+                      <div className="rest-img">
+                        <img
+                          src={r.ImageOutside}
+                          alt={`${r.Restaurant}-image`}
+                          height={100}
+                          width={200}
+                        />
+                      </div>
+                      <div className="rest-stuff">
+                        <h1
+                          className={`title_of_rest_${r.id}`}
+                          style={{ color: "#002868", marginBottom: "5px" }}
+                        >
+                          {r.Restaurant}
+                        </h1>
+                        <hr className="rest-line-divider" />
+                        <a>{r.City}</a>
+                        <br />
+                        <a>{r.Cuisine}</a>
+                        <br />
+                        {/* </Link> */}
+                        <a>{r.BlogIntro}</a>
+                        <br />
+                      </div>
                     </Link>
-
                   </div>
                 );
               })}
