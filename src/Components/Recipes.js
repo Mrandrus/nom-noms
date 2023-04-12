@@ -29,8 +29,8 @@ function Recipes() {
     setShowRecipe(false);
     setShowRecipes(true);
     setRecipe(arr);
-    setSelectedRecipe(arr)
-  }
+    setSelectedRecipe(arr);
+  };
 
   const getRecipe = (id) => {
     console.log("passed recipe id", id);
@@ -46,7 +46,7 @@ function Recipes() {
     setShowRecipes(false);
     console.log("Look at this man", array);
     setRecipe(array);
-  }
+  };
 
   return (
     <div className="recipe-container">
@@ -93,6 +93,7 @@ function Recipes() {
                   </div>
                   <div className="recipe-stuff">
                     <h1
+                      key={`title_of_reicpe_id_${r.Id}_${i}`}
                       className={`title_of_recipe_${r.Id}`}
                       style={{ color: "#002868", marginBottom: "5px" }}
                     >
@@ -109,27 +110,27 @@ function Recipes() {
                 </div>
               );
             })}
-            </div>
+          </div>
         )}
 
-            {showRecipe === true && (
-              <div className="recipe-review">
-                {recipe.map((r, i) => {
-                  return <p>{r.Recipe}</p>;
-                })}
-                <p>Peen</p>
-              </div>
-            )}
-            {showRecipes === true && (
-              <div className="recipe-titles">
-                {selectedRecipe.map((r, i) => {
-                  return (
-                    <div
-                      key={`recipe_id_${r.id}_${i}`}
-                      className={`recipe-titles-items`}
-                      onClick={() => getRecipe(r.Cuisine)}
-                    >
-                      {/* <Link
+        {showRecipe === true && (
+          <div className="recipe-review">
+            {recipe.map((r, i) => {
+              return <p>{r.Recipe}</p>;
+            })}
+            <p>Peen</p>
+          </div>
+        )}
+        {showRecipes === true && (
+          <div className="recipe-titles">
+            {selectedRecipe.map((r, i) => {
+              return (
+                <div
+                  key={`recipe_id_${r.id}_${i}`}
+                  className={`recipe-titles-items`}
+                  onClick={() => getRecipe(r.Cuisine)}
+                >
+                  {/* <Link
                           to="/Reviews"
                           state={{
                             restaurant: r.Restaurant,
@@ -138,36 +139,36 @@ function Recipes() {
                             id: r.Id,
                           }}
                         > */}
-                      <div className="recipe-img">
-                        <img
-                          src={r.Image}
-                          alt={`${r.Recipe}-image`}
-                          height={100}
-                          width={200}
-                        />
-                      </div>
-                      <div className="recipe-stuff">
-                        <h1
-                          className={`title_of_recipe_${r.id}`}
-                          style={{ color: "#002868", marginBottom: "5px" }}
-                        >
-                          {r.Recipe}
-                        </h1>
-                        <hr className="recipe-line-divider" />
-                        <br />
-                        <a>{r.Cuisine}</a>
-                        <br />
-                        {/* </Link> */}
-                        <a>{r.Description}</a>
-                        <br />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+                  <div className="recipe-img">
+                    <img
+                      src={r.Image}
+                      alt={`${r.Recipe}-image`}
+                      height={100}
+                      width={200}
+                    />
+                  </div>
+                  <div className="recipe-stuff">
+                    <h1
+                      className={`title_of_recipe_${r.id}`}
+                      style={{ color: "#002868", marginBottom: "5px" }}
+                    >
+                      {r.Recipe}
+                    </h1>
+                    <hr className="recipe-line-divider" />
+                    <br />
+                    <a>{r.Cuisine}</a>
+                    <br />
+                    {/* </Link> */}
+                    <a>{r.Description}</a>
+                    <br />
+                  </div>
+                </div>
+              );
+            })}
           </div>
+        )}
       </div>
+    </div>
   );
 }
 

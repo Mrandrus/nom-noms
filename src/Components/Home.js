@@ -2,38 +2,46 @@ import "../App.css";
 import ExampleOne from "./PropsPractice/ExampleOne";
 import Rocky from "../images/Rocky-Mountain-National-Park-Colorado.png";
 import DateObject from "react-date-object";
-import jsonReviewData from "../Reviews/foodReview.json";
+import jsonReviewData from "../Reviews/foodReviewJS";
 import jsonRecipeData from "../Reviews/foodRecipes.json";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Home() {
   //let date = new Date().toLocaleString("en-US", { month: "long" })
-  let date = new Date().getFullYear();
-  const restaurantArray = [];
+  const [resties, setResties] = useState([]);
   const recipeArray = [];
-  
+
+  useEffect(() => {
+    GetLatestReviews();
+  }, []);
 
   const GetLatestReviews = () => {
+    const restaurantArray = [];
+
     for (let i = 0; i < jsonReviewData.length; i++) {
-      if (i == jsonReviewData[i].Id) {
-        restaurantArray.push(
-          jsonReviewData[Math.floor(Math.random() * jsonReviewData.length)]
-        );
-      }
+      restaurantArray.push(jsonReviewData[i]);
     }
+
+    restaurantArray.sort((a, b) => {
+      return new Date(b.Date) - new Date(a.Date);
+    });
+    restaurantArray.length = 3;
+    const rev = restaurantArray;
+    setResties(rev);
   };
 
   const GetLatestRecipes = () => {
     for (let i = 0; i < jsonRecipeData.length; i++) {
-        recipeArray.push(
-          jsonRecipeData[Math.floor(Math.random() * jsonRecipeData.length)]
-        );
-      
+      recipeArray.push(
+        jsonRecipeData[Math.floor(Math.random() * jsonRecipeData.length)]
+      );
     }
   };
-
   GetLatestRecipes();
-  GetLatestReviews();
-  console.log(restaurantArray[0].Restaurant);
+  //GetLatestReviews();
+
+  console.log(resties);
   return (
     <div className="noms-home-container">
       <div className="noms-image-container"></div>
@@ -44,25 +52,48 @@ function Home() {
             of the best Restaurants this beautiful state has to offer. Also I'll
             post recipes.
           </p>
-          <p>{date}</p>
         </div>
         <div className="noms-home-intro-content-right">
           <p>shitter</p>
         </div>
       </div>
       <div className="noms-container-two">
-        <div className="restaurant-one">
-          <h3>{restaurantArray[0].Restaurant}</h3>
-          <p>{restaurantArray[0].City}</p>
-          <img
-            src={restaurantArray[0].ImageOutside}
-            alt={`${restaurantArray[0].Restaurant}-food-image${restaurantArray[0].id}`}
-            height={100}
-            width={200}
-          />
-          <p>{restaurantArray[0].BlogIntro}</p>
+        <div className="restaurant-content">
+          {resties?.map((p, q) => {
+            return (
+              <div
+                key={`restaurant_id_${p?.Id}_${q}`}
+                className={`home-restaurant-items`}
+              >
+                <h3>{p?.Restaurant}</h3>
+                <p>{p?.City}</p>
+                <img
+                  src={p?.ImageOutside}
+                  alt={`${p?.Restaurant}-food-image${p.id}`}
+                  height={200}
+                  width={350}
+                />
+                <p>{p?.BlogIntro}</p>
+              </div>
+              // <Link
+              //   className="home-rest-links"
+              //   to="/Reviews"
+              //   state={{
+              //     restaurant: p.Restaurant,
+              //     cuisine: p.Cuisine,
+              //     city: p.City,
+              //     id: p.Id,
+              //     outsidePic: p.ImageOutside,
+              //     foodPic: p.FoodImages,
+              //     blogIntro: p.BlogIntro,
+              //     blogText: p.BlogText,
+              //   }}
+              // >
+              // </Link>
+            );
+          })}
         </div>
-        <div className="restaurant-two">
+        {/* <div className="restaurant-two">
           <h3>{restaurantArray[1].Restaurant}</h3>
           <p>{restaurantArray[1].City}</p>
           <img
@@ -83,13 +114,13 @@ function Home() {
             width={200}
           />
           <p>{restaurantArray[2].BlogIntro}</p>
-        </div>
+        </div> */}
       </div>
       <div className="noms-container-three">
         <div className="recipe-one"></div>
         <div className="recipe-two"></div>
         <div className="recipe-three">
-        <h3>{recipeArray[2].Recipe}</h3>
+          <h3>{recipeArray[2].Recipe}</h3>
           <p>{recipeArray[2].Cuisine}</p>
           <img
             src={recipeArray[2].Image}

@@ -1,4 +1,4 @@
-import jsonReviewData from "../Reviews/foodReview.json";
+import jsonReviewData from "../Reviews/foodReviewJS";
 import React, { Component, useEffect, useState } from "react";
 import "../App.css";
 import RestaurantReview from "./RestaurantReview";
@@ -6,12 +6,13 @@ import Reviews from "./Reviews";
 import { useAsyncError, useLocation } from "react-router-dom";
 import defaultPhoto from "../images/coNomNomsLogo.png";
 import useUrlState from "@ahooksjs/use-url-state";
-import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const Restaurants = () => {
   //const defaultDatas = [...jsonReviewData.Restaurant]
   //console.log("cheese", defaultDatas)
   const loc = useLocation();
+  const navigate = useNavigate();
 
   const [restaurantsSelected, setRestaurantsSelected] = useState([]);
   const [review, setReview] = useState([]);
@@ -103,7 +104,10 @@ const Restaurants = () => {
     setRestaurantsSelected(arr);
     // setUrlPage({cuisine})
     // console.log("url page", urlPage)
+    //updateUrl(cuisine)
   }
+
+  let urlHist = []
 
   function getReview(id) {
     console.log("passed review id", id);
@@ -121,12 +125,24 @@ const Restaurants = () => {
     setReview(array);
   }
 
+  // function updateUrl(newUrl) {
+  //   navigate(newUrl)
+  // }
+  // function updateUrlBack(newUrl) {
+  //   navigate(-1)
+  //   urlHist.pop()
+  //   console.log("History", urlHist)
+  //   setRestaurantsSelected(urlHist)
+  // }
+
   return (
     <>
       <div className="restaurant-content">
+        <div className="restaurnt-space-left"></div>
         <div className="restaurant-sideBar">
           <ul>
             {cuisineList.map((p, k) => (
+              // <Link to={{'/Restaurants/*':`${p.Cuisine}`}}>
               <li key={p.Id}>
                 <button
                   className="restaurant-sideBar-buttons"
@@ -135,9 +151,11 @@ const Restaurants = () => {
                   {p.Cuisine}
                 </button>
               </li>
+              // </Link>
             ))}
           </ul>
         </div>
+        {/* <buttton onClick={updateUrlBack}>Go Back</buttton> */}
 
         <div className="restaurant-page-content">
           {/* <h2>Cuisine: {`${urlPage}`}</h2> */}
@@ -152,6 +170,7 @@ const Restaurants = () => {
                     onClick={() => getReview(r.Id)}
                   >
                     <Link
+                      className="rest-links"
                       to="/Reviews"
                       state={{
                         restaurant: r.Restaurant,
@@ -161,6 +180,7 @@ const Restaurants = () => {
                         outsidePic: r.ImageOutside,
                         foodPic: r.FoodImages,
                         blogIntro: r.BlogIntro,
+                        blogText: r.BlogText,
                       }}
                     >
                       <div className="rest-img">
@@ -179,13 +199,10 @@ const Restaurants = () => {
                           {r.Restaurant}
                         </h1>
                         <hr className="rest-line-divider" />
-                        <a>{r.City}</a>
-                        <br />
-                        <a>{r.Cuisine}</a>
-                        <br />
+                        <p>{r.City}</p>
+                        <p>{r.Cuisine}</p>
                         {/* </Link> */}
-                        <a>{r.BlogIntro}</a>
-                        <br />
+                        <p>{r.BlogIntro}</p>
                       </div>
                     </Link>
                   </div>
@@ -211,7 +228,7 @@ const Restaurants = () => {
                     onClick={() => getReview(r.Id)}
                   >
                     <Link
-                      // to={`/Reviews/${r.Restaurant}`}
+                      className="rest-links"
                       to={`/Reviews`}
                       state={{
                         restaurant: r.Restaurant,
@@ -221,6 +238,7 @@ const Restaurants = () => {
                         outsidePic: r.ImageOutside,
                         foodPic: r.FoodImages,
                         blogIntro: r.BlogIntro,
+                        blogText: r.BlogText,
                       }}
                     >
                       <div className="rest-img">
@@ -239,13 +257,10 @@ const Restaurants = () => {
                           {r.Restaurant}
                         </h1>
                         <hr className="rest-line-divider" />
-                        <a>{r.City}</a>
-                        <br />
-                        <a>{r.Cuisine}</a>
-                        <br />
+                        <p>{r.City}</p>
+                        <p>{r.Cuisine}</p>
                         {/* </Link> */}
-                        <a>{r.BlogIntro}</a>
-                        <br />
+                        <p>{r.BlogIntro}</p>
                       </div>
                     </Link>
                   </div>
@@ -254,6 +269,7 @@ const Restaurants = () => {
             </div>
           )}
         </div>
+        <div className="restaurnt-space-right"></div>
       </div>
       <Routes>
         <Route path="/Reviews/*" element={<Reviews />}></Route>

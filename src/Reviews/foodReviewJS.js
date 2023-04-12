@@ -1,6 +1,6 @@
 import Image from "../Components/Image";
 
-const foodRev = [
+const foodReviewJS = [
   {
     Restaurant: "The Regional",
     Cuisine: "American",
@@ -10,10 +10,12 @@ const foodRev = [
     Content: "",
     Id: 1,
     ImageOutside: "images/regional_outside.jpg",
-    FoodImages: "",
+    // ImageOutside: Image("regional_outside_img"),
+    FoodImages: [""],
     BlogIntro:
       "Possibly my favorite dining experience in Northern Colorado, always amazing food, a great atmosphere, and great service.",
-    Date: "",
+    Date: "2023-03-12T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Henry's Pub",
@@ -24,10 +26,11 @@ const foodRev = [
     Content: "",
     Id: 2,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "One of the best if not the best that Loveland has to offer.  Everything I've tried on the menu has been stellar, but their chicken fried chicken is some of the best I've ever had.",
-    Date: "",
+    Date: "2023-02-12T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Bowl Izakaya",
@@ -38,10 +41,11 @@ const foodRev = [
     Content: "",
     Id: 3,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "A true gem in Loveland, I have spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
-    Date: "",
+    Date: "2023-03-11T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Young's Cafe",
@@ -52,9 +56,10 @@ const foodRev = [
     Content: "",
     Id: 4,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro: "The best Vietnamese in Fort Collins with easily the best pho.",
-    Date: "",
+    Date: "2023-03-10T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Lucile's",
@@ -65,10 +70,11 @@ const foodRev = [
     Content: "",
     Id: 5,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "With locations in Longmont and Boulder as well, I highly recommend this cajun inspired breakfast joint.  Get there early though, it's always packed.",
-    Date: "",
+    Date: "2023-03-09T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Pizza Casbah",
@@ -79,10 +85,11 @@ const foodRev = [
     Content: "",
     Id: 6,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "This New York pizza style joint was a regular lunch spot for their delicious cheese pizza by the slice.",
-    Date: "",
+    Date: "2023-03-08T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Krazy Karl's",
@@ -92,11 +99,12 @@ const foodRev = [
     Cost: "$$",
     Content: "",
     Id: 7,
-    ImageOutside: Image("krazy_karls_outside_img"),
-    FoodImages: "",
+    ImageOutside: "images/krazy_karls_outside.jpg",
+    FoodImages: [""],
     BlogIntro:
       "Krazy Karl's has been a staple in my diet since moving to Fort Collins, The Krazy Hawaiian pizza, Wednesday's grinders, Thursday's big ass beers, all have shaped me into who I am today.",
-    Date: "",
+    Date: "2023-04-08T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Smokin Fins",
@@ -107,10 +115,11 @@ const foodRev = [
     Content: "",
     Id: 16,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "A chain restaurant, but a worthwhile weekend excursion for the warm atmosphere and lobster mac and cheese. ",
-    Date: "",
+    Date: "2023-03-07T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Origins",
@@ -121,10 +130,11 @@ const foodRev = [
     Content: "",
     Id: 8,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "Best pizza in Loveland with a great dining atmosphere.  The Physical location is unfortunately (hopefully temporarily) closed right now.",
-    Date: "",
+    Date: "2023-03-06T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Bai Tong",
@@ -135,10 +145,11 @@ const foodRev = [
     Content: "",
     Id: 9,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "A truly unique dining experience with fantastic food and plentiful portions.",
-    Date: "",
+    Date: "2023-03-06T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Choice City",
@@ -149,10 +160,11 @@ const foodRev = [
     Content: "",
     Id: 10,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "Home of some of the best burgers and sandwiches in Fort Collins.",
-    Date: "",
+    Date: "2023-04-03T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Himalayan Curry & Kebob",
@@ -163,9 +175,10 @@ const foodRev = [
     Content: "",
     Id: 11,
     ImageOutside: "images/curry_kabob_outside.jpg",
-    FoodImages: "images/curry_kabob_plate.jpg",
+    FoodImages: ["images/curry_kabob_plate.jpg"],
     BlogIntro: "A must go for the buttered chicken alone.",
-    Date: "",
+    Date: "2023-04-09T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Mt. Everest Cafe",
@@ -176,10 +189,12 @@ const foodRev = [
     Content: "",
     Id: 12,
     ImageOutside: "images/mt_everest_outside.jpg",
-    FoodImages: "images/mt_everest_plate_two.jpg",
+    //FoodImages: [Image("mt_everest_plate_one_img")],
+    FoodImages: ["images/mt_everest_plate_one.jpg", "images/mt_everest_plate_two.jpg"],
     BlogIntro:
       "A Nepalese buffet in Fort Collins with a medley of delicious curries, tikka masala, and near perfect naan bread.",
-    Date: "",
+    Date: "2023-04-10T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "The Original Pancake House",
@@ -190,10 +205,11 @@ const foodRev = [
     Content: "",
     Id: 13,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "I know this is a chain, but there aren't many places I'd rather go to on a Sunday morning.",
-    Date: "",
+    Date: "2023-03-23T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "El Pueblito",
@@ -204,10 +220,11 @@ const foodRev = [
     Content: "",
     Id: 14,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "El Pueblito has a Fort Collins and a Loveland location, but having only been to the Loveland location, I can make the recommendation for one of Loveland's best Mexican joints.",
-    Date: "",
+    Date: "2023-03-22T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Jim's Wings",
@@ -218,10 +235,11 @@ const foodRev = [
     Content: "",
     Id: 15,
     ImageOutside: "images/jims_wings_outside.jpg",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "The best wings in Fort Collins consisting of the perfect texture, size, and taste.",
-    Date: "",
+    Date: "2023-03-20T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Music City Hot Chicken",
@@ -232,10 +250,11 @@ const foodRev = [
     Content: "",
     Id: 17,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "Great place for some Nashville hot chicken and a side of mac and cheese.",
-    Date: "",
+    Date: "2023-03-27T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Mo' Betta Gumbo",
@@ -246,10 +265,11 @@ const foodRev = [
     Content: "",
     Id: 18,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "A fun cajun joint in the heart of downtown Loveland, Betta Gumbo welcomes you with a colorful atmosphere, extensive drink menu, and great classic cajun dishes.",
-    Date: "",
+    Date: "2023-02-12T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "DGT (Originally Damn Good Tacos)",
@@ -260,10 +280,11 @@ const foodRev = [
     Content: "",
     Id: 19,
     ImageOutside: "images/coNomNomsLogo.png",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "DGT, originally known as Damn Good Tacos (but Torchies got mad), is a great taco stop with a creative variety.",
-    Date: "",
+    Date: "2023-02-13T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Cafe de Bangkok",
@@ -274,10 +295,11 @@ const foodRev = [
     Content: "",
     Id: 20,
     ImageOutside: "images/cafe_de_bangkok.jpg",
-    FoodImages: "",
+    FoodImages: [""],
     BlogIntro:
       "A cosy little restaurant near CSU's campus with the best pad thai and drunken noodles in Fort Collins.",
-    Date: "",
+    Date: "2023-02-23T05:39:14.551Z",
+    BlogText: "",
   },
   {
     Restaurant: "Dae Gee",
@@ -288,9 +310,12 @@ const foodRev = [
     Content: "",
     Id: 21,
     ImageOutside: "images/dae_gee_outside.jpg",
-    FoodImages: "images/dae_gee_grill.jpg",
+    FoodImages: ["images/dae_gee_grill.jpg"],
     BlogIntro:
       "With multiple locations around the Denver area including one in Fort Collins, this is one of my favorite eating experiences where you can choose the all you can eat option and grill the various meats at your table.",
-    Date: "",
+    Date: "2023-04-12T05:39:14.551Z",
+    BlogText: "Perp"
   },
 ];
+
+export default foodReviewJS;
