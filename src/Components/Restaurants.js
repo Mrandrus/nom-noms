@@ -192,8 +192,8 @@ const Restaurants = () => {
                         <img
                           src={r.ImageOutside}
                           alt={`${r.Restaurant}-image`}
-                          height={100}
-                          width={200}
+                          height={125}
+                          width={225}
                         />
                       </div>
                       <div className="rest-stuff">
@@ -250,8 +250,8 @@ const Restaurants = () => {
                         <img
                           src={`${r.ImageOutside}`}
                           alt={`${r.Restaurant}-image`}
-                          height={100}
-                          width={200}
+                          height={125}
+                          width={225}
                         />
                       </div>
                       <div className="rest-stuff">
@@ -275,7 +275,7 @@ const Restaurants = () => {
           )}
         </div>
         <div className="restaurant-space-right">
-          <button onClick={() => navigate(-1)}>click me</button>
+          {/* <button onClick={() => navigate(-1)}>click me</button> */}
         </div>
       </div>
       <Routes>
