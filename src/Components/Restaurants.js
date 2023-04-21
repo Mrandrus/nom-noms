@@ -3,10 +3,18 @@ import React, { Component, useEffect, useState } from "react";
 import "../App.css";
 import RestaurantReview from "./RestaurantReview";
 import Reviews from "./Reviews";
-import { useAsyncError, useLocation } from "react-router-dom";
+import { Outlet, useAsyncError, useLocation } from "react-router-dom";
 import defaultPhoto from "../images/coNomNomsLogo.png";
 import useUrlState from "@ahooksjs/use-url-state";
-import { BrowserRouter, Router, Routes, Route, Link, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
+import UpperContent from "./UpperContent";
 
 const Restaurants = () => {
   //const defaultDatas = [...jsonReviewData.Restaurant]
@@ -14,22 +22,19 @@ const Restaurants = () => {
   const loc = useLocation();
   const navigate = useNavigate();
 
-  const [restaurantsSelected, setRestaurantsSelected] = useState([]);
+  const [restaurantsSelected, setRestaurantsSelected] = useState([jsonReviewData[0]]);
   const [review, setReview] = useState([]);
   const [showReview, setShowReview] = useState(false);
   const [showRest, setShowRest] = useState(false);
-  const [urlPage, setUrlPage] = useUrlState(restaurantsSelected.Cuisine);
+  // const [urlPage, setUrlPage] = useUrlState(restaurantsSelected.Cuisine);
+  const [hist, setHist] = useState([])
 
   useEffect(() => {
     //getReview(restaurantsSelected)
+    setHist(prev => ({...prev, restaurantsSelected}))
   }, [restaurantsSelected]);
-  //const [count, setCount] = useState(0)
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         jsonReviewData: [],
-  //     }
-  // }
+
+
   useEffect(() => {}, [review]);
   // componentDidMount() {
   //     fetch("../Reviews/foodReview.json").then((res) => res.json())
@@ -98,16 +103,14 @@ const Restaurants = () => {
       }
     });
 
-    console.log("push version", arr);
+    //console.log("push version", arr);
     setShowRest(true);
     setShowReview(false);
-    setRestaurantsSelected(arr);
-    // setUrlPage({cuisine})
-    // console.log("url page", urlPage)
+    setRestaurantsSelected(arr)
+
     //updateUrl(cuisine)
   }
 
-  let urlHist = []
 
   function getReview(id) {
     console.log("passed review id", id);
@@ -138,11 +141,12 @@ const Restaurants = () => {
   return (
     <>
       <div className="restaurant-content">
-        <div className="restaurnt-space-left"></div>
+        <div className="restaurant-space-left"></div>
         <div className="restaurant-sideBar">
           <ul>
             {cuisineList.map((p, k) => (
-              // <Link to={{'/Restaurants/*':`${p.Cuisine}`}}>
+              // <Link to={`/Restaurants/${p.Cuisine}`}>
+              <Link to="/Restaurants">
               <li key={p.Id}>
                 <button
                   className="restaurant-sideBar-buttons"
@@ -151,7 +155,7 @@ const Restaurants = () => {
                   {p.Cuisine}
                 </button>
               </li>
-              // </Link>
+              </Link> 
             ))}
           </ul>
         </div>
@@ -171,7 +175,8 @@ const Restaurants = () => {
                   >
                     <Link
                       className="rest-links"
-                      to="/Reviews"
+                      // to={`/Reviews/${r.Restaurant}`}
+                      to={`/Reviews`}
                       state={{
                         restaurant: r.Restaurant,
                         cuisine: r.Cuisine,
@@ -213,7 +218,7 @@ const Restaurants = () => {
 
           {showReview === true && (
             <div className="restaurant-review">
-              <Link to="/Reviews">
+              <Link to={`/Reviews/${review}`}>
                 <Reviews vals={review} />
               </Link>
             </div>
@@ -223,7 +228,7 @@ const Restaurants = () => {
               {restaurantsSelected.map((r, i) => {
                 return (
                   <div
-                    key={`restaurant_id_${r.id}_${i}`}
+                    key={`restaurant_id_${r.Id}_${i}`}
                     className={`restaurant-titles-items`}
                     onClick={() => getReview(r.Id)}
                   >
@@ -243,7 +248,7 @@ const Restaurants = () => {
                     >
                       <div className="rest-img">
                         <img
-                          src={r.ImageOutside}
+                          src={`${r.ImageOutside}`}
                           alt={`${r.Restaurant}-image`}
                           height={100}
                           width={200}
@@ -269,10 +274,16 @@ const Restaurants = () => {
             </div>
           )}
         </div>
-        <div className="restaurnt-space-right"></div>
+        <div className="restaurant-space-right">
+          <button onClick={() => navigate(-1)}>click me</button>
+        </div>
       </div>
       <Routes>
+        <Route path="/Restaurants/*" element={<Reviews />}></Route>
+        <Route path="/Restaurants/:id" element={<Reviews />}></Route>
         <Route path="/Reviews/*" element={<Reviews />}></Route>
+        <Route path="/Reviews/:id" element={<Reviews />}></Route>
+
       </Routes>
     </>
   );

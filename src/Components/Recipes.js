@@ -2,6 +2,16 @@ import "../App.css";
 import jsonReviewData from "../Reviews/foodReview.json";
 import React, { Component, useEffect, useState } from "react";
 import jsonRecipeData from "../Reviews/foodRecipes.json";
+import {
+  BrowserRouter,
+  Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
+import Recipe from "./Recipe";
+
 
 function Recipes() {
   const [selectedRecipe, setSelectedRecipe] = useState([]);
@@ -49,32 +59,46 @@ function Recipes() {
   };
 
   return (
-    <div className="recipe-container">
-      <div className="recipe-sidebar">
-        <ul>
-          {recipes.map((p, k) => (
-            <li key={p.Id}>
-              <button
-                className="recipe-sideBar-buttons"
-                onClick={() => getRecipes(p.Cuisine)}
-              >
-                {p.Cuisine}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="recipe-content">
-        {showRecipe === false && showRecipes === false && (
-          <div className="recipe-titles">
-            {jsonRecipeData.map((r, i) => {
-              return (
-                <div
-                  key={`reicpe_id_${r.Id}_${i}`}
-                  className={`recipe-titles-items`}
-                  onClick={() => getRecipe(r.Id)}
+    <>
+      <div className="recipe-page-container">
+        <div className="recipe-space-left"></div>
+
+        <div className="recipe-page-sidebar">
+          <ul>
+            {recipes.map((p, k) => (
+              <li key={p.Id}>
+                <button
+                  className="recipe-sideBar-buttons"
+                  onClick={() => getRecipes(p.Cuisine)}
                 >
-                  {/* <Link
+                  {p.Cuisine}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="recipe-page-content">
+          {showRecipe === false && showRecipes === false && (
+            <div className="recipe-page-titles">
+              {jsonRecipeData.map((r, i) => {
+                return (
+                  <Link
+                    className="recipe-links"
+                    to="/Recipe"
+                    state={{
+                      recipe: r.Recipe,
+                      cuisine: r.Cuisine,
+                      ingredients: r.Ingredients,
+                      image: r.Image,
+                      instructions: r.Instructions,
+                    }}
+                  >
+                    <div
+                      key={`reicpe_id_${r.Id}_${i}`}
+                      className={`recipe-page-titles-items`}
+                      onClick={() => getRecipe(r.Id)}
+                    >
+                      {/* <Link
                                     to="/Reviews"
                                     state={{
                                       restaurant: r.Restaurant,
@@ -83,54 +107,80 @@ function Recipes() {
                                       id: r.Id,
                                     }}
                                   > */}
-                  <div className="recipe-img">
-                    <img
-                      src={r.Image}
-                      alt={`${r.Recipe}-image`}
-                      height={100}
-                      width={200}
-                    />
-                  </div>
-                  <div className="recipe-stuff">
-                    <h1
-                      key={`title_of_reicpe_id_${r.Id}_${i}`}
-                      className={`title_of_recipe_${r.Id}`}
-                      style={{ color: "#002868", marginBottom: "5px" }}
-                    >
-                      {r.Recipe}
-                    </h1>
-                    <hr className="rest-line-divider" />
-                    <br />
-                    <a>{r.Cuisine}</a>
-                    <br />
-                    {/* </Link> */}
-                    <a>{r.Description}</a>
-                    <br />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
+                      <div className="recipe-page-img">
+                        <img
+                          src={r.Image}
+                          alt={`${r.Recipe}-image`}
+                          height={100}
+                          width={200}
+                        />
+                      </div>
+                      <div className="recipe-stuff">
+                        <h1
+                          key={`title_of_reicpe_id_${r.Id}_${i}`}
+                          className={`title_of_recipe_${r.Id}`}
+                          style={{ color: "#002868", marginBottom: "5px" }}
+                        >
+                          {r.Recipe}
+                        </h1>
+                        <hr className="recipe-line-divider" />
+                        <br />
+                        <a>{r.Cuisine}</a>
+                        <br />
+                        {/* </Link> */}
+                        <a>{r.Description}</a>
+                        <br />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
 
-        {showRecipe === true && (
-          <div className="recipe-review">
-            {recipe.map((r, i) => {
-              return <p>{r.Recipe}</p>;
-            })}
-            <p>Peen</p>
-          </div>
-        )}
-        {showRecipes === true && (
-          <div className="recipe-titles">
-            {selectedRecipe.map((r, i) => {
-              return (
-                <div
-                  key={`recipe_id_${r.id}_${i}`}
-                  className={`recipe-titles-items`}
-                  onClick={() => getRecipe(r.Cuisine)}
-                >
-                  {/* <Link
+          {showRecipe === true && (
+            <div className="recipe-review">
+              {recipe.map((r, i) => {
+                return (
+                  <Link
+                    className="recipe-links"
+                    to="/Recipes"
+                    state={{
+                      recipe: r.Recipe,
+                      cuisine: r.Cuisine,
+                      ingredients: r.Ingredients,
+                      image: r.Image,
+                      instructions: r.Instructions,
+                    }}
+                  >
+                    <p>{r.Recipe}</p>
+                  </Link>
+                );
+              })}
+              <p>Peen</p>
+            </div>
+          )}
+          {showRecipes === true && (
+            <div className="recipe-page-titles">
+              {selectedRecipe.map((r, i) => {
+                return (
+                  <Link
+                    className="recipe-links"
+                    to="/Recipe"
+                    state={{
+                      recipe: r.Recipe,
+                      cuisine: r.Cuisine,
+                      ingredients: r.Ingredients,
+                      image: r.Image,
+                      instructions: r.Instructions,
+                    }}
+                  >
+                    <div
+                      key={`recipe_id_${r.id}_${i}`}
+                      className={`recipe-page-titles-items`}
+                      onClick={() => getRecipe(r.Cuisine)}
+                    >
+                      {/* <Link
                           to="/Reviews"
                           state={{
                             restaurant: r.Restaurant,
@@ -139,36 +189,44 @@ function Recipes() {
                             id: r.Id,
                           }}
                         > */}
-                  <div className="recipe-img">
-                    <img
-                      src={r.Image}
-                      alt={`${r.Recipe}-image`}
-                      height={100}
-                      width={200}
-                    />
-                  </div>
-                  <div className="recipe-stuff">
-                    <h1
-                      className={`title_of_recipe_${r.id}`}
-                      style={{ color: "#002868", marginBottom: "5px" }}
-                    >
-                      {r.Recipe}
-                    </h1>
-                    <hr className="recipe-line-divider" />
-                    <br />
-                    <a>{r.Cuisine}</a>
-                    <br />
-                    {/* </Link> */}
-                    <a>{r.Description}</a>
-                    <br />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
+                      <div className="recipe-page-img">
+                        <img
+                          src={r.Image}
+                          alt={`${r.Recipe}-image`}
+                          height={100}
+                          width={200}
+                        />
+                      </div>
+                      <div className="recipe-stuff">
+                        <h1
+                          className={`title_of_recipe_${r.id}`}
+                          style={{ color: "#002868", marginBottom: "5px" }}
+                        >
+                          {r.Recipe}
+                        </h1>
+                        <hr className="recipe-line-divider" />
+                        <br />
+                        <a>{r.Cuisine}</a>
+                        <br />
+                        {/* </Link> */}
+                        <a>{r.Description}</a>
+                        <br />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </div>
+        <div className="recipe-space-right"></div>
       </div>
-    </div>
+      <Routes>
+        <Route path="/Recipes" element={<Recipe />}></Route>
+        <Route path="/Recipe" element={<Recipe />}></Route>
+
+      </Routes>
+    </>
   );
 }
 

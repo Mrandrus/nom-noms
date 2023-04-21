@@ -316,6 +316,21 @@ const foodReviewJS = [
     Date: "2023-04-12T05:39:14.551Z",
     BlogText: "Perp"
   },
+  {
+    Restaurant: "Bamboo Express",
+    Cuisine: "Chinese",
+    State: "Colorado",
+    City: "Loveland",
+    Cost: "$-$$",
+    Content: "",
+    Id: 22,
+    ImageOutside: "images/bamboo_outside.jpg",
+    FoodImages: ["images/bamboo_plate.jpg"],
+    BlogIntro:
+      "Bamboo Express > Panda Express",
+    Date: "2023-04-17T05:39:14.551Z",
+    BlogText: "Perp"
+  },
 ];
 
 export default foodReviewJS;

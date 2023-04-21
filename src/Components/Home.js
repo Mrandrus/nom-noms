@@ -10,36 +10,34 @@ import { useEffect, useState } from "react";
 function Home() {
   //let date = new Date().toLocaleString("en-US", { month: "long" })
   const [resties, setResties] = useState([]);
-  const recipeArray = [];
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     GetLatestReviews();
+    GetLatestRecipes();
   }, []);
 
   const GetLatestReviews = () => {
     const restaurantArray = [];
 
-    for (let i = 0; i < jsonReviewData.length; i++) {
-      restaurantArray.push(jsonReviewData[i]);
-    }
+    restaurantArray.push(...jsonReviewData);
 
     restaurantArray.sort((a, b) => {
       return new Date(b.Date) - new Date(a.Date);
     });
+
     restaurantArray.length = 3;
     const rev = restaurantArray;
     setResties(rev);
   };
 
   const GetLatestRecipes = () => {
-    for (let i = 0; i < jsonRecipeData.length; i++) {
-      recipeArray.push(
-        jsonRecipeData[Math.floor(Math.random() * jsonRecipeData.length)]
-      );
-    }
+    const recipeArray = [];
+
+    recipeArray.push(...jsonRecipeData);
+    recipeArray.length = 3;
+    setRecipes(recipeArray);
   };
-  GetLatestRecipes();
-  //GetLatestReviews();
 
   console.log(resties);
   return (
@@ -58,6 +56,9 @@ function Home() {
         </div>
       </div>
       <div className="noms-container-two">
+        <div className="restaurant-content-title">
+          <h2>Latest Reviews</h2>
+        </div>
         <div className="restaurant-content">
           {resties?.map((p, q) => {
             return (
@@ -65,31 +66,33 @@ function Home() {
                 key={`restaurant_id_${p?.Id}_${q}`}
                 className={`home-restaurant-items`}
               >
-                <h3>{p?.Restaurant}</h3>
-                <p>{p?.City}</p>
-                <img
-                  src={p?.ImageOutside}
-                  alt={`${p?.Restaurant}-food-image${p.id}`}
-                  height={200}
-                  width={350}
-                />
-                <p>{p?.BlogIntro}</p>
+                <Link
+                  className="rest-links"
+                  // to={`/Reviews/${r.Restaurant}`}
+                  to={`/Reviews`}
+                  state={{
+                    restaurant: p.Restaurant,
+                    cuisine: p.Cuisine,
+                    city: p.City,
+                    id: p.Id,
+                    outsidePic: p.ImageOutside,
+                    foodPic: p.FoodImages,
+                    blogIntro: p.BlogIntro,
+                    blogText: p.BlogText,
+                  }}
+                >
+                  <h3>{p?.Restaurant}</h3>
+                  <p>{p?.Cuisine}</p>
+                  <p>{p?.City}</p>
+                  <img
+                    src={p?.ImageOutside}
+                    alt={`${p?.Restaurant}-food-image${p.id}`}
+                    height={200}
+                    width={350}
+                  />
+                  <p>{p?.BlogIntro}</p>
+                </Link>
               </div>
-              // <Link
-              //   className="home-rest-links"
-              //   to="/Reviews"
-              //   state={{
-              //     restaurant: p.Restaurant,
-              //     cuisine: p.Cuisine,
-              //     city: p.City,
-              //     id: p.Id,
-              //     outsidePic: p.ImageOutside,
-              //     foodPic: p.FoodImages,
-              //     blogIntro: p.BlogIntro,
-              //     blogText: p.BlogText,
-              //   }}
-              // >
-              // </Link>
             );
           })}
         </div>
@@ -117,18 +120,40 @@ function Home() {
         </div> */}
       </div>
       <div className="noms-container-three">
-        <div className="recipe-one"></div>
-        <div className="recipe-two"></div>
-        <div className="recipe-three">
-          <h3>{recipeArray[2].Recipe}</h3>
-          <p>{recipeArray[2].Cuisine}</p>
-          <img
-            src={recipeArray[2].Image}
-            alt={`${recipeArray[2].Image}-food-image${recipeArray[2].id}`}
-            height={100}
-            width={200}
-          />
-          <p>{recipeArray[2].Description}</p>
+        <div className="recipe-content-title">
+          <h2>Latest Recipes</h2>
+        </div>
+        <div className="recipe-content">
+          {recipes?.map((p, q) => {
+            return (
+              <div
+                key={`recipe_id_${p?.Id}_${q}`}
+                className={`home-recipe-items`}
+              >
+                <Link
+                  className="recipe-links"
+                  to="/Recipe"
+                  state={{
+                    recipe: p.Recipe,
+                    cuisine: p.Cuisine,
+                    ingredients: p.Ingredients,
+                    image: p.Image,
+                    instructions: p.Instructions,
+                  }}
+                >
+                  <h3>{p.Recipe}</h3>
+                  <p>{p.Cuisine}</p>
+                  <img
+                    src={p?.Image}
+                    alt={`${p?.Image}-food-image${p?.id}`}
+                    height={100}
+                    width={200}
+                  />
+                  <p>{p?.Description}</p>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div>{/* <ExampleOne /> */}</div>

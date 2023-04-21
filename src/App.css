@@ -104,6 +104,7 @@
   width: 100%;
   display: flex;
   align-self: center;
+
 }
 
 .noms-home-intro-content-left {
@@ -119,12 +120,12 @@
 }
 
 .noms-container-two {
-  height: 50vmin;
+  height: auto;
   background-color: #ffffff;
   color: #002868;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .restaurant-content {
@@ -141,10 +142,35 @@
   gap: 5rem;
 }
 
+.restaurant-content-title {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: #002868;
+  color: #ffffff;
+  transition: 1s ease-in-out;
+
+}
+
 .home-restaurant-items {
   width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-restaurant-items a {
   display: flex;
   flex-direction: column;
+}
+
+.home-restaurant-items:hover {
+  background-color: #bf0a3183;
+  height: auto;
+  transition: 1s;
+  border-radius: 10px;;
 }
 
 .restaurant-content img {
@@ -152,11 +178,61 @@
 }
 
 .noms-container-three {
-  height: 50vmin;
-  background-color: #002868;
-  color: #ffffff;
+  height: auto;
+  background-color: #ffffff;
+  color: #002868;
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  background-color: #ffffff;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  gap: 5rem;
+}
+
+.recipe-content-title {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color:#BF0A30;
+  color: #ffffff;
+}
+
+.recipe-content img {
+  align-self: center;
+}
+
+.home-recipe-items {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-recipe-items a {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-recipe-items:hover {
+  background-color: #0028683b;
+  height: auto;
+  transition: 1s;
+  border-radius: 10px;;
+}
+
+.reicpe-content img {
+  align-self: center;
 }
 
 /* //////////////// Restaurant and restaraunt side bar //////////////// */
@@ -181,7 +257,6 @@
   list-style-type: none;
   padding: 2px;
 }
-
 
 .restaurant-sideBar-buttons {
   border: solid 3px transparent;
@@ -225,11 +300,11 @@
   padding: 10px;
 }
 
-.restaurnt-space-left {
+.restaurant-space-left {
   width: 10%;
 }
 
-.restaurnt-space-right {
+.restaurant-space-right {
   width: 10%;
 }
 
@@ -286,22 +361,36 @@
 }
 
 /* //////////////// Recipe and recipe side bar //////////////// */
-.recipe-container {
+.recipe-page-container {
   display: flex;
   width: 100%;
+  gap: 5rem;
 }
 
-.recipe-sidebar {
-  justify-content: flex-start;
-  width: 30%;
+.recipe-page-sidebar {
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  border: 2px;
+  border-color: #002868;
 }
 
-.recipe-content {
+.recipe-page-content {
   justify-content: flex-end;
-  width: 70%;
+  text-align: left;
+  width: 60%;
+  padding: 10px;
 }
 
-.recipe-sidebar li {
+.recipe-space-left {
+  width: 10%;
+}
+
+.recipe-space-right {
+  width: 10%;
+}
+
+.recipe-page-sidebar li {
   list-style-type: none;
   padding: 2px;
 }
@@ -332,6 +421,48 @@
   color: #BF0A30;
   text-decoration: underline;
   text-decoration-color: #FFD700;
+}
+
+.recipe-page-titles-items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+
+.recipe-page-titles-items:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: 1s;
+  border-radius: 10px;
+}
+
+.recipe-page-img {
+  order: 1;
+  width: 25%;
+  justify-content: center;
+  align-self: center;
+  padding: 10px;
+}
+
+.recipe-page-img img {
+  border-radius: 10px;
+}
+
+.recipe-stuff {
+  order: 2;
+  width: 75%;
+  padding: 10px;
+}
+
+.recipe-line-divider {
+  border-top: 5px solid #BF0A30;
+  border-radius: 5px;
+}
+
+.recipe-links {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
 }
 
 /* //////////////// About Page //////////////// */
@@ -387,9 +518,18 @@
   justify-content: center;
   text-align: center;
   align-self: center;
+  text-decoration: none;
+
 }
 
 .footerMenu li {
+  text-decoration: none;
+  color: #002868;
+  font-size: large;
+  font-weight: bold;
+}
+
+.footerMenu li:visited {
   text-decoration: none;
   color: #002868;
   font-size: large;
