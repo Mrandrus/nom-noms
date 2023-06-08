@@ -13,8 +13,12 @@
   }
 }
 
-/* //////////////// Header, header logo, and navigation //////////////// */
+/* //////////////// GLOBAL /////////////// */
+.display-none {
+  display: none;
+}
 
+/* //////////////// Header, header logo, and navigation //////////////// */
 
 .App-header {
   background-color: #282c34;
@@ -66,14 +70,14 @@
 }
 
 .headerMenu a:hover {
-  color: #BF0A30;
+  color: #bf0a30;
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .headerMenu a:active {
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .NomNoms-logo {
@@ -92,31 +96,30 @@
   display: flex;
   width: 100%;
   height: 75vmin;
-  background-image: url("./images/Rocky-Mountain-National-Park-Colorado.png");
+  background-image: url('./images/Rocky-Mountain-National-Park-Colorado.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .nom-container-one {
   height: 50vmin;
-  background-color: #BF0A30;
+  background-color: #bf0a30;
   color: #ffffff;
   width: 100%;
   display: flex;
   align-self: center;
-
 }
 
 .noms-home-intro-content-left {
   width: 50%;
   justify-content: flex-start;
-  padding: 10px;  
+  padding: 10px;
 }
 
 .noms-home-intro-content-right {
   width: 50%;
-  justify-content: flex-end;  
-  padding: 10px;  
+  justify-content: flex-end;
+  padding: 10px;
 }
 
 .noms-container-two {
@@ -150,7 +153,6 @@
   background-color: #002868;
   color: #ffffff;
   transition: 1s ease-in-out;
-
 }
 
 .home-restaurant-items {
@@ -170,7 +172,7 @@
   background-color: #bf0a3183;
   height: auto;
   transition: 1s;
-  border-radius: 10px;;
+  border-radius: 10px;
 }
 
 .restaurant-content img {
@@ -206,7 +208,7 @@
   width: 100%;
   text-align: center;
   justify-content: center;
-  background-color:#BF0A30;
+  background-color: #bf0a30;
   color: #ffffff;
 }
 
@@ -229,7 +231,7 @@
   background-color: #0028683b;
   height: auto;
   transition: 1s;
-  border-radius: 10px;;
+  border-radius: 10px;
 }
 
 .reicpe-content img {
@@ -265,7 +267,7 @@
   background-color: #ffffff;
   font-size: 15px;
   font-weight: bold;
-  color:#002868;
+  color: #002868;
   border-radius: 10px;
   padding: 5px;
   border-width: 5px;
@@ -274,17 +276,17 @@
 }
 
 .restaurant-sideBar-buttons:hover {
-  border-color: #BF0A30;
-  color: #BF0A30;
+  border-color: #bf0a30;
+  color: #bf0a30;
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .restaurant-sideBar-buttons:active {
-  border-color: #BF0A30;
-  color: #BF0A30;
+  border-color: #bf0a30;
+  color: #bf0a30;
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 /* .restaurant-titles {
@@ -347,7 +349,7 @@
 }
 
 .rest-line-divider {
-  border-top: 5px solid #BF0A30;
+  border-top: 5px solid #bf0a30;
   border-radius: 5px;
 }
 
@@ -357,7 +359,7 @@
 }
 
 .allFoodImages:hover {
-  border: solid #BF0A30;
+  border: solid #bf0a30;
   border-radius: 10px;
 }
 
@@ -402,7 +404,7 @@
   background-color: #ffffff;
   font-size: 15px;
   font-weight: bold;
-  color:#002868;
+  color: #002868;
   border-radius: 10px;
   padding: 5px;
   border-width: 5px;
@@ -411,17 +413,17 @@
 }
 
 .recipe-sideBar-buttons:hover {
-  border-color: #BF0A30;
-  color: #BF0A30;
+  border-color: #bf0a30;
+  color: #bf0a30;
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .recipe-sideBar-buttons:active {
-  border-color: #BF0A30;
-  color: #BF0A30;
+  border-color: #bf0a30;
+  color: #bf0a30;
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .recipe-page-titles-items {
@@ -456,7 +458,7 @@
 }
 
 .recipe-line-divider {
-  border-top: 5px solid #BF0A30;
+  border-top: 5px solid #bf0a30;
   border-radius: 5px;
 }
 
@@ -495,12 +497,11 @@
 
 /* //////////////// Contact Page //////////////// */
 
-
 /* //////////////// Footer //////////////// */
 .footer {
   display: flex;
   flex-direction: row;
-  background-color: #BF0A30;
+  background-color: #bf0a30;
   height: 40vh;
 }
 
@@ -520,7 +521,6 @@
   text-align: center;
   align-self: center;
   text-decoration: none;
-
 }
 
 .footerMenu li {

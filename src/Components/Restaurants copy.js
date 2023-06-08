@@ -1,110 +1,131 @@
-import jsonReviewData from '../Reviews/foodReviewJS'
-import React, { Component, useEffect, useState } from 'react'
-import '../App.css'
-import RestaurantReview from './RestaurantReview'
-import Reviews from './Reviews'
-import { Outlet, useAsyncError, useLocation } from 'react-router-dom'
-import defaultPhoto from '../images/coNomNomsLogo.png'
-import useUrlState from '@ahooksjs/use-url-state'
-import { BrowserRouter, Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
-import UpperContent from './UpperContent'
+import jsonReviewData from "../Reviews/foodReviewJS";
+import React, { Component, useEffect, useState } from "react";
+import "../App.css";
+import RestaurantReview from "./RestaurantReview";
+import Reviews from "./Reviews";
+import { Outlet, useAsyncError, useLocation } from "react-router-dom";
+import defaultPhoto from "../images/coNomNomsLogo.png";
+import useUrlState from "@ahooksjs/use-url-state";
+import {
+  BrowserRouter,
+  Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
+import UpperContent from "./UpperContent";
 
 const Restaurants = () => {
   //const defaultDatas = [...jsonReviewData.Restaurant]
   //console.log("cheese", defaultDatas)
-  const loc = useLocation()
-  const navigate = useNavigate()
+  const loc = useLocation();
+  const navigate = useNavigate();
 
-  const [restaurantsSelected, setRestaurantsSelected] = useState([jsonReviewData[0]])
-  const [review, setReview] = useState([])
-  const [showReview, setShowReview] = useState(false)
-  const [showRest, setShowRest] = useState(false)
+  const [restaurantsSelected, setRestaurantsSelected] = useState([
+    jsonReviewData[0],
+  ]);
+  const [review, setReview] = useState([]);
+  const [showReview, setShowReview] = useState(false);
+  const [showRest, setShowRest] = useState(false);
   // const [urlPage, setUrlPage] = useUrlState(restaurantsSelected.Cuisine);
-  const [hist, setHist] = useState([])
+  const [hist, setHist] = useState([]);
 
   useEffect(() => {
     //getReview(restaurantsSelected)
-    setHist(prev => ({ ...prev, restaurantsSelected }))
-  }, [restaurantsSelected])
+    setHist((prev) => ({ ...prev, restaurantsSelected }));
+  }, [restaurantsSelected]);
 
-  useEffect(() => {}, [review])
+  useEffect(() => {}, [review]);
+  // componentDidMount() {
+  //     fetch("../Reviews/foodReview.json").then((res) => res.json())
+  //     .then((data) => {
+  //         console.log("this data from json: ", data)
+
+  //         this.setState({ jsonReviewData: JSON.stringify(data) }, () => {
+  //             alert(this.state.hugeText)
+  //         });
+  //     })
+  // }
 
   const removeDupes = (arr, key) => {
-    const data = [...new Map(arr.map(item => [item[key], item])).values()]
-    return data
-  }
+    const data = [...new Map(arr.map((item) => [item[key], item])).values()];
+    return data;
+  };
 
   const findDupes = (arr, key) => {
-    arr.filter((keys, index) => arr.indexOf(key) !== index)
-  }
+    arr.filter((keys, index) => arr.indexOf(key) !== index);
+  };
 
-  const count = {}
-  jsonReviewData.forEach(element => {
-    count[element.Cuisine] = (count[element.Cuisine] || 0) + 1
-  })
+  const count = {};
+  jsonReviewData.forEach((element) => {
+    count[element.Cuisine] = (count[element.Cuisine] || 0) + 1;
+  });
 
-  console.log(count)
+  console.log(count);
 
-  const cuisineList = removeDupes(jsonReviewData, 'Cuisine')
-  const dupies = findDupes(jsonReviewData, 'Cuisine')
+  const cuisineList = removeDupes(jsonReviewData, "Cuisine");
+  const dupies = findDupes(jsonReviewData, "Cuisine");
   //console.log("Poops", dupies)
 
   cuisineList.sort((a, b) => {
-    let textA = a.Cuisine.toUpperCase()
-    let textB = b.Cuisine.toUpperCase()
-    return textA < textB ? -1 : textA > textB ? 1 : 0
-  })
+    let textA = a.Cuisine.toUpperCase();
+    let textB = b.Cuisine.toUpperCase();
+    return textA < textB ? -1 : textA > textB ? 1 : 0;
+  });
 
   function RestaurantData(props) {
-    return <li onClick={e => console.log(e.target.value)}>{props.Restaurant}</li>
+    return (
+      <li onClick={(e) => console.log(e.target.value)}>{props.Restaurant}</li>
+    );
   }
 
   function ChooseData() {
-    const listItems = jsonReviewData.map(object => (
+    const listItems = jsonReviewData.map((object) => (
       <RestaurantData key={object.Id.toString()} value={object} />
-    ))
+    ));
     return (
       <ul>
         <li>{listItems.Cuisine}</li>
       </ul>
-    )
+    );
   }
 
-  console.log(jsonReviewData)
-  console.log('Cuisine Array', ChooseData())
+  console.log(jsonReviewData);
+  console.log("Cuisine Array", ChooseData());
 
   function getRestaurants(cuisine) {
-    console.log('Passed cuisine', cuisine)
-    const arr = []
+    console.log("Passed cuisine", cuisine);
+    const arr = [];
 
     jsonReviewData.forEach((r, i) => {
       if (r.Cuisine === cuisine) {
-        arr.push(r)
+        arr.push(r);
       }
-    })
+    });
 
     //console.log("push version", arr);
-    setShowRest(true)
-    setShowReview(false)
-    setRestaurantsSelected(arr)
+    setShowRest(true);
+    setShowReview(false);
+    setRestaurantsSelected(arr);
 
     //updateUrl(cuisine)
   }
 
   function getReview(id) {
-    console.log('passed review id', id)
-    const array = []
+    console.log("passed review id", id);
+    const array = [];
 
     jsonReviewData.forEach((a, b) => {
       if (a.Id === id) {
-        array.push(a)
+        array.push(a);
       }
-    })
-    setRestaurantsSelected(array)
-    setShowRest(false)
-    setShowReview(true)
-    console.log('Look at this man', array)
-    setReview(array)
+    });
+    setRestaurantsSelected(array);
+    setShowRest(false);
+    setShowReview(true);
+    console.log("Look at this man", array);
+    setReview(array);
   }
 
   // function updateUrl(newUrl) {
@@ -117,36 +138,32 @@ const Restaurants = () => {
   //   setRestaurantsSelected(urlHist)
   // }
 
-  /* == CHILD COMPONENTS == */
-  const SpacingLeft = () => <div className="restaurant-space-left" />
-  const SpacingRight = () => <div className="restaurant-space-right" />
-
-  const RestaurantSideBar = () => (
-    <div className="restaurant-sideBar">
-      <ul>
-        {cuisineList.map((p, i) => (
-          <Link to="/Restaurants" key={i}>
-            <li key={p.Id}>
-              <button
-                className="restaurant-sideBar-buttons"
-                onClick={() => getRestaurants(p.Cuisine)}
-              >
-                {p.Cuisine}
-              </button>
-            </li>
-          </Link>
-        ))}
-      </ul>
-    </div>
-  )
-
   return (
     <>
       <div className="restaurant-content">
-        <SpacingLeft />
-        <RestaurantSideBar />
+        <div className="restaurant-space-left"></div>
+        <div className="restaurant-sideBar">
+          <ul>
+            {cuisineList.map((p, k) => (
+              // <Link to={`/Restaurants/${p.Cuisine}`}>
+              <Link to="/Restaurants">
+                <li key={p.Id}>
+                  <button
+                    className="restaurant-sideBar-buttons"
+                    onClick={() => getRestaurants(p.Cuisine)}
+                  >
+                    {p.Cuisine}
+                  </button>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+        {/* <buttton onClick={updateUrlBack}>Go Back</buttton> */}
 
         <div className="restaurant-page-content">
+          {/* <h2>Cuisine: {`${urlPage}`}</h2> */}
+
           {showReview === false && showRest === false && (
             <div className="restaurant-titles">
               {jsonReviewData.map((r, i) => {
@@ -158,6 +175,7 @@ const Restaurants = () => {
                   >
                     <Link
                       className="rest-links"
+                      // to={`/Reviews/${r.Restaurant}`}
                       to={`/Reviews`}
                       state={{
                         restaurant: r.Restaurant,
@@ -181,18 +199,19 @@ const Restaurants = () => {
                       <div className="rest-stuff">
                         <h1
                           className={`title_of_rest_${r.Id}`}
-                          style={{ color: '#002868', marginBottom: '5px' }}
+                          style={{ color: "#002868", marginBottom: "5px" }}
                         >
                           {r.Restaurant}
                         </h1>
                         <hr className="rest-line-divider" />
                         <p>{r.City}</p>
                         <p>{r.Cuisine}</p>
+                        {/* </Link> */}
                         <p>{r.BlogIntro}</p>
                       </div>
                     </Link>
                   </div>
-                )
+                );
               })}
             </div>
           )}
@@ -238,23 +257,26 @@ const Restaurants = () => {
                       <div className="rest-stuff">
                         <h1
                           className={`title_of_rest_${r.id}`}
-                          style={{ color: '#002868', marginBottom: '5px' }}
+                          style={{ color: "#002868", marginBottom: "5px" }}
                         >
                           {r.Restaurant}
                         </h1>
                         <hr className="rest-line-divider" />
                         <p>{r.City}</p>
                         <p>{r.Cuisine}</p>
+                        {/* </Link> */}
                         <p>{r.BlogIntro}</p>
                       </div>
                     </Link>
                   </div>
-                )
+                );
               })}
             </div>
           )}
         </div>
-        <SpacingRight />
+        <div className="restaurant-space-right">
+          {/* <button onClick={() => navigate(-1)}>click me</button> */}
+        </div>
       </div>
       <Routes>
         <Route path="/Restaurants/*" element={<Reviews />}></Route>
@@ -263,10 +285,10 @@ const Restaurants = () => {
         <Route path="/Reviews/:id" element={<Reviews />}></Route>
       </Routes>
     </>
-  )
-}
+  );
+};
 
-export default Restaurants
+export default Restaurants;
 // export default () => {
 //   return (
 //     <Routes>
