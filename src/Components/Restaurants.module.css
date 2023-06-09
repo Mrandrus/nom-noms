@@ -1,0 +1,8 @@
+.restaurantsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.restaurantsContainer > * {
+  outline: blue 1px solid;
+}
