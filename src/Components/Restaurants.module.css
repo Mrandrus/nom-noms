@@ -3,6 +3,10 @@
   flex-direction: row;
   gap: 1em;
 }
+
+.activeCuisine {
+  background-color: blue !important;
+}
 .restaurantsContainer > * {
   outline: blue 1px solid;
 }
