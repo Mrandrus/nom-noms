@@ -5,16 +5,38 @@ import { BrowserRouter, Router, Routes, Route, Link, useNavigate } from 'react-r
 
 /* == IMPORT RAW DATA == */
 import jsonReviewData from '../Reviews/foodReviewJS'
+console.log('jsonReviewData', jsonReviewData)
+const cuisineList = removeDuplicatesByKey(jsonReviewData, 'Cuisine')
 
 const Restaurants = () => {
   const [activeCuisine, setActiveCuisine] = useState(null)
-  const cuisineList = removeDuplicatesByKey(jsonReviewData, 'Cuisine')
+  const [activeRestaurant, setActiveRestaurant] = useState(null)
+  const [history, setHistory] = useState([])
+  console.log('history', history)
+
+  const restaurantListByCuisine = jsonReviewData.filter(p => p.Cuisine === activeCuisine)
+
   return (
     <div className={styles.restaurantsContainer}>
-      <RestaurantCuisineFilter {...{ cuisineList, activeCuisine, setActiveCuisine }} />
-      <RestaurantListByCuisine />
+      <RestaurantCuisineFilter {...{ cuisineList, activeCuisine, selectCuisine }} />
+      {activeRestaurant ? (
+        <RestaurantReview restaurant={jsonReviewData.find(p => p.Restaurant === activeRestaurant)} />
+      ) : (
+        <RestaurantListByCuisine {...{ restaurantListByCuisine, selectRestaurant }} />
+      )}
     </div>
   )
+
+  /* == HELPERS for Restaurants Component ===== */
+  function selectCuisine(cuisine) {
+    setActiveCuisine(cuisine)
+    setActiveRestaurant(null)
+    setHistory(previousHistory => [...previousHistory, cuisine])
+  }
+  function selectRestaurant(restaurant) {
+    setActiveRestaurant(restaurant)
+    setHistory(prev => [...prev, restaurant])
+  }
 }
 
 export default Restaurants
@@ -26,20 +48,14 @@ export default Restaurants
  */
 
 const RestaurantCuisineFilter = props => {
-  const { cuisineList, activeCuisine, setActiveCuisine } = props
+  const { cuisineList, activeCuisine, selectCuisine } = props
   return (
     <div className="restaurant-sideBar">
       <ul>
         {getArray(cuisineList).map((p, i) => (
           <Link to="/Restaurants" key={i}>
-            <li
-              key={p.Id}
-              className={`${activeCuisine === p.Cuisine ? styles.activeCuisine : ''}`}
-            >
-              <button
-                className="restaurant-sideBar-buttons"
-                onClick={() => setActiveCuisine(p.Cuisine)}
-              >
+            <li key={p.Id} className={`${activeCuisine === p.Cuisine ? styles.activeCuisine : ''}`}>
+              <button className="restaurant-sideBar-buttons" onClick={() => selectCuisine(p.Cuisine)}>
                 {p.Cuisine}
               </button>
             </li>
@@ -51,10 +67,30 @@ const RestaurantCuisineFilter = props => {
 }
 
 const RestaurantListByCuisine = props => {
-  const { restaurantListh, activeCuisine } = props
+  const { restaurantListByCuisine, selectRestaurant } = props
   return (
     <div>
       <h1>RestaurantListByCuisine</h1>
+      <div className="restaurant-list">
+        {getArray(restaurantListByCuisine).map((p, i) => {
+          return (
+            <button key={i} onClick={() => selectRestaurant(p.Restaurant)}>
+              <h2>{p.Restaurant}</h2>
+              <p>{p.BlogIntro}</p>
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+const RestaurantReview = props => {
+  const { restaurant } = props
+  return (
+    <div>
+      <h1>Restaurant Review</h1>
+      <p>{restaurant?.BlogIntro}</p>
     </div>
   )
 }

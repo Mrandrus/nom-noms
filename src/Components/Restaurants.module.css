@@ -7,6 +7,6 @@
 .activeCuisine {
   background-color: blue !important;
 }
-.restaurantsContainer > * {
+.restaurantsContainer {
   outline: blue 1px solid;
 }
