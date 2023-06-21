@@ -4,20 +4,21 @@ import { useParams, Link } from 'react-router-dom'
 /* == IMPORT RAW DATA (mimicking fetch to DB)== */
 import jsonReviewData from '../Reviews/foodReviewJS'
 
-/** 
-* @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} /> 
-* note: the `/` in front is necessary otherwise Link to{} will just keep elongating the URL
-*/
+/**
+ * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
+ * note: the `/` in front is necessary otherwise Link to{} will just keep elongating the URL
+ */
 const baseUrlRestaurants = '/Restaurants'
 
 const Restaurants = () => {
   /**
-   * @params is set in AppRouter.js
-   * It may be overkill, but i had to add every Route that could lead to Restaurants
+   * @params is set in AppRouter.js see excerpt below:
    *      <Route path="/Restaurants/*" element={<Restaurants />}></Route>
           <Route path="/Restaurants/:cuisine/*" element={<Restaurants />}></Route>
           <Route path="/Restaurants/:cuisine/:restaurant/*" element={<Restaurants />}></Route>
-    Notice how the only state here is using the hook useParams().
+
+   * It may be overkill, but i had to add every Route that could lead to Restaurants
+    Notice how the only state in the Restaurant Component is using the hook useParams().
     no other state is required as the Link elements set the url, and @params now has access to cuisine
     and restaurants respectively from the url
 
@@ -48,7 +49,9 @@ const Restaurants = () => {
 
 export default Restaurants
 
-/* === DUMB CHILD COMPONENTS === */
+/** == DUMB CHILD COMPONENTS ===
+ * They Only receive props. There is no state inside them
+ */
 
 const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
   return (
@@ -105,6 +108,5 @@ function getArray(data) {
 }
 
 function removeDuplicatesByKey(arr, key) {
-  const data = [...new Map(arr.map(item => [item[key], item])).values()]
-  return data
+  return [...new Map(arr.map(item => [item[key], item])).values()]
 }
