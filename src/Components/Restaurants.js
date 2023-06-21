@@ -7,6 +7,19 @@ import jsonReviewData from '../Reviews/foodReviewJS'
 const baseUrlRestaurants = '/Restaurants'
 
 const Restaurants = () => {
+  /**
+   * @params is set in AppRouter.js
+   * It may be overkill, but i had to add every Route that could lead to Restaurants
+   *      <Route path="/Restaurants/*" element={<Restaurants />}></Route>
+          <Route path="/Restaurants/:cuisine/*" element={<Restaurants />}></Route>
+          <Route path="/Restaurants/:cuisine/:restaurant/*" element={<Restaurants />}></Route>
+    Notice how the only state here is using the hook useParams().
+    no other state is required as the Link elements set the url, and @params now has access to cuisine
+    and restaurants respectively from the url
+
+    params keys  'cuisine' and 'restaurant' are set in AppRouter by using the ':' in front of the variable name
+    
+   */
   const params = useParams()
 
   return (
