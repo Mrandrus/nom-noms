@@ -1,9 +1,13 @@
 import React from 'react'
 import styles from './Restaurants.module.css'
 import { useParams, Link } from 'react-router-dom'
-/* == IMPORT RAW DATA == */
+/* == IMPORT RAW DATA (mimicking fetch to DB)== */
 import jsonReviewData from '../Reviews/foodReviewJS'
 
+/** 
+* @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} /> 
+* note: the `/` in front is necessary otherwise Link to{} will just keep elongating the URL
+*/
 const baseUrlRestaurants = '/Restaurants'
 
 const Restaurants = () => {
