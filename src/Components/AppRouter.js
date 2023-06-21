@@ -1,14 +1,14 @@
-import Reviews from "./Reviews.js";
-import UpperContent from "./UpperContent.js";
-import Home from "./Home.js";
-import Restaurants from "./Restaurants.js";
-import About from "./About.js";
-import Contact from "./Contact.js";
-import Recipes from "./Recipes.js";
-import ErrorPage from "./ErrorPage.js";
-import Recipe from "./Recipe.js";
-import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
-import "../App.css";
+import Reviews from './Reviews.js'
+import UpperContent from './UpperContent.js'
+import Home from './Home.js'
+import Restaurants from './Restaurants.js'
+import About from './About.js'
+import Contact from './Contact.js'
+import Recipes from './Recipes.js'
+import ErrorPage from './ErrorPage.js'
+import Recipe from './Recipe.js'
+import { BrowserRouter, Router, Routes, Route, Link } from 'react-router-dom'
+import '../App.css'
 
 function AppRouter() {
   return (
@@ -38,6 +38,8 @@ function AppRouter() {
           <Route path="/Home" element={<Home />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Restaurants/*" element={<Restaurants />}></Route>
+          <Route path="/Restaurants/:cuisine/*" element={<Restaurants />}></Route>
+          <Route path="/Restaurants/:cuisine/:restaurant/*" element={<Restaurants />}></Route>
           <Route path="/Reviews/*" element={<Reviews />}></Route>
           <Route path="/Recipes/*" element={<Recipes />}></Route>
           <Route path="/Recipe" element={<Recipe />}></Route>
@@ -47,7 +49,7 @@ function AppRouter() {
         </Routes>
       </div>
     </div>
-  );
+  )
 }
 
-export default AppRouter;
+export default AppRouter

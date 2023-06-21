@@ -5,8 +5,6 @@
 }
 
 .activeCuisine {
-  background-color: blue !important;
-}
-.restaurantsContainer {
-  outline: blue 1px solid;
+  background-color: #002868;
+  color: #eee;
 }

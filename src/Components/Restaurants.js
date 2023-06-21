@@ -1,63 +1,51 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Restaurants.module.css'
-/* == REACT ROUTER DOM == */
-import { BrowserRouter, Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
-
+import { useParams, Link } from 'react-router-dom'
 /* == IMPORT RAW DATA == */
 import jsonReviewData from '../Reviews/foodReviewJS'
-console.log('jsonReviewData', jsonReviewData)
-const cuisineList = removeDuplicatesByKey(jsonReviewData, 'Cuisine')
+
+const baseUrlRestaurants = '/Restaurants'
 
 const Restaurants = () => {
-  const [activeCuisine, setActiveCuisine] = useState(null)
-  const [activeRestaurant, setActiveRestaurant] = useState(null)
-  const [history, setHistory] = useState([])
-  console.log('history', history)
-
-  const restaurantListByCuisine = jsonReviewData.filter(p => p.Cuisine === activeCuisine)
+  const params = useParams()
 
   return (
     <div className={styles.restaurantsContainer}>
-      <RestaurantCuisineFilter {...{ cuisineList, activeCuisine, selectCuisine }} />
-      {activeRestaurant ? (
-        <RestaurantReview restaurant={jsonReviewData.find(p => p.Restaurant === activeRestaurant)} />
+      <RestaurantCuisineFilter
+        cuisineList={removeDuplicatesByKey(jsonReviewData, 'Cuisine')}
+        cuisine={params?.cuisine}
+      />
+      {!params.restaurant ? (
+        <RestaurantListByCuisine
+          restaurantListByCuisine={jsonReviewData.filter(p => p.Cuisine === params.cuisine)}
+          cuisine={params?.cuisine}
+        />
       ) : (
-        <RestaurantListByCuisine {...{ restaurantListByCuisine, selectRestaurant }} />
+        <RestaurantReview
+          restaurant={jsonReviewData.find(p => p.Restaurant === params.restaurant)}
+        />
       )}
     </div>
   )
-
-  /* == HELPERS for Restaurants Component ===== */
-  function selectCuisine(cuisine) {
-    setActiveCuisine(cuisine)
-    setActiveRestaurant(null)
-    setHistory(previousHistory => [...previousHistory, cuisine])
-  }
-  function selectRestaurant(restaurant) {
-    setActiveRestaurant(restaurant)
-    setHistory(prev => [...prev, restaurant])
-  }
 }
 
 export default Restaurants
 
-/**
- *
- *
- * ===================== CHILD COMPONENTS =====================
- */
+/* === DUMB CHILD COMPONENTS === */
 
-const RestaurantCuisineFilter = props => {
-  const { cuisineList, activeCuisine, selectCuisine } = props
+const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
   return (
     <div className="restaurant-sideBar">
       <ul>
         {getArray(cuisineList).map((p, i) => (
-          <Link to="/Restaurants" key={i}>
-            <li key={p.Id} className={`${activeCuisine === p.Cuisine ? styles.activeCuisine : ''}`}>
-              <button className="restaurant-sideBar-buttons" onClick={() => selectCuisine(p.Cuisine)}>
-                {p.Cuisine}
-              </button>
+          <Link to={`${baseUrlRestaurants}/${p.Cuisine}`} key={i}>
+            <li
+              key={p.Id}
+              className={`restaurant-sideBar-buttons ${
+                cuisine === p.Cuisine ? styles.activeCuisine : ''
+              }`}
+            >
+              {p.Cuisine}
             </li>
           </Link>
         ))}
@@ -66,18 +54,17 @@ const RestaurantCuisineFilter = props => {
   )
 }
 
-const RestaurantListByCuisine = props => {
-  const { restaurantListByCuisine, selectRestaurant } = props
+const RestaurantListByCuisine = ({ restaurantListByCuisine, cuisine }) => {
   return (
     <div>
       <h1>RestaurantListByCuisine</h1>
       <div className="restaurant-list">
         {getArray(restaurantListByCuisine).map((p, i) => {
           return (
-            <button key={i} onClick={() => selectRestaurant(p.Restaurant)}>
+            <Link key={i} to={`${baseUrlRestaurants}/${cuisine}/${p.Restaurant}`}>
               <h2>{p.Restaurant}</h2>
               <p>{p.BlogIntro}</p>
-            </button>
+            </Link>
           )
         })}
       </div>
@@ -85,17 +72,17 @@ const RestaurantListByCuisine = props => {
   )
 }
 
-const RestaurantReview = props => {
-  const { restaurant } = props
+const RestaurantReview = ({ restaurant }) => {
   return (
     <div>
       <h1>Restaurant Review</h1>
+      <h2>{restaurant?.Restaurant}</h2>
       <p>{restaurant?.BlogIntro}</p>
     </div>
   )
 }
 
-/* === HELPERS === */
+/* === JS HELPERS === */
 function getArray(data) {
   return Array.isArray(data) === true ? data : []
 }
