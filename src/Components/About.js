@@ -1,4 +1,5 @@
 import "../App.css";
+import chefMatt from "../images/matt_chef.jpg"
 
 function About() {
   return (
@@ -16,7 +17,7 @@ function About() {
         </p>
       </div>
       <div className="aboutSectionTwo">
-        <p>I'll have a pic a me here</p>
+        <img src={chefMatt} className="chefMert" alt="chefMert"/>
       </div>
     </div>
   );

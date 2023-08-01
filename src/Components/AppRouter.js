@@ -42,6 +42,8 @@ function AppRouter() {
           <Route path="/Restaurants/:cuisine/:restaurant/*" element={<Restaurants />}></Route>
           <Route path="/Reviews/*" element={<Reviews />}></Route>
           <Route path="/Recipes/*" element={<Recipes />}></Route>
+          <Route path="/Recipes/:cuisine/*" element={<Recipes />}></Route>
+          <Route path="/Recipes/:cuisine/:recipe/*" element={<Recipes />}></Route>
           <Route path="/Recipe" element={<Recipe />}></Route>
           <Route path="/About" element={<About />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>

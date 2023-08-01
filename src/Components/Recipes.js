@@ -2,6 +2,7 @@ import "../App.css";
 import jsonReviewData from "../Reviews/foodReview.json";
 import React, { Component, useEffect, useState } from "react";
 import jsonRecipeData from "../Reviews/foodRecipes.json";
+import foodRecipesJS from "../Reviews/foodRecipesJS";
 import {
   BrowserRouter,
   Router,
@@ -9,225 +10,174 @@ import {
   Route,
   Link,
   useLocation,
+  useParams,
 } from "react-router-dom";
 import Recipe from "./Recipe";
+import styles from "./Restaurants.module.css";
 
+const baseUrlRecipes = "/Recipes";
 
-function Recipes() {
-  const [selectedRecipe, setSelectedRecipe] = useState([]);
-  const [recipe, setRecipe] = useState([]);
-  const [showRecipes, setShowRecipes] = useState(false);
-  const [showRecipe, setShowRecipe] = useState(false);
-
-  const removeDupes = (arr, key) => {
-    const data = [...new Map(arr.map((item) => [item[key], item])).values()];
-    return data;
-  };
-
-  const recipes = removeDupes(jsonRecipeData, "Cuisine");
-
-  const getRecipes = (cuisine) => {
-    console.log("Passed cuisine", cuisine);
-    const arr = [];
-
-    jsonRecipeData.forEach((r, i) => {
-      if (r.Cuisine === cuisine) {
-        arr.push(r);
-      }
-    });
-
-    setShowRecipe(false);
-    setShowRecipes(true);
-    setRecipe(arr);
-    setSelectedRecipe(arr);
-  };
-
-  const getRecipe = (id) => {
-    console.log("passed recipe id", id);
-    const array = [];
-
-    jsonReviewData.forEach((a, b) => {
-      if (a.Id === id) {
-        array.push(a);
-      }
-    });
-
-    setShowRecipe(true);
-    setShowRecipes(false);
-    console.log("Look at this man", array);
-    setRecipe(array);
-  };
+const Recipes = () => {
+  const params = useParams();
 
   return (
-    <>
-      <div className="recipe-page-container">
-        <div className="recipe-space-left"></div>
+    <div className="recipe-page-container">
+      <RecipeCuisineFilter
+        cuisineList={removeDuplicatesByKey(foodRecipesJS, "Cuisine")}
+        cuisine={params?.cuisine}
+      />
 
-        <div className="recipe-page-sidebar">
-          <ul>
-            {recipes.map((p, k) => (
-              <li key={p.Id}>
-                <button
-                  className="recipe-sideBar-buttons"
-                  onClick={() => getRecipes(p.Cuisine)}
-                >
-                  {p.Cuisine}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="recipe-page-content">
-          {showRecipe === false && showRecipes === false && (
-            <div className="recipe-page-titles">
-              {jsonRecipeData.map((r, i) => {
-                return (
-                  <Link
-                    className="recipe-links"
-                    to="/Recipe"
-                    state={{
-                      recipe: r.Recipe,
-                      cuisine: r.Cuisine,
-                      ingredients: r.Ingredients,
-                      image: r.Image,
-                      instructions: r.Instructions,
-                    }}
-                  >
-                    <div
-                      key={`reicpe_id_${r.Id}_${i}`}
-                      className={`recipe-page-titles-items`}
-                      onClick={() => getRecipe(r.Id)}
-                    >
-                      {/* <Link
-                                    to="/Reviews"
-                                    state={{
-                                      restaurant: r.Restaurant,
-                                      cuisine: r.Cuisine,
-                                      city: r.City,
-                                      id: r.Id,
-                                    }}
-                                  > */}
-                      <div className="recipe-page-img">
-                        <img
-                          src={r.Image}
-                          alt={`${r.Recipe}-image`}
-                          height={100}
-                          width={200}
-                        />
-                      </div>
-                      <div className="recipe-stuff">
-                        <h1
-                          key={`title_of_reicpe_id_${r.Id}_${i}`}
-                          className={`title_of_recipe_${r.Id}`}
-                          style={{ color: "#002868", marginBottom: "5px" }}
-                        >
-                          {r.Recipe}
-                        </h1>
-                        <hr className="recipe-line-divider" />
-                        <br />
-                        <a>{r.Cuisine}</a>
-                        <br />
-                        {/* </Link> */}
-                        <a>{r.Description}</a>
-                        <br />
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
+      {!params.recipe ? (
+        <RecipeListByCuisine
+          recipeByCuisine={foodRecipesJS.filter(
+            (p) => p.Cuisine === params.cuisine
           )}
-
-          {showRecipe === true && (
-            <div className="recipe-review">
-              {recipe.map((r, i) => {
-                return (
-                  <Link
-                    className="recipe-links"
-                    to="/Recipes"
-                    state={{
-                      recipe: r.Recipe,
-                      cuisine: r.Cuisine,
-                      ingredients: r.Ingredients,
-                      image: r.Image,
-                      instructions: r.Instructions,
-                    }}
-                  >
-                    <p>{r.Recipe}</p>
-                  </Link>
-                );
-              })}
-              <p>Peen</p>
-            </div>
-          )}
-          {showRecipes === true && (
-            <div className="recipe-page-titles">
-              {selectedRecipe.map((r, i) => {
-                return (
-                  <Link
-                    className="recipe-links"
-                    to="/Recipe"
-                    state={{
-                      recipe: r.Recipe,
-                      cuisine: r.Cuisine,
-                      ingredients: r.Ingredients,
-                      image: r.Image,
-                      instructions: r.Instructions,
-                    }}
-                  >
-                    <div
-                      key={`recipe_id_${r.id}_${i}`}
-                      className={`recipe-page-titles-items`}
-                      onClick={() => getRecipe(r.Cuisine)}
-                    >
-                      {/* <Link
-                          to="/Reviews"
-                          state={{
-                            restaurant: r.Restaurant,
-                            cuisine: r.Cuisine,
-                            city: r.City,
-                            id: r.Id,
-                          }}
-                        > */}
-                      <div className="recipe-page-img">
-                        <img
-                          src={r.Image}
-                          alt={`${r.Recipe}-image`}
-                          height={100}
-                          width={200}
-                        />
-                      </div>
-                      <div className="recipe-stuff">
-                        <h1
-                          className={`title_of_recipe_${r.id}`}
-                          style={{ color: "#002868", marginBottom: "5px" }}
-                        >
-                          {r.Recipe}
-                        </h1>
-                        <hr className="recipe-line-divider" />
-                        <br />
-                        <a>{r.Cuisine}</a>
-                        <br />
-                        {/* </Link> */}
-                        <a>{r.Description}</a>
-                        <br />
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-        </div>
-        <div className="recipe-space-right"></div>
-      </div>
-      <Routes>
-        <Route path="/Recipes" element={<Recipe />}></Route>
-        <Route path="/Recipe" element={<Recipe />}></Route>
-
-      </Routes>
-    </>
+          cuisine={params?.cuisine}
+        />
+      ) : (
+        <ActualRecipe
+          recipe={foodRecipesJS.find((p) => p.Recipe === params.recipe)}
+        />
+      )}
+    </div>
   );
-}
+};
 
 export default Recipes;
+
+const RecipeCuisineFilter = ({ cuisineList, cuisine }) => {
+  cuisineList.sort((a, b) => {
+    let textA = a.Cuisine.toUpperCase();
+    let textB = b.Cuisine.toUpperCase();
+    return textA < textB ? -1 : textA > textB ? 1 : 0;
+  });
+  return (
+    <div className="recipe-page-sideBar">
+      <ul>
+        {getArray(cuisineList).map((p, i) => (
+          <Link to={`${baseUrlRecipes}/${p.Cuisine}`} key={i}>
+            <li
+              key={p.Id}
+              className={`recipe-sideBar-buttons ${
+                cuisine === p.Cuisine ? styles.activeCuisine : ""
+              }`}
+            >
+              {p.Cuisine}
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const RecipeListByCuisine = ({ recipeByCuisine, cuisine }) => {
+  return (
+    <div className="recipe-page-content">
+      {!cuisine ? (
+        <RecipeList />
+      ) : (
+        <>
+          {getArray(recipeByCuisine).map((p, i) => {
+            return (
+              <div
+                key={`recipe_id_${p.Id}_${i}`}
+                className={`recipe-page-titles-items`}
+              >
+                <Link key={i} to={`${baseUrlRecipes}/${cuisine}/${p.Recipe}`}>
+                  <div className="recipe-page-img">
+                    <img
+                      src={`${p.Image}`}
+                      alt={`${p.Recipe}-image`}
+                      height={125}
+                      width={225}
+                    />
+                  </div>
+                  <div className="recipe-stuff">
+                  <h1
+                    key={`title_of_reicpe_id_${p.Id}_${i}`}
+                    className={`title_of_recipe_${p.Id}`}
+                    style={{ color: "#002868", marginBottom: "5px" }}
+                  >
+                    {p.Recipe}
+                  </h1>
+                  <hr className="recipe-line-divider" />
+                  <br />
+                  <a>{p.Cuisine}</a>
+                  <br />
+                  {/* </Link> */}
+                  <a>{p.Description}</a>
+                  <br />
+                </div>
+                </Link>
+              </div>
+            );
+          })}{" "}
+        </>
+      )}
+    </div>
+  );
+};
+
+const RecipeList = () => {
+  return (
+    <>
+      <div className="recipe-page-titles">
+        {foodRecipesJS.map((r, i) => {
+          return (
+            <Link key={i} to={`${baseUrlRecipes}/${r.Cuisine}/${r.Recipe}`}>
+              <div
+                key={`reicpe_id_${r.Id}_${i}`}
+                className={`recipe-page-titles-items`}
+              >
+                <div className="recipe-page-img">
+                  <img
+                    src={r.Image}
+                    alt={`${r.Recipe}-image`}
+                    height={100}
+                    width={200}
+                  />
+                </div>
+                <div className="recipe-stuff">
+                  <h1
+                    key={`title_of_reicpe_id_${r.Id}_${i}`}
+                    className={`title_of_recipe_${r.Id}`}
+                    style={{ color: "#002868", marginBottom: "5px" }}
+                  >
+                    {r.Recipe}
+                  </h1>
+                  <hr className="recipe-line-divider" />
+                  <br />
+                  <a>{r.Cuisine}</a>
+                  <br />
+                  {/* </Link> */}
+                  <a>{r.Description}</a>
+                  <br />
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+const ActualRecipe = ({ recipe }) => {
+  return (
+    <div>
+      <h1>Recipe Bitch</h1>
+      <h3>{recipe.Recipe}</h3>
+      <p>{recipe.Description}</p>
+    </div>
+  );
+};
+
+/* === JS HELPERS === */
+function getArray(data) {
+  return Array.isArray(data) === true ? data : [];
+}
+
+function removeDuplicatesByKey(arr, key) {
+  return [...new Map(arr.map((item) => [item[key], item])).values()];
+}

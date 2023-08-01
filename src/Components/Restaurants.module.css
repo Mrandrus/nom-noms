@@ -8,3 +8,12 @@
   background-color: #002868;
   color: #eee;
 }
+
+.restaurant-sideBar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+

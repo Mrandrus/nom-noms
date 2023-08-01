@@ -1,14 +1,15 @@
-import React from 'react'
-import styles from './Restaurants.module.css'
-import { useParams, Link } from 'react-router-dom'
+import React from "react";
+import styles from "./Restaurants.module.css";
+import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 /* == IMPORT RAW DATA (mimicking fetch to DB)== */
-import jsonReviewData from '../Reviews/foodReviewJS'
+import jsonReviewData from "../Reviews/foodReviewJS";
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
  * note: the `/` in front is necessary otherwise Link to{} will just keep elongating the URL
  */
-const baseUrlRestaurants = '/Restaurants'
+const baseUrlRestaurants = "/Restaurants";
 
 const Restaurants = () => {
   /**
@@ -25,35 +26,46 @@ const Restaurants = () => {
     params keys  'cuisine' and 'restaurant' are set in AppRouter by using the ':' in front of the variable name
     
    */
-  const params = useParams()
+  const params = useParams();
 
   return (
-    <div className={styles.restaurantsContainer}>
+    <div className="restaurant-content">
       <RestaurantCuisineFilter
-        cuisineList={removeDuplicatesByKey(jsonReviewData, 'Cuisine')}
+        cuisineList={removeDuplicatesByKey(jsonReviewData, "Cuisine")}
         cuisine={params?.cuisine}
       />
+
       {!params.restaurant ? (
         <RestaurantListByCuisine
-          restaurantListByCuisine={jsonReviewData.filter(p => p.Cuisine === params.cuisine)}
+          restaurantListByCuisine={jsonReviewData.filter(
+            (p) => p.Cuisine === params.cuisine
+          )}
           cuisine={params?.cuisine}
         />
       ) : (
         <RestaurantReview
-          restaurant={jsonReviewData.find(p => p.Restaurant === params.restaurant)}
+          restaurant={jsonReviewData.find(
+            (p) => p.Restaurant === params.restaurant
+          )}
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Restaurants
+export default Restaurants;
 
 /** == DUMB CHILD COMPONENTS ===
  * They Only receive props. There is no state inside them
  */
 
 const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
+  cuisineList.sort((a, b) => {
+    let textA = a.Cuisine.toUpperCase();
+    let textB = b.Cuisine.toUpperCase();
+    return textA < textB ? -1 : textA > textB ? 1 : 0;
+  });
+
   return (
     <div className="restaurant-sideBar">
       <ul>
@@ -62,7 +74,7 @@ const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
             <li
               key={p.Id}
               className={`restaurant-sideBar-buttons ${
-                cuisine === p.Cuisine ? styles.activeCuisine : ''
+                cuisine === p.Cuisine ? styles.activeCuisine : ""
               }`}
             >
               {p.Cuisine}
@@ -71,26 +83,96 @@ const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 const RestaurantListByCuisine = ({ restaurantListByCuisine, cuisine }) => {
   return (
-    <div>
-      <h1>RestaurantListByCuisine</h1>
-      <div className="restaurant-list">
-        {getArray(restaurantListByCuisine).map((p, i) => {
-          return (
-            <Link key={i} to={`${baseUrlRestaurants}/${cuisine}/${p.Restaurant}`}>
-              <h2>{p.Restaurant}</h2>
-              <p>{p.BlogIntro}</p>
-            </Link>
-          )
-        })}
-      </div>
+    <div className="restaurant-page-content">
+        {!cuisine ? (
+          <RestaurantList />
+        ) : (
+          <>
+            {getArray(restaurantListByCuisine).map((p, i) => {
+              return (
+                <div
+                  key={`restaurant_id_${p.Id}_${i}`}
+                  className={`restaurant-titles-items`}
+                >
+                  <Link
+                    key={i}
+                    to={`${baseUrlRestaurants}/${cuisine}/${p.Restaurant}`}
+                  >
+                    <div className="rest-img">
+                      <img
+                        src={`${p.ImageOutside}`}
+                        alt={`${p.Restaurant}-image`}
+                        height={125}
+                        width={225}
+                      />
+                    </div>
+                    <div className="rest-stuff">
+                      <h1
+                        className={`title_of_rest_${p.id}`}
+                        style={{ color: "#002868", marginBottom: "5px" }}
+                      >
+                        {p.Restaurant}
+                      </h1>
+                      <hr className="rest-line-divider" />
+                      <p>{p.City}</p>
+                      <p>{p.Cuisine}</p>
+                      <p>{p.BlogIntro}</p>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}{" "}
+          </>
+        )}
     </div>
-  )
-}
+  );
+};
+
+const RestaurantList = () => {
+  return (
+    <>
+      {getArray(jsonReviewData).map((p, i) => {
+        return (
+          <div
+            key={`restaurant_id_${p.Id}_${i}`}
+            className={`restaurant-titles-items`}
+          >
+            <Link
+              key={i}
+              to={`${baseUrlRestaurants}/${p.Cuisine}/${p.Restaurant}`}
+            >
+              <div className="rest-img">
+                <img
+                  src={`${p.ImageOutside}`}
+                  alt={`${p.Restaurant}-image`}
+                  height={125}
+                  width={225}
+                />
+              </div>
+              <div className="rest-stuff">
+                <h1
+                  className={`title_of_rest_${p.id}`}
+                  style={{ color: "#002868", marginBottom: "5px" }}
+                >
+                  {p.Restaurant}
+                </h1>
+                <hr className="rest-line-divider" />
+                <p>{p.City}</p>
+                <p>{p.Cuisine}</p>
+                <p>{p.BlogIntro}</p>
+              </div>
+            </Link>
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
 const RestaurantReview = ({ restaurant }) => {
   return (
@@ -99,14 +181,14 @@ const RestaurantReview = ({ restaurant }) => {
       <h2>{restaurant?.Restaurant}</h2>
       <p>{restaurant?.BlogIntro}</p>
     </div>
-  )
-}
+  );
+};
 
 /* === JS HELPERS === */
 function getArray(data) {
-  return Array.isArray(data) === true ? data : []
+  return Array.isArray(data) === true ? data : [];
 }
 
 function removeDuplicatesByKey(arr, key) {
-  return [...new Map(arr.map(item => [item[key], item])).values()]
+  return [...new Map(arr.map((item) => [item[key], item])).values()];
 }

@@ -239,6 +239,7 @@
 }
 
 /* //////////////// Restaurant and restaraunt side bar //////////////// */
+
 .restaurant-restaurantContent {
   display: flex;
 }
@@ -289,18 +290,12 @@
   text-decoration-color: #ffd700;
 }
 
-/* .restaurant-titles {
-  justify-content: flex-end;
-  text-align: left;
-  width: 70%;
-  padding: 10px;
-} */
-
 .restaurant-page-content {
-  justify-content: flex-end;
   text-align: left;
   width: 60%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .restaurant-space-left {
@@ -311,14 +306,17 @@
   width: 10%;
 }
 
-.restaurant-titles-items {
+.restaurant-titles-items a {
   display: flex;
   flex-direction: row;
   width: 100%;
   transition: 1s ease-in-out;
+  text-decoration: none;
+  color:#002868;
+  font-weight: 500;
 }
 
-.restaurant-titles-items:hover {
+.restaurant-titles-items a:hover {
   background-color: rgba(255, 0, 0, 0.5);
   transition: 1s;
   border-radius: 10px;
@@ -363,19 +361,22 @@
   border-radius: 10px;
 }
 
+
 /* //////////////// Recipe and recipe side bar //////////////// */
 .recipe-page-container {
   display: flex;
+  justify-content: center;
   width: 100%;
   gap: 5rem;
 }
 
-.recipe-page-sidebar {
+.recipe-page-sideBar {
   justify-content: center;
   text-align: center;
   width: 20%;
   border: 2px;
   border-color: #002868;
+  list-style-type: none;
 }
 
 .recipe-page-content {
@@ -383,6 +384,10 @@
   text-align: left;
   width: 60%;
   padding: 10px;
+}
+
+.recipe-page-content a {
+  text-decoration: none;
 }
 
 .recipe-space-left {
@@ -393,7 +398,7 @@
   width: 10%;
 }
 
-.recipe-page-sidebar li {
+.recipe-page-sideBar li {
   list-style-type: none;
   padding: 2px;
 }
@@ -424,6 +429,15 @@
   color: #bf0a30;
   text-decoration: underline;
   text-decoration-color: #ffd700;
+}
+
+.recipe-page-titles-items a {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  transition: 1s ease-in-out;
+  color: #002868;
+  font-weight: 500;
 }
 
 .recipe-page-titles-items {
@@ -473,7 +487,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 50vh;
+  height: 75vh;
   justify-content: center;
 }
 
@@ -484,6 +498,8 @@
   justify-content: center;
   align-self: center;
   text-align: center;
+  color:#002868;
+  font-weight: 500;
 }
 
 .aboutSectionTwo {
@@ -493,6 +509,10 @@
   justify-content: center;
   align-self: center;
   text-align: center;
+}
+
+.chefMert {
+  height: 25rem;
 }
 
 /* //////////////// Contact Page //////////////// */
@@ -525,16 +545,24 @@
 
 .footerMenu li {
   text-decoration: none;
-  color: #002868;
   font-size: large;
   font-weight: bold;
 }
 
 .footerMenu li:visited {
-  text-decoration: none;
-  color: #002868;
+  color: #ffffff;
   font-size: large;
   font-weight: bold;
+}
+
+.footerMenu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerMenu a:hover {
+  color: #002868;
+  text-decoration:underline;
 }
 
 .footerLogo {
