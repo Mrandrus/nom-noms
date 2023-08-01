@@ -89,46 +89,46 @@ const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
 const RestaurantListByCuisine = ({ restaurantListByCuisine, cuisine }) => {
   return (
     <div className="restaurant-page-content">
-        {!cuisine ? (
-          <RestaurantList />
-        ) : (
-          <>
-            {getArray(restaurantListByCuisine).map((p, i) => {
-              return (
-                <div
-                  key={`restaurant_id_${p.Id}_${i}`}
-                  className={`restaurant-titles-items`}
+      {!cuisine ? (
+        <RestaurantList />
+      ) : (
+        <>
+          {getArray(restaurantListByCuisine).map((p, i) => {
+            return (
+              <div
+                key={`restaurant_id_${p.Id}_${i}`}
+                className={`restaurant-titles-items`}
+              >
+                <Link
+                  key={i}
+                  to={`${baseUrlRestaurants}/${cuisine}/${p.Restaurant}`}
                 >
-                  <Link
-                    key={i}
-                    to={`${baseUrlRestaurants}/${cuisine}/${p.Restaurant}`}
-                  >
-                    <div className="rest-img">
-                      <img
-                        src={`${p.ImageOutside}`}
-                        alt={`${p.Restaurant}-image`}
-                        height={125}
-                        width={225}
-                      />
-                    </div>
-                    <div className="rest-stuff">
-                      <h1
-                        className={`title_of_rest_${p.id}`}
-                        style={{ color: "#002868", marginBottom: "5px" }}
-                      >
-                        {p.Restaurant}
-                      </h1>
-                      <hr className="rest-line-divider" />
-                      <p>{p.City}</p>
-                      <p>{p.Cuisine}</p>
-                      <p>{p.BlogIntro}</p>
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}{" "}
-          </>
-        )}
+                  <div className="rest-img">
+                    <img
+                      src={`${p.ImageOutside}`}
+                      alt={`${p.Restaurant}-image`}
+                      height={125}
+                      width={225}
+                    />
+                  </div>
+                  <div className="rest-stuff">
+                    <h1
+                      className={`title_of_rest_${p.id}`}
+                      style={{ color: "#002868", marginBottom: "5px" }}
+                    >
+                      {p.Restaurant}
+                    </h1>
+                    <hr className="rest-line-divider" />
+                    <p>{p.City}</p>
+                    <p>{p.Cuisine}</p>
+                    <p>{p.BlogIntro}</p>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}{" "}
+        </>
+      )}
     </div>
   );
 };
@@ -176,9 +176,13 @@ const RestaurantList = () => {
 
 const RestaurantReview = ({ restaurant }) => {
   return (
-    <div>
-      <h1>Restaurant Review</h1>
-      <h2>{restaurant?.Restaurant}</h2>
+    <div className="rest-review-content">
+      <h1>{restaurant?.Restaurant}</h1>
+      <hr className="rest-line-divider" />
+
+      <div className="restaurant-image">
+        <img src={restaurant?.ImageOutside} alt={restaurant?.Restaurant} />
+      </div>
       <p>{restaurant?.BlogIntro}</p>
     </div>
   );

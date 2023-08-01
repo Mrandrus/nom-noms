@@ -44,15 +44,12 @@ function Home() {
     <div className="noms-home-container">
       <div className="noms-image-container"></div>
       <div className="nom-container-one">
-        <div className="noms-home-intro-content-left">
+        <div className="noms-home-intro-content">
           <p>
             Join me in my journey across Colorado as I compile a roadmap of some
             of the best Restaurants this beautiful state has to offer. Also I'll
-            post recipes.
+            post some of my favorite recipes.
           </p>
-        </div>
-        <div className="noms-home-intro-content-right">
-          <p>shitter</p>
         </div>
       </div>
       <div className="noms-container-two">

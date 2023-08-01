@@ -1,6 +1,7 @@
 import NomNomsLogo from "../images/coNomNomsLogo.png";
 import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
 import "../App.css";
+import ToggleDarkMode from "./ToggleDarkMode";
 
 function Footer() {
   return (
@@ -39,6 +40,8 @@ function Footer() {
             alt="Nomlogo"
           />
         </a>
+
+        {/* <ToggleDarkMode /> */}
       </div>
     </div>
   );

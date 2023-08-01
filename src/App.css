@@ -102,24 +102,22 @@
 }
 
 .nom-container-one {
-  height: 50vmin;
+  height: 20vmin;
   background-color: #bf0a30;
   color: #ffffff;
   width: 100%;
   display: flex;
   align-self: center;
+  justify-content: center;
 }
 
-.noms-home-intro-content-left {
-  width: 50%;
-  justify-content: flex-start;
-  padding: 10px;
-}
-
-.noms-home-intro-content-right {
-  width: 50%;
-  justify-content: flex-end;
-  padding: 10px;
+.noms-home-intro-content {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 90%;
+  font-size: large;
+  font-weight: 500;
 }
 
 .noms-container-two {
@@ -166,6 +164,8 @@
 .home-restaurant-items a {
   display: flex;
   flex-direction: column;
+  color: #002868;
+  font-weight: 500;
 }
 
 .home-restaurant-items:hover {
@@ -225,6 +225,8 @@
 .home-recipe-items a {
   display: flex;
   flex-direction: column;
+  color: #002868;
+  font-weight: 500;
 }
 
 .home-recipe-items:hover {
@@ -242,11 +244,6 @@
 
 .restaurant-restaurantContent {
   display: flex;
-}
-
-.restaurant-content {
-  display: flex;
-  width: 100%;
 }
 
 .restaurant-sideBar {
@@ -338,6 +335,14 @@
 
 .rest-img img {
   border-radius: 10px;
+}
+
+.restaurant-image img{
+  height: 40vh;
+}
+
+.rest-review-content {
+  text-align: left;
 }
 
 .rest-stuff {
