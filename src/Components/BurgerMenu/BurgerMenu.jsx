@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./burgermenu.module.css";
 import { usePageWidth } from "../../hooks";
 
@@ -40,14 +40,23 @@ const MainMenu = (props) => {
 export default MainMenu;
 
 const CusineDrop = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <label for="cuisine">Cuisine:</label>
-      <select name="cusine" id="menuCusine">
+      <label style={{ color: "white" }} for="cuisine">
+        Cuisine:
+      </label>
+      <select
+        name="cuisine"
+        id="menuCusine"
+        onChange={(e) => navigate(e.target.value)}
+      >
         {burgerMenuData.map((p, k) => {
-          <Link to={p.path}>
-            <option value={p.label}>Free</option>
-          </Link>;
+          return (
+            <option value={p.label} key={k}>
+              {p.label}
+            </option>
+          );
         })}
       </select>
     </>
