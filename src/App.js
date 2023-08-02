@@ -12,11 +12,7 @@ import { Router, Routes, Route } from "react-router-dom";
 import AppRouter from "./Components/AppRouter";
 import React, { Component, useEffect, useState } from "react";
 
-
-
-
 function App() {
-
   // const [message, setMessage] = useState("");
 
   // useEffect(() => {
@@ -28,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <Footer />
     </div>
   );
