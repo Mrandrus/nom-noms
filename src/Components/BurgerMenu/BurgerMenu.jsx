@@ -19,9 +19,7 @@ const MainMenu = (props) => {
   const pageWidth = usePageWidth();
 
   return (
-    // <div className="headerMenu">
-    <div>
-      TEST
+    <div className="headerMenu">
       {pageWidth > 1000 ? (
         <ul>
           {burgerMenuData.map((item, key) => {
