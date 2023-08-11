@@ -43,7 +43,7 @@ const foodReviewJS = [
     ImageOutside: "/images/coNomNomsLogo.png",
     FoodImages: [""],
     BlogIntro:
-      "A true gem in Loveland, I have spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
+      "A true gem in Loveland, I've spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
     Date: "2023-03-11T05:39:14.551Z",
     BlogText: "",
   },
@@ -100,9 +100,9 @@ const foodReviewJS = [
     Content: "",
     Id: 7,
     ImageOutside: "/images/krazy_karls_outside.jpg",
-    FoodImages: [""],
+    FoodImages: ["/images/krazy_two.JPEG", "/images/krazy_three.JPEG"],
     BlogIntro:
-      "Krazy Karl's has been a staple in my diet since moving to Fort Collins, The Krazy Hawaiian pizza, Wednesday's grinders, Thursday's big ass beers, all have shaped me into who I am today.",
+      "Krazy Karl's has been a staple in my diet since moving to Fort Collins, The Krazy Hawaiian pizza, Wednesday's grinders, Thursday's big ass beers, have all shaped me into who I am today.",
     Date: "2023-04-08T05:39:14.551Z",
     BlogText: "",
   },
@@ -119,21 +119,6 @@ const foodReviewJS = [
     BlogIntro:
       "A chain restaurant, but a worthwhile weekend excursion for the warm atmosphere and lobster mac and cheese. ",
     Date: "2023-03-07T05:39:14.551Z",
-    BlogText: "",
-  },
-  {
-    Restaurant: "Origins",
-    Cuisine: "Italian",
-    State: "Colorado",
-    City: "Loveland",
-    Cost: "$$",
-    Content: "",
-    Id: 8,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "Best pizza in Loveland with a great dining atmosphere.  The Physical location is unfortunately (hopefully temporarily) closed right now.",
-    Date: "2023-03-06T05:39:14.551Z",
     BlogText: "",
   },
   {
@@ -312,7 +297,7 @@ const foodReviewJS = [
     ImageOutside: "/images/dae_gee_outside.jpg",
     FoodImages: ["/images/dae_gee_grill.jpg"],
     BlogIntro:
-      "With multiple locations around the Denver area including one in Fort Collins, this is one of my favorite eating experiences where you can choose the all you can eat option and grill the various meats at your table.",
+      "With multiple locations around the Denver area including one in Fort Collins, this is one of my favorite eating experiences where you can choose the bbq option and eat until it becomes hard to breathe.",
     Date: "2023-04-12T05:39:14.551Z",
     BlogText: "Perp"
   },

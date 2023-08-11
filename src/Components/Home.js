@@ -4,13 +4,26 @@ import Rocky from "../images/Rocky-Mountain-National-Park-Colorado.png";
 import DateObject from "react-date-object";
 import jsonReviewData from "../Reviews/foodReviewJS";
 import jsonRecipeData from "../Reviews/foodRecipes.json";
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Home() {
   //let date = new Date().toLocaleString("en-US", { month: "long" })
   const [resties, setResties] = useState([]);
   const [recipes, setRecipes] = useState([]);
+
+  const baseUrlRestaurants = "/Restaurants";
+
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+  }
+
 
   useEffect(() => {
     GetLatestReviews();
@@ -66,7 +79,7 @@ function Home() {
                 <Link
                   className="rest-links"
                   // to={`/Reviews/${r.Restaurant}`}
-                  to={`/Reviews`}
+                  to={`${baseUrlRestaurants}/${p.Cuisine}/${p.Restaurant}`}
                   state={{
                     restaurant: p.Restaurant,
                     cuisine: p.Cuisine,
@@ -79,15 +92,14 @@ function Home() {
                   }}
                 >
                   <h3>{p?.Restaurant}</h3>
-                  <p>{p?.Cuisine}</p>
-                  <p>{p?.City}</p>
                   <img
                     src={p?.ImageOutside}
                     alt={`${p?.Restaurant}-food-image${p.id}`}
                     height={200}
                     width={350}
                   />
-                  <p>{p?.BlogIntro}</p>
+                  <p>{p?.Cuisine}</p>
+                  <p>{p?.City}</p>
                 </Link>
               </div>
             );
@@ -154,6 +166,7 @@ function Home() {
         </div>
       </div>
       <div>{/* <ExampleOne /> */}</div>
+      <ScrollToTop />
     </div>
   );
 }

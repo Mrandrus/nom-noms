@@ -165,9 +165,10 @@ const RecipeList = () => {
 
 const ActualRecipe = ({ recipe }) => {
   return (
-    <div>
-      <h1>Recipe Bitch</h1>
-      <h3>{recipe.Recipe}</h3>
+    <div className="recipe-review-content">
+      <h1>{recipe.Recipe}</h1>
+      <hr className="rest-line-divider" />
+
       <p>{recipe.Description}</p>
     </div>
   );

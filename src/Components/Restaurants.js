@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 /* == IMPORT RAW DATA (mimicking fetch to DB)== */
 import jsonReviewData from "../Reviews/foodReviewJS";
+import $ from "jquery";
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
@@ -26,6 +27,10 @@ const Restaurants = () => {
     params keys  'cuisine' and 'restaurant' are set in AppRouter by using the ':' in front of the variable name
     
    */
+  const imageZoom = () => {
+
+  }
+
   const params = useParams();
 
   return (
@@ -107,8 +112,8 @@ const RestaurantListByCuisine = ({ restaurantListByCuisine, cuisine }) => {
                     <img
                       src={`${p.ImageOutside}`}
                       alt={`${p.Restaurant}-image`}
-                      height={125}
-                      width={225}
+                      // height={125}
+                      // width={225}
                     />
                   </div>
                   <div className="rest-stuff">
@@ -150,8 +155,8 @@ const RestaurantList = () => {
                 <img
                   src={`${p.ImageOutside}`}
                   alt={`${p.Restaurant}-image`}
-                  height={125}
-                  width={225}
+                  // height={125}
+                  // width={225}
                 />
               </div>
               <div className="rest-stuff">
@@ -184,6 +189,39 @@ const RestaurantReview = ({ restaurant }) => {
         <img src={restaurant?.ImageOutside} alt={restaurant?.Restaurant} />
       </div>
       <p>{restaurant?.BlogIntro}</p>
+      <div>
+          {restaurant?.FoodImages?.map((x, i) => {
+            {
+              // console.log({ test: x });
+              // $(document).ready(function () {
+              //   $(".allFoodImages").click(function () {
+              //     this.requestFullscreen();
+              //   });
+              // });
+
+              return (
+                // <div>
+                //     {x}
+                // </div>
+                <img
+                  key={`${i}_imagesReturned`}
+                  src={x}
+                  alt={`${restaurant?.Restaurant}-food-image${x}`}
+                  // height={200}
+                  // width={350}
+                  className="allFoodImages"
+                  onClick={(e) => e.target.classList.toggle("allFoodImages-clicked")}
+                />
+              );
+            }
+          })}
+          {/* <img
+            src={details?.foodPic[0]}
+            alt={`${details?.restaurant}-food-image${details?.id}`}
+            height={200}
+            width={350}
+          /> */}
+        </div>
     </div>
   );
 };

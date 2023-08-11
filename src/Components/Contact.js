@@ -10,9 +10,12 @@ function Contact() {
   const [serverMessage, setServerMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/message")
+    // fetch("http://localhost:8000/message")
+    //   .then((res) => res.json())
+    //   .then((data) => setServerMessage(data.messageTwo));
+    fetch("http://localhost:8000/reviews")
       .then((res) => res.json())
-      .then((data) => setServerMessage(data.message));
+      .then((data) => setServerMessage(data.firstReviews));
   }, []);
 
   function handleSubmit(e) {

@@ -1,5 +1,5 @@
 import "../App.css";
-import chefMatt from "../images/matt_chef.jpg"
+import chefMatt from "../images/matt_chef.jpg";
 
 function About() {
   return (
@@ -10,14 +10,14 @@ function About() {
           and in Northern Colorado for the last ten years, where my love for
           good food flourished. I have no cullinary training, but I've found a
           love for cooking that has only emboldened my search for great
-          restaurants. Eating out is culutural treat because you get to go on a
-          short jaunt outside the home, where hopefully, you'll be welcomed by a
-          creative atmosphere that reflects the restaurant's theme, and
-          delicious food made by artisans of their craft.
+          restaurants. Eating out is a culutural treat and finding a truly great
+          restaurant, food truck, or a hole in the wall can be an arduous
+          journey, but here I hope to catalog the very best food joints Colorado
+          has to offer.
         </p>
       </div>
       <div className="aboutSectionTwo">
-        <img src={chefMatt} className="chefMert" alt="chefMert"/>
+        <img src={chefMatt} className="chefMert" alt="chefMert" />
       </div>
     </div>
   );
