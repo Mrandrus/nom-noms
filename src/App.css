@@ -158,7 +158,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s ease-in-out;
 }
 
 .home-restaurant-items a {
@@ -166,9 +165,10 @@
   flex-direction: column;
   color: #002868;
   font-weight: 500;
+  transition: 1s ease-in-out;
 }
 
-.home-restaurant-items:hover {
+.home-restaurant-items a:hover {
   height: auto;
   transition: 1s ease-in-out;
   border-radius: 10px;
