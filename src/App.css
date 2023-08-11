@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -13,8 +13,12 @@
   }
 }
 
-/* //////////////// Header, header logo, and navigation //////////////// */
+/* //////////////// GLOBAL /////////////// */
+.display-none {
+  display: none;
+}
 
+/* //////////////// Header, header logo, and navigation //////////////// */
 
 .App-header {
   background-color: #282c34;
@@ -41,9 +45,10 @@
 }
 
 .headerMenu {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
+  background-color: #002868;
 }
 
 .headerMenu ul {
@@ -51,7 +56,7 @@
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 10rem;
+  gap: 15vw;
 }
 
 .headerMenu a {
@@ -60,45 +65,612 @@
   display: flex;
   align-items: stretch;
   font-weight: bold;
-  color: #002868;
+  color: #ffffff;
   font-size: 1.5rem;
 }
 
 .headerMenu a:hover {
-  color: #BF0A30;
+  color: #bf0a30;
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .headerMenu a:active {
   text-decoration: underline;
-  text-decoration-color: #FFD700;
+  text-decoration-color: #ffd700;
 }
 
 .NomNoms-logo {
-  height: 50vh;
+  height: 30vh;
+}
+
+/* //////////////// Home Page  //////////////// */
+
+.noms-home-container {
+  /* background-color: #002868; */
+  color: #ffffff;
+  width: 100%;
+}
+
+.noms-image-container {
+  display: flex;
+  width: 100%;
+  height: 75vmin;
+  background-image: url('./images/Rocky-Mountain-National-Park-Colorado.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nom-container-one {
+  background-color: #bf0a30;
+  color: #ffffff;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.noms-home-intro-content {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 90%;
+  font-size: large;
+  font-weight: 500;
+}
+
+.noms-container-two {
+  height: auto;
+  background-color: #ffffff;
+  color: #002868;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  background-color: #ffffff;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  gap: 5rem;
+}
+
+.restaurant-content-title {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: #002868;
+  color: #ffffff;
+  transition: 1s ease-in-out;
+}
+
+.home-restaurant-items {
+  width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease-in-out;
+}
+
+.home-restaurant-items a {
+  display: flex;
+  flex-direction: column;
+  color: #002868;
+  font-weight: 500;
+}
+
+.home-restaurant-items:hover {
+  height: auto;
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.restaurant-content img {
+  align-self: center;
+  border-radius: 5px;
+}
+
+.noms-container-three {
+  height: auto;
+  background-color: #ffffff;
+  color: #002868;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  background-color: #ffffff;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  gap: 5rem;
+}
+
+.recipe-content-title {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: #bf0a30;
+  color: #ffffff;
+}
+
+.recipe-content img {
+  align-self: center;
+}
+
+.home-recipe-items {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-recipe-items a {
+  display: flex;
+  flex-direction: column;
+  color: #002868;
+  font-weight: 500;
+  transition: 1s ease-in-out;
+}
+
+.home-recipe-items a:hover {
+  background-color: #0028683b;
+  height: auto;
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.reicpe-content img {
+  align-self: center;
 }
 
 /* //////////////// Restaurant and restaraunt side bar //////////////// */
 
-.restaurantContent {
-  width: 100%;
+.restaurant-restaurantContent {
+  display: flex;
 }
 
 .restaurant-sideBar {
-  justify-content: left;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
   border: 2px;
   border-color: #002868;
-  width: 30%;
 }
 
 .restaurant-sideBar li {
   list-style-type: none;
+  padding: 2px;
 }
 
-.restaurantDescriptions {
-  width: 70%;
-  justify-content: right;
+.restaurant-sideBar-buttons {
+  border: solid 3px transparent;
+  border-color: #002868;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  color: #002868;
+  border-radius: 10px;
+  padding: 5px;
+  border-width: 5px;
+  width: 200px;
+  transition-duration: 0.4s;
+}
+
+.restaurant-sideBar-buttons:hover {
+  border-color: #bf0a30;
+  color: #bf0a30;
+  text-decoration: underline;
+  text-decoration-color: #ffd700;
+}
+
+.restaurant-sideBar-buttons:active {
+  border-color: #bf0a30;
+  color: #bf0a30;
+  text-decoration: underline;
+  text-decoration-color: #ffd700;
+}
+
+.restaurant-page-content {
+  text-align: left;
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-space-left {
+  width: 10%;
+}
+
+.restaurant-space-right {
+  width: 10%;
+}
+
+.restaurant-titles-items a {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  transition: 1s ease-in-out;
+  text-decoration: none;
+  color:#002868;
+  font-weight: 500;
+}
+
+.restaurant-titles-items a:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.rest-links {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+}
+
+.rest-links:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.rest-img {
+  order: 1;
+  width: 25%;
+  justify-content: center;
+  align-self: center;
+  padding: 10px;
+}
+
+.rest-img img {
+  border-radius: 10px;
+  height: 125px;
+  width: 225px;
+}
+
+.restaurant-image img{
+  height: 400px;
+  width: 650px;
+  border-radius: 10px;
+}
+
+.rest-review-content {
+  text-align: left;
+}
+
+.rest-stuff {
+  order: 2;
+  width: 75%;
+  padding: 10px;
+}
+
+.rest-line-divider {
+  border-top: 5px solid #bf0a30;
+  border-radius: 5px;
+}
+
+.allFoodImages {
+  gap: 10px 20px;
+  padding: 10px;
+  border-radius: 24px;
+  height: 200px;
+  width: 350px;
+}
+
+.allFoodImages img {
+  border-radius: 10px;
+}
+
+.allFoodImages-clicked {
+  height: 400px;
+  width: 650px;
 }
 
 
+/* //////////////// Recipe and recipe side bar //////////////// */
+.recipe-page-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 5rem;
+}
+
+.recipe-page-sideBar {
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  border: 2px;
+  border-color: #002868;
+  list-style-type: none;
+}
+
+.recipe-page-content {
+  justify-content: flex-end;
+  text-align: left;
+  width: 60%;
+  padding: 10px;
+}
+
+.recipe-page-content a {
+  text-decoration: none;
+}
+
+.recipe-space-left {
+  width: 10%;
+}
+
+.recipe-space-right {
+  width: 10%;
+}
+
+.recipe-page-sideBar li {
+  list-style-type: none;
+  padding: 2px;
+}
+
+.recipe-sideBar-buttons {
+  border: solid 3px transparent;
+  border-color: #002868;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  color: #002868;
+  border-radius: 10px;
+  padding: 5px;
+  border-width: 5px;
+  width: 200px;
+  transition-duration: 0.4s;
+}
+
+.recipe-sideBar-buttons:hover {
+  border-color: #bf0a30;
+  color: #bf0a30;
+  text-decoration: underline;
+  text-decoration-color: #ffd700;
+}
+
+.recipe-sideBar-buttons:active {
+  border-color: #bf0a30;
+  color: #bf0a30;
+  text-decoration: underline;
+  text-decoration-color: #ffd700;
+}
+
+.recipe-page-titles-items a {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  transition: 1s ease-in-out;
+  color: #002868;
+  font-weight: 500;
+}
+
+.recipe-page-titles-items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+
+.recipe-page-titles-items:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.recipe-page-img {
+  order: 1;
+  width: 25%;
+  justify-content: center;
+  align-self: center;
+  padding: 10px;
+}
+
+.recipe-page-img img {
+  border-radius: 10px;
+}
+
+.recipe-stuff {
+  order: 2;
+  width: 75%;
+  padding: 10px;
+}
+
+.recipe-line-divider {
+  border-top: 5px solid #bf0a30;
+  border-radius: 5px;
+}
+
+.recipe-links {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* //////////////// About Page //////////////// */
+.aboutPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.aboutSectionOne {
+  display: flex;
+  order: 1;
+  width: 40%;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  color:#002868;
+  font-weight: 500;
+  padding: 15px;
+}
+
+.aboutSectionTwo {
+  display: flex;
+  order: 2;
+  width: 40%;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.chefMert {
+  height: 50vh;
+  border-radius: 15px;
+}
+
+/* //////////////// Contact Page //////////////// */
+
+/* //////////////// Footer //////////////// */
+.footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #bf0a30;
+  padding: 15px;
+}
+
+.footerMenu {
+  display: flex;
+  order: 1;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+}
+
+.footerMenu ul {
+  list-style-type: none;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+}
+
+.footerMenu li {
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+.footerMenu li:visited {
+  color: #ffffff;
+  font-size: large;
+  font-weight: bold;
+}
+
+.footerMenu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerMenu a:hover {
+  color: #002868;
+  text-decoration:underline;
+}
+
+.footerLogo {
+  display: flex;
+  order: 2;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+}
+
+.NomNoms-logo-footer {
+  height: 20vh;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 50px #ffffff;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+}
+
+/* //////////////// Responsive Section //////////////// */
+
+
+@media screen and (max-width: 1399px) {
+  .restaurant-content {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .restaurant-page-content {
+    display: flex;
+    width: 90%;
+  }
+
+  .restaurant-sideBar {
+    display: flex;
+    width: 90%;
+  }
+
+  .recipe-page-container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+
+  .recipe-page-sideBar {
+    display: flex;
+    width: 90%;
+  }
+
+  .home-restaurant-items {
+    width: 90%;
+  }
+
+  .recipe-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-recipe-items {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .aboutPage {
+    flex-direction: column;
+  }
+
+  .aboutSectionOne {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+}

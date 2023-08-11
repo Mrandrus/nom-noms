@@ -7,7 +7,10 @@
     "Cost": "$$-$$$",
     "Content": "",
     "Id": 1,
-    "Blog": "default text here"
+    "ImageOutside": "images/regional_outside.jpg",
+    "FoodImages": "",
+    "BlogIntro": "Possibly my favorite dining experience in Northern Colorado, always amazing food, a great atmosphere, and great service.",
+    "Date": ""
   },
   {
     "Restaurant": "Henry's Pub",
@@ -16,7 +19,11 @@
     "City": "Loveland",
     "Cost": "$$-$$$",
     "Content": "",
-    "Id": 2
+    "Id": 2,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "One of the best if not the best that Loveland has to offer.  Everything I've tried on the menu has been stellar, but their chicken fried chicken is some of the best I've ever had.",
+    "Date": ""
   },
   {
     "Restaurant": "Bowl Izakaya",
@@ -25,16 +32,24 @@
     "City": "Loveland",
     "Cost": "$$",
     "Content": "",
-    "Id": 3
+    "Id": 3,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "A true gem in Loveland, I have spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
+    "Date": ""
   },
   {
-    "Restaurant": "Saigon Grill III",
+    "Restaurant": "Young's Cafe",
     "Cuisine": "Vietnamese",
     "State": "Colorado",
     "City": "Fort Collins",
     "Cost": "$-$$",
     "Content": "",
-    "Id": 4
+    "Id": 4,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "The best Vietnamese in Fort Collins with easily the best pho.",
+    "Date": ""
   },
   {
     "Restaurant": "Lucile's",
@@ -43,7 +58,11 @@
     "City": "Fort Collins",
     "Cost": "$-$$",
     "Content": "",
-    "Id": 5
+    "Id": 5,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "With locations in Longmont and Boulder as well, I highly recommend this cajun inspired breakfast joint.  Get there early though, it's always packed.",
+    "Date": ""
   },
   {
     "Restaurant": "Pizza Casbah",
@@ -52,7 +71,11 @@
     "City": "Fort Collins",
     "Cost": "$-$$",
     "Content": "",
-    "Id": 6
+    "Id": 6,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "This New York pizza style joint was a regular lunch spot for their delicious cheese pizza by the slice.",
+    "Date": ""
   },
   {
     "Restaurant": "Krazy Karl's",
@@ -61,7 +84,11 @@
     "City": "Fort Collins",
     "Cost": "$$",
     "Content": "",
-    "Id": 7
+    "Id": 7,
+    "ImageOutside": "images/krazy_karls_outside.jpg",
+    "FoodImages": "",
+    "BlogIntro": "Krazy Karl's has been a staple in my diet since moving to Fort Collins, The Krazy Hawaiian pizza, Wednesday's grinders, Thursday's big ass beers, all have shaped me into who I am today.",
+    "Date": ""
   },
   {
     "Restaurant": "Smokin Fins",
@@ -70,7 +97,11 @@
     "City": "Fort Collins",
     "Cost": "$$",
     "Content": "",
-    "Id": 16
+    "Id": 16,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "A chain restaurant, but a worthwhile weekend excursion for the warm atmosphere and lobster mac and cheese. ",
+    "Date": ""
   },
   {
     "Restaurant": "Origins",
@@ -79,7 +110,11 @@
     "City": "Loveland",
     "Cost": "$$",
     "Content": "",
-    "Id": 8
+    "Id": 8,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "Best pizza in Loveland with a great dining atmosphere.  The Physical location is unfortunately (hopefully temporarily) closed right now.",
+    "Date": ""
   },
   {
     "Restaurant": "Bai Tong",
@@ -88,7 +123,11 @@
     "City": "Loveland",
     "Cost": "$$",
     "Content": "",
-    "Id": 9
+    "Id": 9,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "A truly unique dining experience with fantastic food and plentiful portions.",
+    "Date": ""
   },
   {
     "Restaurant": "Choice City",
@@ -97,34 +136,50 @@
     "City": "Fort Collins",
     "Cost": "$$",
     "Content": "",
-    "Id": 10
+    "Id": 10,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "Home of some of the best burgers and sandwiches in Fort Collins.",
+    "Date": ""
   },
   {
     "Restaurant": "Himalayan Curry & Kebob",
-    "Cuisine": "Indian",
+    "Cuisine": "Indian/Nepalese",
     "State": "Colorado",
     "City": "Loveland",
     "Cost": "$$",
     "Content": "",
-    "Id": 11
+    "Id": 11,
+    "ImageOutside": "images/curry_kabob_outside.jpg",
+    "FoodImages": "images/curry_kabob_plate.jpg",
+    "BlogIntro": "A must go for the buttered chicken alone.",
+    "Date": ""
   },
   {
     "Restaurant": "Mt. Everest Cafe",
-    "Cuisine": "Nepalese",
+    "Cuisine": "Indian/Nepalese",
     "State": "Colorado",
     "City": "Fort Collins",
     "Cost": "$$",
     "Content": "",
-    "Id": 12
+    "Id": 12,
+    "ImageOutside": "images/mt_everest_outside.jpg",
+    "FoodImages": "images/mt_everest_plate_two.jpg",
+    "BlogIntro": "A Nepalese buffet in Fort Collins with a medley of delicious curries, tikka masala, and near perfect naan bread.",
+    "Date": ""
   },
   {
     "Restaurant": "The Original Pancake House",
-    "Cuisine": "American, Sea Food",
+    "Cuisine": "American",
     "State": "Colorado",
     "City": "Fort Collins",
     "Cost": "$$",
     "Content": "",
-    "Id": 13
+    "Id": 13,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "I know this is a chain, but there aren't many places I'd rather go to on a Sunday morning.",
+    "Date": ""
   },
   {
     "Restaurant": "El Pueblito",
@@ -133,7 +188,11 @@
     "City": "Loveland",
     "Cost": "$$",
     "Content": "",
-    "Id": 14
+    "Id": 14,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "El Pueblito has a Fort Collins and a Loveland location, but having only been to the Loveland location, I can make the recommendation for one of Loveland's best Mexican joints.",
+    "Date": ""
   },
   {
     "Restaurant": "Jim's Wings",
@@ -142,6 +201,75 @@
     "City": "Fort Collins",
     "Cost": "$-$$",
     "Content": "",
-    "Id": 15
+    "Id": 15,
+    "ImageOutside": "images/jims_wings_outside.jpg",
+    "FoodImages": "",
+    "BlogIntro": "The best wings in Fort Collins consisting of the perfect texture, size, and taste.",
+    "Date": ""
+  },
+  {
+    "Restaurant": "Music City Hot Chicken",
+    "Cuisine": "American",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 17,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "Great place for some Nashville hot chicken and a side of mac and cheese.",
+    "Date": ""
+  },
+  {
+    "Restaurant": "Mo' Betta Gumbo",
+    "Cuisine": "Cajun",
+    "State": "Colorado",
+    "City": "Loveland",
+    "Cost": "$$",
+    "Content": "",
+    "Id": 18,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "A fun cajun joint in the heart of downtown Loveland, Betta Gumbo welcomes you with a colorful atmosphere, extensive drink menu, and great classic cajun dishes.",
+    "Date": ""
+  },
+  {
+    "Restaurant": "DGT (Originally Damn Good Tacos)",
+    "Cuisine": "Mexican",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 19,
+    "ImageOutside": "images/coNomNomsLogo.png",
+    "FoodImages": "",
+    "BlogIntro": "DGT, originally known as Damn Good Tacos (but Torchies got mad), is a great taco stop with a creative variety.",
+    "Date": ""
+  },
+  {
+    "Restaurant": "Cafe de Bangkok",
+    "Cuisine": "Thai",
+    "State": "Colorado",
+    "City": "Fort Collins",
+    "Cost": "$-$$",
+    "Content": "",
+    "Id": 20,
+    "ImageOutside": "images/cafe_de_bangkok.jpg",
+    "FoodImages": "",
+    "BlogIntro": "A cosy little restaurant near CSU's campus with the best pad thai and drunken noodles in Fort Collins.",
+    "Date": ""
+  },
+  {
+    "Restaurant": "Dae Gee",
+    "Cuisine": "Korean",
+    "State": "Colorado",
+    "City": "Denver, Fort Collins",
+    "Cost": "$$-$$$",
+    "Content": "",
+    "Id": 21,
+    "ImageOutside": "images/dae_gee_outside.jpg",
+    "FoodImages": "images/dae_gee_grill.jpg",
+    "BlogIntro": "With multiple locations around the Denver area including one in Fort Collins, this is one of my favorite eating experiences where you can choose the all you can eat option and grill the various meats at your table.",
+    "Date": ""
   }
 ]
