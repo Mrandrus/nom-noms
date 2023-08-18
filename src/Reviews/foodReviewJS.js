@@ -25,7 +25,7 @@ const foodReviewJS = [
     Cost: "$$-$$$",
     Content: "",
     Id: 2,
-    ImageOutside: "/images/coNomNomsLogo.png",
+    ImageOutside: "/images/Henry's_outside.jpg",
     FoodImages: [""],
     BlogIntro:
       "One of the best if not the best that Loveland has to offer.  Everything I've tried on the menu has been stellar, but their chicken fried chicken is some of the best I've ever had.",
@@ -40,7 +40,7 @@ const foodReviewJS = [
     Cost: "$$",
     Content: "",
     Id: 3,
-    ImageOutside: "/images/coNomNomsLogo.png",
+    ImageOutside: "/images/bowl_iz_outside.jpg",
     FoodImages: [""],
     BlogIntro:
       "A true gem in Loveland, I've spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
@@ -204,8 +204,8 @@ const foodReviewJS = [
     Cost: "$$",
     Content: "",
     Id: 14,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
+    ImageOutside: "/images/el_pueblito_outside.jpg",
+    FoodImages: ["/images/el_pueblito_burrito.jpg", "/images/el_pueblito_nachos.jpg"],
     BlogIntro:
       "El Pueblito has a Fort Collins and a Loveland location, but having only been to the Loveland location, I can make the recommendation for one of Loveland's best Mexican joints.",
     Date: "2023-03-22T05:39:14.551Z",
@@ -249,7 +249,7 @@ const foodReviewJS = [
     Cost: "$$",
     Content: "",
     Id: 18,
-    ImageOutside: "/images/coNomNomsLogo.png",
+    ImageOutside: "/images/betta_gumbo_outside.jpg",
     FoodImages: [""],
     BlogIntro:
       "A fun cajun joint in the heart of downtown Loveland, Betta Gumbo welcomes you with a colorful atmosphere, extensive drink menu, and great classic cajun dishes.",
@@ -315,6 +315,22 @@ const foodReviewJS = [
       "Bamboo Express > Panda Express",
     Date: "2023-04-17T05:39:14.551Z",
     BlogText: "Perp"
+  },
+  {
+    Restaurant: "Tortilleria La Autentica",
+    Cuisine: "Mexican",
+    State: "Colorado",
+    City: "Loveland",
+    Cost: "$-$$",
+    Content: "",
+    Id: 23,
+    ImageOutside: "/images/tortilla_factory_outside.jpg",
+    // ImageOutside: Image("regional_outside_img"),
+    FoodImages: [""],
+    BlogIntro:
+      "Located in downtown loveland, this is the best place to get your tortillas and try all their different burritos.",
+    Date: "2023-07-12T05:39:14.551Z",
+    BlogText: "",
   },
 ];
 
