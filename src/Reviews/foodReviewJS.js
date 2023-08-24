@@ -161,7 +161,7 @@ const foodReviewJS = [
     Id: 11,
     ImageOutside: "/images/curry_kabob_outside.jpg",
     FoodImages: ["/images/curry_kabob_plate.jpg"],
-    BlogIntro: "A must go for the buttered chicken alone.",
+    BlogIntro: "A must for the buttered chicken alone.",
     Date: "2023-04-09T05:39:14.551Z",
     BlogText: "",
   },
@@ -192,7 +192,7 @@ const foodReviewJS = [
     ImageOutside: "/images/og_pancake_house.jpg",
     FoodImages: ["/images/og_pancake_dishOne.jpg"],
     BlogIntro:
-      "I know this is a chain, but there aren't many places I'd rather go to on a Sunday morning.",
+      "I know this is a chain, but there aren't many places I'd rather be on a Sunday morning.",
     Date: "2023-03-23T05:39:14.551Z",
     BlogText: "",
   },

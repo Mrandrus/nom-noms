@@ -13,7 +13,6 @@ function Footer() {
             <Link to="/Restaurants">Restaurants</Link>
           </li>
           <br />
-
           {/* <li className="navReviews">
             <Link to="/Reviews">Reviews</Link>
           </li> */}
