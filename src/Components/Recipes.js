@@ -11,9 +11,12 @@ import {
   Link,
   useLocation,
   useParams,
+  useNavigate,
 } from "react-router-dom";
 import Recipe from "./Recipe";
 import styles from "./Restaurants.module.css";
+import { usePageWidth } from "../hooks";
+
 
 const baseUrlRecipes = "/Recipes";
 
@@ -51,22 +54,30 @@ const RecipeCuisineFilter = ({ cuisineList, cuisine }) => {
     let textB = b.Cuisine.toUpperCase();
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
+
+  const pageWidth = usePageWidth();
+
+
   return (
     <div className="recipe-page-sideBar">
-      <ul>
-        {getArray(cuisineList).map((p, i) => (
-          <Link to={`${baseUrlRecipes}/${p.Cuisine}`} key={i}>
-            <li
-              key={p.Id}
-              className={`recipe-sideBar-buttons ${
-                cuisine === p.Cuisine ? styles.activeCuisine : ""
-              }`}
-            >
-              {p.Cuisine}
-            </li>
-          </Link>
-        ))}
-      </ul>
+      {pageWidth > 1399 ? (
+        <ul>
+          {getArray(cuisineList).map((p, i) => (
+            <Link to={`${baseUrlRecipes}/${p.Cuisine}`} key={i}>
+              <li
+                key={p.Id}
+                className={`recipe-sideBar-buttons ${
+                  cuisine === p.Cuisine ? styles.activeCuisine : ""
+                }`}
+              >
+                {p.Cuisine}
+              </li>
+            </Link>
+          ))}
+        </ul>
+      ) : (
+        <CuisineDrop cuisines={cuisineList} />
+      )}
     </div>
   );
 };
@@ -94,21 +105,21 @@ const RecipeListByCuisine = ({ recipeByCuisine, cuisine }) => {
                     />
                   </div>
                   <div className="recipe-stuff">
-                  <h1
-                    key={`title_of_reicpe_id_${p.Id}_${i}`}
-                    className={`title_of_recipe_${p.Id}`}
-                    style={{ color: "#002868", marginBottom: "5px" }}
-                  >
-                    {p.Recipe}
-                  </h1>
-                  <hr className="recipe-line-divider" />
-                  <br />
-                  <a>{p.Cuisine}</a>
-                  <br />
-                  {/* </Link> */}
-                  <a>{p.Description}</a>
-                  <br />
-                </div>
+                    <h1
+                      key={`title_of_reicpe_id_${p.Id}_${i}`}
+                      className={`title_of_recipe_${p.Id}`}
+                      style={{ color: "#002868", marginBottom: "5px" }}
+                    >
+                      {p.Recipe}
+                    </h1>
+                    <hr className="recipe-line-divider" />
+                    <br />
+                    <a>{p.Cuisine}</a>
+                    <br />
+                    {/* </Link> */}
+                    <a>{p.Description}</a>
+                    <br />
+                  </div>
                 </Link>
               </div>
             );
@@ -171,6 +182,56 @@ const ActualRecipe = ({ recipe }) => {
 
       <p>{recipe.Description}</p>
     </div>
+  );
+};
+
+const CuisineDrop = ({ cuisines }) => {
+  const navigate = useNavigate();
+
+  const [burgerActive, setBurgerActive] = useState(false);
+
+  const toggleBurger = () => {
+    setBurgerActive(!burgerActive);
+  };
+
+  return (
+    <>
+      {/* <label style={{ color: "white" }} for="cuisine">
+        Cuisine:
+      </label>
+      <select
+        name="cuisine"
+        id="menuCusine"
+        onChange={(e) => navigate(e.target.value)}
+      > */}
+      <div className="burger-container">
+        <div className="burger-cuisine-icon" onClick={toggleBurger}>
+          <div className="burger-cuisine">
+            <i className="arrow-down"></i> | Cuisines |{" "}
+            <i className="arrow-down"></i>
+          </div>
+        </div>
+        <ul className={`cuisine-links ${burgerActive ? "active" : "none"}`}>
+          {getArray(cuisines).map((p, k) => {
+            return (
+              // <option value={p.label} key={k}>
+              //   {p.label}
+              // </option>
+              <li key={k}>
+                <Link
+                  to={`${baseUrlRecipes}/${p.Cuisine}`}
+                  key={k}
+                  onClick={toggleBurger}
+                >
+                  {p.Cuisine}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      {/* </select> */}
+    </>
   );
 };
 
