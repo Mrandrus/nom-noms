@@ -197,6 +197,7 @@ const RestaurantReview = ({ restaurant }) => {
         <img src={restaurant?.ImageOutside} alt={restaurant?.Restaurant} />
       </div>
       <p>{restaurant?.BlogIntro}</p>
+       {/* <RestaurantReview /> */}
       <div>
         {restaurant?.FoodImages?.map((x, i) => {
           {
@@ -217,7 +218,7 @@ const RestaurantReview = ({ restaurant }) => {
                 alt={`${restaurant?.Restaurant}-food-image${x}`}
                 // height={200}
                 // width={350}
-                className="allFoodImages"
+                className={x != "" ? "allFoodImages" : "noFoodImages"}
                 onClick={(e) =>
                   e.target.classList.toggle("allFoodImages-clicked")
                 }
@@ -225,12 +226,6 @@ const RestaurantReview = ({ restaurant }) => {
             );
           }
         })}
-        {/* <img
-            src={details?.foodPic[0]}
-            alt={`${details?.restaurant}-food-image${details?.id}`}
-            height={200}
-            width={350}
-          /> */}
       </div>
     </div>
   );
@@ -258,7 +253,7 @@ const CusineDrop = ({ cuisines }) => {
       <div className="burger-container">
         <div className="burger-cuisine-icon" onClick={toggleBurger}>
           <div className="burger-cuisine">
-            <i className="arrow-down"></i> | Cuisines |{" "}
+            <i className="arrow-down"></i> | Cuisines | {" "}
             <i className="arrow-down"></i>
           </div>
         </div>
