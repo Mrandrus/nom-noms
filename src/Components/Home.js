@@ -6,7 +6,7 @@ import jsonReviewData from "../Reviews/foodReviewJS";
 import jsonRecipeData from "../Reviews/foodRecipes.json";
 import { Link, useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Map from "./Map";
+import FoodMap from "./FoodMap";
 
 function Home() {
   //let date = new Date().toLocaleString("en-US", { month: "long" })
@@ -165,9 +165,6 @@ function Home() {
             );
           })}
         </div>
-      </div>
-      <div>
-          <Map />
       </div>
       <ScrollToTop />
     </div>

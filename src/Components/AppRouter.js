@@ -10,6 +10,7 @@ import Recipe from "./Recipe.js";
 import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
 import "../App.css";
 import BurgerMenu from "./BurgerMenu/BurgerMenu.jsx";
+import FoodMap from "./FoodMap.js";
 
 function AppRouter() {
   return (
@@ -36,8 +37,9 @@ function AppRouter() {
             element={<Recipes />}
           ></Route>
           <Route path="/Recipe" element={<Recipe />}></Route>
+          <Route path="/FoodMap" element={<FoodMap />}></Route>
           <Route path="/About" element={<About />}></Route>
-          <Route path="/Contact" element={<Contact />}></Route>
+          {/* <Route path="/Contact" element={<Contact />}></Route> */}
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </div>

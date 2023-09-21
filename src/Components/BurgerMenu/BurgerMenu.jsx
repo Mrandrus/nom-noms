@@ -6,8 +6,8 @@ import { usePageWidth } from "../../hooks";
 const burgerMenuData = [
   { label: "Restaurants", path: "/Restaurants" },
   { label: "Recipes", path: "/Recipes" },
+  { label: "Food Map", path: "/FoodMap" },
   { label: "About", path: "/About" },
-  { label: "Contact", path: "/Contact" },
 ];
 
 // const Menu=()=>{return (
