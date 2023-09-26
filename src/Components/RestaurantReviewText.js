@@ -53,7 +53,7 @@ const Regional = () => {
   return (
     <div>
       <p>
-        Everything I’ve had from the Regional has been a culinary work of art, I
+        Everything I've had from the Regional has been a culinary work of art, I
         highly recommend their happy hour special of a burger, beer, and a shot
         with a slew of oysters to start. The atmosphere is a nicely lit, cozy,
         rustic environment nestled right next to the train tracks in downtown
@@ -104,23 +104,19 @@ const Henrys = () => {
         was taking over the square in downtown Loveland because of Valentine's
         day. There was live music, concessions, games, and it seemed everyone in
         Loveland came out for it. As my parents enjoyed the live music, I made a
-        straight line to the tent that served alcohol. I got craft brewed
-        libation and proceeded to immediately run into an old friend of mine who
-        was there on a date. We exchanged pleasantries before he stifled a laugh
-        and asked if I was here by myself. I laughed loudly and explained that I
-        was actually here with my parents, we all laughed and parted ways. As I
-        stood in the cold alone with my beer, I watched my parents enjoy the
-        live music and a thought overtook me, I can't wait to order the chicken
-        fried chicken.
+        straight line to the tent that served alcohol. I got a craft brewed
+        libation and making my way back to my parents, ran into an old friend of
+        mine who was there on a date. We exchanged pleasantries before he
+        stifled a laugh and asked if I was here by myself. I laughed loudly and
+        explained that I was actually here with my parents, we all laughed and
+        parted ways. As I stood in the cold alone with my beer, I watched my
+        parents enjoy the live music and a thought overtook me, I can't wait to
+        order the chicken fried chicken.
       </p>
     </div>
   );
 };
 
 const BambooExpress = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+  return <div></div>;
+};

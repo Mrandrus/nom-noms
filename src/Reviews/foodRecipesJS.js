@@ -8,7 +8,7 @@ const foodRecipesJS = [
         IngredientsImage: [""],
         Ingredients: "Rice noodles, thai basil, chicken thighs, Thai chiles/seranos, etc ",
         Description: "One of my favorite Thai dishes that truly slaps.",
-        Instructions: "First things first dance "
+        Instructions: [""]
       },
       {
         Recipe: "Chicken Gyro",
@@ -18,7 +18,7 @@ const foodRecipesJS = [
         IngredientsImage: [""],
         Ingredients: "Rice noodles, thai basil, chicken thighs, Thai chiles/seranos, etc ",
         Description: "An easy and delicious Mediterranean classic.",
-        Instructions: "First things first dance "
+        Instructions: [""]
       },
       {
         Recipe: "Lasagna",
@@ -28,7 +28,7 @@ const foodRecipesJS = [
         IngredientsImage: [""],
         Ingredients: "Rice noodles, thai basil, chicken thighs, Thai chiles/seranos, etc ",
         Description: "Inject it into my veins.",
-        Instructions: "First things first dance "
+        Instructions: [""]
       },
       {
         Recipe: "Shrimp Scampi",
