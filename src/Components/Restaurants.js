@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import jsonReviewData from "../Reviews/foodReviewJS";
 import $ from "jquery";
 import { usePageWidth } from "../hooks";
+import RestaurantReviewReview from "./RestaurantReviewText";
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
@@ -196,8 +197,10 @@ const RestaurantReview = ({ restaurant }) => {
       <div className="restaurant-image">
         <img src={restaurant?.ImageOutside} alt={restaurant?.Restaurant} />
       </div>
-      <p>{restaurant?.BlogIntro}</p>
-       {/* <RestaurantReview /> */}
+      {/* <p>{restaurant?.BlogText}</p> */}
+      <div className="restaurant-review">
+        <RestaurantReviewReview props={restaurant} />
+      </div>
       <div>
         {restaurant?.FoodImages?.map((x, i) => {
           {
@@ -253,7 +256,7 @@ const CusineDrop = ({ cuisines }) => {
       <div className="burger-container">
         <div className="burger-cuisine-icon" onClick={toggleBurger}>
           <div className="burger-cuisine">
-            <i className="arrow-down"></i> | Cuisines | {" "}
+            <i className="arrow-down"></i> | Cuisines |{" "}
             <i className="arrow-down"></i>
           </div>
         </div>

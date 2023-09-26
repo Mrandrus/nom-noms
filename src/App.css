@@ -95,7 +95,7 @@
 .noms-image-container {
   display: flex;
   width: 100%;
-  height: 75vmin;
+  height: 60vmin;
   background-image: url("./images/newcastle_scenic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -353,6 +353,7 @@
 
 .rest-review-content {
   text-align: left;
+  width: 60%;
 }
 
 .rest-stuff {
@@ -510,6 +511,11 @@
   display: flex;
   width: 100%;
   text-decoration: none;
+}
+
+.recipe-review-content {
+  width: 60%;
+  text-align: left;
 }
 
 /* //////////////// About Page //////////////// */

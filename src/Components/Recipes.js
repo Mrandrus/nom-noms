@@ -13,9 +13,10 @@ import {
   useParams,
   useNavigate,
 } from "react-router-dom";
-import Recipe from "./Recipe";
+import Recipe from "./RecipeText";
 import styles from "./Restaurants.module.css";
 import { usePageWidth } from "../hooks";
+import RecipeText from "./RecipeText";
 
 
 const baseUrlRecipes = "/Recipes";
@@ -179,8 +180,7 @@ const ActualRecipe = ({ recipe }) => {
     <div className="recipe-review-content">
       <h1>{recipe.Recipe}</h1>
       <hr className="rest-line-divider" />
-
-      <p>{recipe.Description}</p>
+      <RecipeText props={recipe} />
     </div>
   );
 };
