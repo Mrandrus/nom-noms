@@ -42,6 +42,8 @@ const RestaurantReviewText = (props) => {
       return <Regional />;
     case 2:
       return <Henrys />;
+    case 3:
+      return <BowlIzakaya />;
     case 22:
       return <BambooExpress />;
     case 12:
@@ -52,6 +54,8 @@ const RestaurantReviewText = (props) => {
       return <JimsWings />;
     case 14:
       return <ElPueblito />;
+    case 13:
+      return <OrginalPancakeHouse />
     default:
       return "";
   }
@@ -317,6 +321,98 @@ const ElPueblito = () => {
         the desired affect achieved. Letting out a long satisfactory sigh, I
         fixed my eyes on a Broncos scoreboard already heavily favoring the
         opposing team, and my eyelids became heavier and heavier.
+      </p>
+    </div>
+  );
+};
+
+const BowlIzakaya = () => {
+  return (
+    <div>
+      <p>
+        Bowl Izakaya is located in an inconspicuous corner of a shopping center;
+        it is a unique gem in an area that is otherwise made up of mostly chains
+        and subpar food. They have an excellent menu with dishes like tonkatsu,
+        miso, tempura, yakitori, and a bevy of sushi options. I'm unfortunately
+        allergic to fish, so I am unable to partake in this portion of the menu,
+        but not a day goes by that I wish I could order a salmon roll. There
+        isn't much, if any, competition when it comes to Bowl Izakaya's ramen,
+        and I'd argue it's likely the best in all the Front Range.
+      </p>
+      <br />
+      <p>
+        Personal Testimony: In 2020, right before the pandemic shut everything
+        down, I was able to visit Japan, and it was one of the best trips I've
+        ever taken. I was blown away at the quality of the cuisine at every
+        restaurant we ate at. Asian food just happens to be my favorite genre of
+        food, which I know is painting with a very broad brush, but it's hard to
+        pick a frontrunner between Korean, Vietnamese, Thai, Japanese, Chinese,
+        etc. I hadn't delved too deep into the Japanese library of food, but
+        while in Shinjuku and Shibuya, I was able to try pork katsu, Japanese
+        curry, okonomiyaki, Takoyaki, yakisoba, Udon, and the best ramen I've
+        ever had. When I returned to the US, I began compiling a list of
+        Japanese restaurants to check out in hopes of discovering one that could
+        resemble what I experienced in the land of the rising sun.
+        Unfortunately, just a few weeks later, everything shut down and my
+        dreams of food adventures were quelled.
+        <br />
+        <br />
+        It was probably a year into the pandemic and I began to venture out a
+        bit more. The layers of ice that formed around my aspirations for food
+        conquest were finally beginning to thaw. A friend of mine alerted me of
+        Bowl Izakaya, and I jumped at the opportunity to ingest real ramen with
+        an authentic pork bone broth. I arrived to join my friend at the
+        establishment. I sensed his excitement to eat, but also in introducing
+        me to this obscure treasure. I ordered the spicy pork tonkatsu and a
+        small plate of Takoyaki, which are small pastry balls filled with
+        chopped squid and a wheat batter. We slurped and chewed, looking up at
+        one another from time to time sharing a glance of contentment. I drank
+        the last of my broth from the large bowl and leaned back in my chair,
+        folding my hands across my belly. I felt truly blessed to have found
+        this place.
+      </p>
+    </div>
+  );
+};
+
+const OrginalPancakeHouse = () => {
+  return (
+    <div>
+      <p>
+        The original pancake house is a large chain of restaurants that operate
+        primarily in the US and have been a long time favorite of mine for
+        breakfast. I normally wouldn't include a restaurant chain here, but the
+        menus vary by location and the Fort Collins menu is the most creative
+        and impressive. Every menu item I've had, from savory to sweet, has been
+        great, to the point that I can't help but get a half order of something
+        sweet, and a half of something savory so I can get the full pancake
+        house experience. My top picks would have to be the banana praline
+        crepes and the Texican; your choice of eggs over chorizo, hashbrowns,
+        jalapenos, green chili, and onion.{" "}
+      </p>
+      <br />
+      <p>
+        <strong>Personal Testimony:</strong> It was my birthday and one of my best friends took
+        me to the Original Pancake House in Fort Collins for a birthday
+        breakfast. We went early on a weekday, and were met with no wait time,
+        which was a welcome birthday surprise. Attempting to do the same on a
+        weekend is a near impossible feat unless you're arriving in the morning
+        darkness when they just unlock the doors. We were seated and promptly
+        offered coffee, and we happily accepted. It has become tradition for
+        this friend and I to order 3 different plates and split them between the
+        two of us. It can sometimes be a marathon but we have been training for
+        mornings like this our entire lives. We order the banana praline crepes,
+        the Texican, and the Cowboy, a loaded omelet topped with their house
+        gravy. We rotated the plates around the table as we ate and reveled in
+        one another's company. My breath became more labored as we continued to
+        clean plates. The real challenge came when we pushed to finish the
+        different plate's sides. Additional pancakes and bacon could have easily
+        been boxed for later, but this was my birthday and I was looking to fuel
+        a three hour birthday nap. Finally, after the all the pates were
+        finished, we ordered the check and sat for a short time conversing and
+        sipping our coffees. When I arrived home, I went straight for my napping
+        couch and proceeded to sleep for half the day. It was one of my favorite
+        birthdays.
       </p>
     </div>
   );
