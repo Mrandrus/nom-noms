@@ -81,7 +81,7 @@
 }
 
 .NomNoms-logo {
-  height: 30vh;
+  height: 25vh;
 }
 
 /* //////////////// Home Page  //////////////// */
@@ -95,8 +95,8 @@
 .noms-image-container {
   display: flex;
   width: 100%;
-  height: 75vmin;
-  background-image: url('./images/Rocky-Mountain-National-Park-Colorado.png');
+  height: 60vmin;
+  background-image: url("./images/newcastle_scenic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -139,7 +139,7 @@
   justify-content: center;
   align-self: center;
   text-align: center;
-  gap: 5rem;
+  /* gap: 5rem; */
 }
 
 .restaurant-content-title {
@@ -158,7 +158,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s ease-in-out;
 }
 
 .home-restaurant-items a {
@@ -166,9 +165,10 @@
   flex-direction: column;
   color: #002868;
   font-weight: 500;
+  transition: 1s ease-in-out;
 }
 
-.home-restaurant-items:hover {
+.home-restaurant-items a:hover {
   height: auto;
   transition: 1s ease-in-out;
   border-radius: 10px;
@@ -199,7 +199,6 @@
   justify-content: center;
   align-self: center;
   text-align: center;
-  gap: 5rem;
 }
 
 .recipe-content-title {
@@ -213,6 +212,7 @@
 
 .recipe-content img {
   align-self: center;
+  border-radius: 5px;
 }
 
 .home-recipe-items {
@@ -309,7 +309,7 @@
   width: 100%;
   transition: 1s ease-in-out;
   text-decoration: none;
-  color:#002868;
+  color: #002868;
   font-weight: 500;
 }
 
@@ -345,7 +345,7 @@
   width: 225px;
 }
 
-.restaurant-image img{
+.restaurant-image img {
   height: 400px;
   width: 650px;
   border-radius: 10px;
@@ -353,6 +353,7 @@
 
 .rest-review-content {
   text-align: left;
+  width: 60%;
 }
 
 .rest-stuff {
@@ -366,30 +367,33 @@
   border-radius: 5px;
 }
 
-.allFoodImages {
-  gap: 10px 20px;
+.noFoodImages {
+  display: none;
+}
+
+.restaurant-food-image {
+  display: flex;
+  gap: 10px;
   padding: 10px;
-  border-radius: 24px;
-  height: 200px;
-  width: 350px;
 }
 
-.allFoodImages img {
+.restaurant-food-image img {
   border-radius: 10px;
+  height: 300px;
+  width: 550px;
 }
 
-.allFoodImages-clicked {
+/* .allFoodImages-clicked {
   height: 400px;
   width: 650px;
-}
-
+} */
 
 /* //////////////// Recipe and recipe side bar //////////////// */
 .recipe-page-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 5rem;
+  /* gap: 5rem; */
 }
 
 .recipe-page-sideBar {
@@ -401,11 +405,16 @@
   list-style-type: none;
 }
 
+.recipe-page-sideBar ul {
+  padding-inline-start: 0px;
+}
+
 .recipe-page-content {
-  justify-content: flex-end;
   text-align: left;
   width: 60%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe-page-content a {
@@ -487,6 +496,12 @@
   border-radius: 10px;
 }
 
+.recipe-main-food-image img {
+  height: 400px;
+  width: 650px;
+  border-radius: 10px;
+}
+
 .recipe-stuff {
   order: 2;
   width: 75%;
@@ -504,6 +519,30 @@
   text-decoration: none;
 }
 
+.recipe-review-content {
+  width: 60%;
+  text-align: left;
+}
+
+.recipe-ingredients-image img {
+  height: 400px;
+  width: 650px;
+  border-radius: 10px;
+}
+
+.recipe-instructions-images {
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.recipe-instructions-images img {
+  height: 200px;
+  width: 350px;
+  border-radius: 10px;
+}
+
 /* //////////////// About Page //////////////// */
 .aboutPage {
   display: flex;
@@ -519,7 +558,7 @@
   justify-content: center;
   align-self: center;
   text-align: center;
-  color:#002868;
+  color: #002868;
   font-weight: 500;
   padding: 15px;
 }
@@ -540,6 +579,81 @@
 }
 
 /* //////////////// Contact Page //////////////// */
+
+/* //////////////// Map Page //////////////// */
+.map-container {
+  height: 400px;
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  border-radius: 25px;
+  border: 3px solid #002868;
+}
+
+.map-heading {
+  color: #002868;
+}
+
+.map-stuff {
+  font-weight: 500; 
+  padding:6px 12px;
+  border-radius: 5px;
+}
+
+.map-null {
+  display: none;
+}
+
+.map-stuff-blurb {
+  background-color: #002868;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 5px;
+
+}
+
+.map-clicked-data {
+  color:#002868;
+  padding: 6px 12px;
+  transition: 1s ease-in-out;
+}
+
+.map-clicked-data a {
+  color:#002868;
+  text-decoration: none;
+}
+
+.map-clicked-data:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.map-sidebar {
+  background-color:#bf0a30;
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 5px;
+}
+
+.customMarker {
+  width: 15px;
+  height: 15px;
+  background-color: #bf0a30;
+  border: 2px solid #002868;
+  border-radius: 50%; /* Makes it circular */
+  transform: translate(-50%, -50%); /* Center the marker */
+  }
+
+  .customMarker:hover {
+    border:2px solid #ffd700;
+  }
 
 /* //////////////// Footer //////////////// */
 .footer {
@@ -565,6 +679,7 @@
   text-align: center;
   align-self: center;
   text-decoration: none;
+  padding-inline-start: 0px;
 }
 
 .footerMenu li {
@@ -586,7 +701,7 @@
 
 .footerMenu a:hover {
   color: #002868;
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .footerLogo {
@@ -607,8 +722,75 @@
   align-self: center;
 }
 
-/* //////////////// Responsive Section //////////////// */
+/* //////////////// Responsive Section Burger Menu //////////////// */
 
+.burger-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.burger-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 3px 0;
+  border-radius: 25px;
+}
+
+.burger-links {
+  list-style: none;
+  display: flex;
+}
+
+.arrow-down {
+  border: solid #002868;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .burger-icon {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .burger-links.none {
+    display: none;
+  }
+
+  .burger-links.active {
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    /* top: 70px;
+      right: 10px; */
+    background-color: #002868;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: none;
+  }
+
+  /* .navRestaurants {
+    display: none;
+  } */
+}
+
+/* //////////////// Responsive Section //////////////// */
 
 @media screen and (max-width: 1399px) {
   .restaurant-content {
@@ -623,6 +805,11 @@
     width: 90%;
   }
 
+  .recipe-page-content {
+    display: flex;
+    width: 90%;
+  }
+
   .restaurant-sideBar {
     display: flex;
     width: 90%;
@@ -632,7 +819,7 @@
     flex-direction: column;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
   }
 
   .recipe-page-sideBar {
@@ -653,6 +840,125 @@
   .home-recipe-items {
     width: 90%;
   }
+
+  .cuisine-links.none {
+    display: none;
+  }
+
+  .burger-cuisine {
+    border: solid 3px transparent;
+    border-color: #002868;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    color: #002868;
+    border-radius: 10px;
+    padding: 5px;
+    border-width: 5px;
+    width: 200px;
+  }
+
+  .cuisine-links.active {
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    /* top: 70px;
+      right: 10px; */
+    background-color: #ffffff;
+    border: 5px solid #002868;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-inline-start: 0px;
+    width: 100%;
+  }
+
+  .cuisine-links.active a {
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: #002868;
+  }
+
+  .cuisine-links.active a:hover {
+    color: #bf0a30;
+    text-decoration: underline;
+    text-decoration-color: #ffd700;
+  }
+
+  .restaurant-content {
+    gap: 0px;
+  }
+
+  .restaurant-sideBar {
+    padding-top: 10px;
+  }
+
+  .recipe-page-sideBar {
+    padding-top: 10px;
+  }
+
+  /* .arrow-down:hover {
+    border: solid #bf0a30;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  } */
+
+  .burger-cuisine:hover {
+    color: #bf0a30;
+    border: 5px solid #bf0a30;
+    text-decoration: underline;
+    text-decoration-color: #ffd700;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .rest-img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rest-stuff {
+    width: 60%;
+  }
+
+  .restaurant-image img {
+    height: 300px;
+    width: 550px;
+    border-radius: 10px;
+  }
+
+  .rest-review-content {
+    padding: 15px;
+  }
+
+  .restaurant-food-image img {
+    height: 200px;
+    width: 350px;
+  }
+
+  .rest-review-content {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .restaurant-food-image {
+    flex-direction: column;
+  }
+
+  .restaurant-food-image img {
+    height: 300px;
+    width: 550px;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -663,10 +969,26 @@
   .aboutSectionOne {
     width: 90%;
   }
+
+  .NomNoms-logo-footer {
+    height: 20vw;
+  }
+
+  .restaurant-image img {
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+  }
+
+  .restaurant-food-image img {
+    height: 200px;
+    width: 350px;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .footer {
+    display: flex;
     flex-direction: column;
     height: auto;
     justify-content: center;

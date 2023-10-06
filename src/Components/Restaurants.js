@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./Restaurants.module.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 /* == IMPORT RAW DATA (mimicking fetch to DB)== */
 import jsonReviewData from "../Reviews/foodReviewJS";
 import $ from "jquery";
+import { usePageWidth } from "../hooks";
+import RestaurantReviewText from "./RestaurantReviewText";
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
@@ -27,9 +29,10 @@ const Restaurants = () => {
     params keys  'cuisine' and 'restaurant' are set in AppRouter by using the ':' in front of the variable name
     
    */
-  const imageZoom = () => {
 
-  }
+  // const imageZoom = () => {
+
+  // }
 
   const params = useParams();
 
@@ -71,22 +74,28 @@ const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
 
+  const pageWidth = usePageWidth();
+
   return (
     <div className="restaurant-sideBar">
-      <ul>
-        {getArray(cuisineList).map((p, i) => (
-          <Link to={`${baseUrlRestaurants}/${p.Cuisine}`} key={i}>
-            <li
-              key={p.Id}
-              className={`restaurant-sideBar-buttons ${
-                cuisine === p.Cuisine ? styles.activeCuisine : ""
-              }`}
-            >
-              {p.Cuisine}
-            </li>
-          </Link>
-        ))}
-      </ul>
+      {pageWidth > 1399 ? (
+        <ul>
+          {getArray(cuisineList).map((p, i) => (
+            <Link to={`${baseUrlRestaurants}/${p.Cuisine}`} key={i}>
+              <li
+                key={p.Id}
+                className={`restaurant-sideBar-buttons ${
+                  cuisine === p.Cuisine ? styles.activeCuisine : ""
+                }`}
+              >
+                {p.Cuisine}
+              </li>
+            </Link>
+          ))}
+        </ul>
+      ) : (
+        <CusineDrop cuisines={cuisineList} />
+      )}
     </div>
   );
 };
@@ -188,41 +197,83 @@ const RestaurantReview = ({ restaurant }) => {
       <div className="restaurant-image">
         <img src={restaurant?.ImageOutside} alt={restaurant?.Restaurant} />
       </div>
-      <p>{restaurant?.BlogIntro}</p>
-      <div>
-          {restaurant?.FoodImages?.map((x, i) => {
-            {
-              // console.log({ test: x });
-              // $(document).ready(function () {
-              //   $(".allFoodImages").click(function () {
-              //     this.requestFullscreen();
-              //   });
-              // });
-
-              return (
-                // <div>
-                //     {x}
-                // </div>
-                <img
-                  key={`${i}_imagesReturned`}
-                  src={x}
-                  alt={`${restaurant?.Restaurant}-food-image${x}`}
-                  // height={200}
-                  // width={350}
-                  className="allFoodImages"
-                  onClick={(e) => e.target.classList.toggle("allFoodImages-clicked")}
-                />
-              );
-            }
-          })}
-          {/* <img
-            src={details?.foodPic[0]}
-            alt={`${details?.restaurant}-food-image${details?.id}`}
-            height={200}
-            width={350}
-          /> */}
-        </div>
+      {/* <p>{restaurant?.BlogText}</p> */}
+      <div className="restaurant-review">
+        <RestaurantReviewText props={restaurant} />
+      </div>
+      <div className="restaurant-food-image">
+        {restaurant?.FoodImages?.map((x, i) => {
+          {
+            return (
+              // <div>
+              //     {x}
+              // </div>
+              <img
+                key={`${i}_imagesReturned`}
+                src={x}
+                alt={`${restaurant?.Restaurant}-food-image${x}`}
+                // height={200}
+                // width={350}
+                className={x != "" ? "allFoodImages" : "noFoodImages"}
+                // onClick={(e) =>
+                //   e.target.classList.toggle("allFoodImages-clicked")
+                // }
+              />
+            );
+          }
+        })}
+      </div>
     </div>
+  );
+};
+
+const CusineDrop = ({ cuisines }) => {
+  const navigate = useNavigate();
+
+  const [burgerActive, setBurgerActive] = useState(false);
+
+  const toggleBurger = () => {
+    setBurgerActive(!burgerActive);
+  };
+
+  return (
+    <>
+      {/* <label style={{ color: "white" }} for="cuisine">
+        Cuisine:
+      </label>
+      <select
+        name="cuisine"
+        id="menuCusine"
+        onChange={(e) => navigate(e.target.value)}
+      > */}
+      <div className="burger-container">
+        <div className="burger-cuisine-icon" onClick={toggleBurger}>
+          <div className="burger-cuisine">
+            <i className="arrow-down"></i> | Cuisines |{" "}
+            <i className="arrow-down"></i>
+          </div>
+        </div>
+        <ul className={`cuisine-links ${burgerActive ? "active" : "none"}`}>
+          {getArray(cuisines).map((p, k) => {
+            return (
+              // <option value={p.label} key={k}>
+              //   {p.label}
+              // </option>
+              <li key={k}>
+                <Link
+                  to={`${baseUrlRestaurants}/${p.Cuisine}`}
+                  key={k}
+                  onClick={toggleBurger}
+                >
+                  {p.Cuisine}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      {/* </select> */}
+    </>
   );
 };
 

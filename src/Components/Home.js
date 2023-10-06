@@ -3,9 +3,10 @@ import ExampleOne from "./PropsPractice/ExampleOne";
 import Rocky from "../images/Rocky-Mountain-National-Park-Colorado.png";
 import DateObject from "react-date-object";
 import jsonReviewData from "../Reviews/foodReviewJS";
-import jsonRecipeData from "../Reviews/foodRecipes.json";
+import jsonRecipeData from "../Reviews/foodRecipesJS.js";
 import { Link, useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import FoodMap from "./FoodMap";
 
 function Home() {
   //let date = new Date().toLocaleString("en-US", { month: "long" })
@@ -13,6 +14,8 @@ function Home() {
   const [recipes, setRecipes] = useState([]);
 
   const baseUrlRestaurants = "/Restaurants";
+  const baseUrlRecipes = "/Recipes";
+
 
   function ScrollToTop() {
     const { pathname } = useLocation();
@@ -105,28 +108,7 @@ function Home() {
             );
           })}
         </div>
-        {/* <div className="restaurant-two">
-          <h3>{restaurantArray[1].Restaurant}</h3>
-          <p>{restaurantArray[1].City}</p>
-          <img
-            src={restaurantArray[1].ImageOutside}
-            alt={`${restaurantArray[1].Restaurant}-food-image${restaurantArray[1].id}`}
-            height={100}
-            width={200}
-          />
-          <p>{restaurantArray[1].BlogIntro}</p>
-        </div>
-        <div className="restaurant-three">
-          <h3>{restaurantArray[2].Restaurant}</h3>
-          <p>{restaurantArray[2].City}</p>
-          <img
-            src={restaurantArray[2].ImageOutside}
-            alt={`${restaurantArray[2].Restaurant}-food-image${restaurantArray[2].id}`}
-            height={100}
-            width={200}
-          />
-          <p>{restaurantArray[2].BlogIntro}</p>
-        </div> */}
+        
       </div>
       <div className="noms-container-three">
         <div className="recipe-content-title">
@@ -141,7 +123,7 @@ function Home() {
               >
                 <Link
                   className="recipe-links"
-                  to="/Recipe"
+                  to={`${baseUrlRecipes}/${p.Cuisine}/${p.Recipe}`}
                   state={{
                     recipe: p.Recipe,
                     cuisine: p.Cuisine,
@@ -155,8 +137,8 @@ function Home() {
                   <img
                     src={p?.Image}
                     alt={`${p?.Image}-food-image${p?.id}`}
-                    height={100}
-                    width={200}
+                    height={200}
+                    width={350}
                   />
                   <p>{p?.Description}</p>
                 </Link>
@@ -165,7 +147,6 @@ function Home() {
           })}
         </div>
       </div>
-      <div>{/* <ExampleOne /> */}</div>
       <ScrollToTop />
     </div>
   );

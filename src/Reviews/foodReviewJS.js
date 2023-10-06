@@ -6,6 +6,10 @@ const foodReviewJS = [
     Cuisine: "American",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.078629, 40.586632]
+      },
     Cost: "$$-$$$",
     Content: "",
     Id: 1,
@@ -22,10 +26,14 @@ const foodReviewJS = [
     Cuisine: "American, Pub",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.073639, 40.395161]
+      },
     Cost: "$$-$$$",
     Content: "",
     Id: 2,
-    ImageOutside: "/images/coNomNomsLogo.png",
+    ImageOutside: "/images/Henry's_outside.jpg",
     FoodImages: [""],
     BlogIntro:
       "One of the best if not the best that Loveland has to offer.  Everything I've tried on the menu has been stellar, but their chicken fried chicken is some of the best I've ever had.",
@@ -37,10 +45,14 @@ const foodReviewJS = [
     Cuisine: "Japanese",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.099520, 40.380090]
+      },
     Cost: "$$",
     Content: "",
     Id: 3,
-    ImageOutside: "/images/coNomNomsLogo.png",
+    ImageOutside: "/images/bowl_iz_outside.jpg",
     FoodImages: [""],
     BlogIntro:
       "A true gem in Loveland, I've spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
@@ -52,6 +64,10 @@ const foodReviewJS = [
     Cuisine: "Vietnamese",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.079071, 40.541981]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 4,
@@ -66,6 +82,10 @@ const foodReviewJS = [
     Cuisine: "Cajun",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0822335, 40.5826719]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 5,
@@ -81,6 +101,10 @@ const foodReviewJS = [
     Cuisine: "Italian",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0782122, 40.5781851]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 6,
@@ -96,6 +120,10 @@ const foodReviewJS = [
     Cuisine: "Italian",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0964613, 40.5747102]
+      },
     Cost: "$$",
     Content: "",
     Id: 7,
@@ -107,25 +135,14 @@ const foodReviewJS = [
     BlogText: "",
   },
   {
-    Restaurant: "Smokin Fins",
-    Cuisine: "American, Sea Food",
-    State: "Colorado",
-    City: "Fort Collins",
-    Cost: "$$",
-    Content: "",
-    Id: 16,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "A chain restaurant, but a worthwhile weekend excursion for the warm atmosphere and lobster mac and cheese. ",
-    Date: "2023-03-07T05:39:14.551Z",
-    BlogText: "",
-  },
-  {
     Restaurant: "Bai Tong",
     Cuisine: "Thai",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0729819, 40.4040528]
+      },
     Cost: "$$",
     Content: "",
     Id: 9,
@@ -141,6 +158,10 @@ const foodReviewJS = [
     Cuisine: "American, Sandwiches",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0773951, 40.5843979]
+      },
     Cost: "$$",
     Content: "",
     Id: 10,
@@ -156,12 +177,16 @@ const foodReviewJS = [
     Cuisine: "Indian & Nepalese",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0586272, 40.4087751]
+      },
     Cost: "$$",
     Content: "",
     Id: 11,
     ImageOutside: "/images/curry_kabob_outside.jpg",
     FoodImages: ["/images/curry_kabob_plate.jpg"],
-    BlogIntro: "A must go for the buttered chicken alone.",
+    BlogIntro: "A must for the buttered chicken alone.",
     Date: "2023-04-09T05:39:14.551Z",
     BlogText: "",
   },
@@ -170,6 +195,10 @@ const foodReviewJS = [
     Cuisine: "Indian & Nepalese",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.096605, 40.5512293]
+      },
     Cost: "$$",
     Content: "",
     Id: 12,
@@ -186,13 +215,17 @@ const foodReviewJS = [
     Cuisine: "American",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0233941, 40.5226454]
+      },
     Cost: "$$",
     Content: "",
     Id: 13,
     ImageOutside: "/images/og_pancake_house.jpg",
     FoodImages: ["/images/og_pancake_dishOne.jpg"],
     BlogIntro:
-      "I know this is a chain, but there aren't many places I'd rather go to on a Sunday morning.",
+      "I know this is a chain, but there aren't many places I'd rather be on a Sunday morning.",
     Date: "2023-03-23T05:39:14.551Z",
     BlogText: "",
   },
@@ -201,11 +234,15 @@ const foodReviewJS = [
     Cuisine: "Mexican",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0985814, 40.4072711]
+      },
     Cost: "$$",
     Content: "",
     Id: 14,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
+    ImageOutside: "/images/el_pueblito_outside.jpg",
+    FoodImages: ["/images/el_pueblito_burrito.jpg", "/images/el_pueblito_nachos.jpg"],
     BlogIntro:
       "El Pueblito has a Fort Collins and a Loveland location, but having only been to the Loveland location, I can make the recommendation for one of Loveland's best Mexican joints.",
     Date: "2023-03-22T05:39:14.551Z",
@@ -216,6 +253,10 @@ const foodReviewJS = [
     Cuisine: "American, Pub",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.097208, 40.574562]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 15,
@@ -231,6 +272,10 @@ const foodReviewJS = [
     Cuisine: "American",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0786398, 40.5666055]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 17,
@@ -246,10 +291,14 @@ const foodReviewJS = [
     Cuisine: "Cajun",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0733305, 40.3941018]
+      },
     Cost: "$$",
     Content: "",
     Id: 18,
-    ImageOutside: "/images/coNomNomsLogo.png",
+    ImageOutside: "/images/betta_gumbo_outside.jpg",
     FoodImages: [""],
     BlogIntro:
       "A fun cajun joint in the heart of downtown Loveland, Betta Gumbo welcomes you with a colorful atmosphere, extensive drink menu, and great classic cajun dishes.",
@@ -261,6 +310,10 @@ const foodReviewJS = [
     Cuisine: "Mexican",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.078188, 40.578647]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 19,
@@ -276,6 +329,10 @@ const foodReviewJS = [
     Cuisine: "Thai",
     State: "Colorado",
     City: "Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.097547, 40.574716]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 20,
@@ -291,13 +348,17 @@ const foodReviewJS = [
     Cuisine: "Korean",
     State: "Colorado",
     City: "Denver, Fort Collins",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0781435, 40.5846051]
+      },
     Cost: "$$-$$$",
     Content: "",
     Id: 21,
     ImageOutside: "/images/dae_gee_outside.jpg",
     FoodImages: ["/images/dae_gee_grill.jpg"],
     BlogIntro:
-      "With multiple locations around the Denver area including one in Fort Collins, this is one of my favorite eating experiences where you can choose the bbq option and eat until it becomes hard to breathe.",
+      "With multiple locations around the Denver area including one in Fort Collins, this is one of my favorite eating experiences. Make sure you choose the bbq option, then eat until it becomes hard to breathe.",
     Date: "2023-04-12T05:39:14.551Z",
     BlogText: "Perp"
   },
@@ -306,6 +367,10 @@ const foodReviewJS = [
     Cuisine: "Chinese",
     State: "Colorado",
     City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.1006798, 40.4075086]
+      },
     Cost: "$-$$",
     Content: "",
     Id: 22,
@@ -315,6 +380,26 @@ const foodReviewJS = [
       "Bamboo Express > Panda Express",
     Date: "2023-04-17T05:39:14.551Z",
     BlogText: "Perp"
+  },
+  {
+    Restaurant: "Tortilleria La Autentica",
+    Cuisine: "Mexican",
+    State: "Colorado",
+    City: "Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': [-105.0703303, 40.3953207]
+      },
+    Cost: "$-$$",
+    Content: "",
+    Id: 23,
+    ImageOutside: "/images/tortilla_factory_outside.jpg",
+    // ImageOutside: Image("regional_outside_img"),
+    FoodImages: [""],
+    BlogIntro:
+      "Located in downtown loveland, this is the best place to get your tortillas and try all their different burritos.",
+    Date: "2023-07-12T05:39:14.551Z",
+    BlogText: "",
   },
 ];
 

@@ -13,7 +13,6 @@ function Footer() {
             <Link to="/Restaurants">Restaurants</Link>
           </li>
           <br />
-
           {/* <li className="navReviews">
             <Link to="/Reviews">Reviews</Link>
           </li> */}
@@ -21,15 +20,18 @@ function Footer() {
             <Link to="/Recipes">Recipes</Link>
           </li>
           <br />
-
+          <li className="navFoodMap">
+            <Link to="/FoodMap">Food Map</Link>
+          </li>
+          <br />
           <li className="navAbout">
             <Link to="/About">About</Link>
           </li>
           <br />
-          <li className="navContact">
+          {/* <li className="navContact">
             <Link to="/Contact">Contact</Link>
           </li>
-          <br />
+          <br /> */}
         </ul>
       </div>
       <div className="footerLogo">
