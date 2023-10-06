@@ -201,16 +201,9 @@ const RestaurantReview = ({ restaurant }) => {
       <div className="restaurant-review">
         <RestaurantReviewText props={restaurant} />
       </div>
-      <div>
+      <div className="restaurant-food-image">
         {restaurant?.FoodImages?.map((x, i) => {
           {
-            // console.log({ test: x });
-            // $(document).ready(function () {
-            //   $(".allFoodImages").click(function () {
-            //     this.requestFullscreen();
-            //   });
-            // });
-
             return (
               // <div>
               //     {x}
@@ -222,9 +215,9 @@ const RestaurantReview = ({ restaurant }) => {
                 // height={200}
                 // width={350}
                 className={x != "" ? "allFoodImages" : "noFoodImages"}
-                onClick={(e) =>
-                  e.target.classList.toggle("allFoodImages-clicked")
-                }
+                // onClick={(e) =>
+                //   e.target.classList.toggle("allFoodImages-clicked")
+                // }
               />
             );
           }

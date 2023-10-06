@@ -12,7 +12,7 @@ function About() {
           love for cooking that has only emboldened my search for great
           restaurants. Eating out is a culutural treat and finding a truly great
           restaurant, food truck, or a hole in the wall can be an arduous
-          journey, but here I hope to catalog the very best food joints Colorado
+          journey, but here I hope to catalog the very best food Colorado
           has to offer.
         </p>
       </div>

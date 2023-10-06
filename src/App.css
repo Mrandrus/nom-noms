@@ -199,7 +199,6 @@
   justify-content: center;
   align-self: center;
   text-align: center;
-  gap: 5rem;
 }
 
 .recipe-content-title {
@@ -213,6 +212,7 @@
 
 .recipe-content img {
   align-self: center;
+  border-radius: 5px;
 }
 
 .home-recipe-items {
@@ -367,26 +367,26 @@
   border-radius: 5px;
 }
 
-.allFoodImages {
-  gap: 10px 20px;
-  padding: 10px;
-  border-radius: 24px;
-  height: 200px;
-  width: 350px;
-}
-
-.allFoodImages img {
-  border-radius: 10px;
-}
-
 .noFoodImages {
   display: none;
 }
 
-.allFoodImages-clicked {
+.restaurant-food-image {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.restaurant-food-image img {
+  border-radius: 10px;
+  height: 300px;
+  width: 550px;
+}
+
+/* .allFoodImages-clicked {
   height: 400px;
   width: 650px;
-}
+} */
 
 /* //////////////// Recipe and recipe side bar //////////////// */
 .recipe-page-container {
@@ -496,6 +496,12 @@
   border-radius: 10px;
 }
 
+.recipe-main-food-image img {
+  height: 400px;
+  width: 650px;
+  border-radius: 10px;
+}
+
 .recipe-stuff {
   order: 2;
   width: 75%;
@@ -516,6 +522,25 @@
 .recipe-review-content {
   width: 60%;
   text-align: left;
+}
+
+.recipe-ingredients-image img {
+  height: 400px;
+  width: 650px;
+  border-radius: 10px;
+}
+
+.recipe-instructions-images {
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.recipe-instructions-images img {
+  height: 200px;
+  width: 350px;
+  border-radius: 10px;
 }
 
 /* //////////////// About Page //////////////// */
@@ -914,6 +939,26 @@
   .rest-review-content {
     padding: 15px;
   }
+
+  .restaurant-food-image img {
+    height: 200px;
+    width: 350px;
+  }
+
+  .rest-review-content {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .restaurant-food-image {
+    flex-direction: column;
+  }
+
+  .restaurant-food-image img {
+    height: 300px;
+    width: 550px;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -933,6 +978,11 @@
     height: 200px;
     width: 350px;
     border-radius: 10px;
+  }
+
+  .restaurant-food-image img {
+    height: 200px;
+    width: 350px;
   }
 }
 

@@ -55,7 +55,13 @@ const RestaurantReviewText = (props) => {
     case 14:
       return <ElPueblito />;
     case 13:
-      return <OrginalPancakeHouse />
+      return <OrginalPancakeHouse />;
+    case 11:
+      return <HimalayanKabob />;
+    case 21:
+      return <DaeGee />
+    case 7:
+      return <KrazyKarls />
     default:
       return "";
   }
@@ -392,27 +398,141 @@ const OrginalPancakeHouse = () => {
       </p>
       <br />
       <p>
-        <strong>Personal Testimony:</strong> It was my birthday and one of my best friends took
-        me to the Original Pancake House in Fort Collins for a birthday
-        breakfast. We went early on a weekday, and were met with no wait time,
-        which was a welcome birthday surprise. Attempting to do the same on a
-        weekend is a near impossible feat unless you're arriving in the morning
-        darkness when they just unlock the doors. We were seated and promptly
-        offered coffee, and we happily accepted. It has become tradition for
-        this friend and I to order 3 different plates and split them between the
-        two of us. It can sometimes be a marathon but we have been training for
-        mornings like this our entire lives. We order the banana praline crepes,
-        the Texican, and the Cowboy, a loaded omelet topped with their house
-        gravy. We rotated the plates around the table as we ate and reveled in
-        one another's company. My breath became more labored as we continued to
-        clean plates. The real challenge came when we pushed to finish the
-        different plate's sides. Additional pancakes and bacon could have easily
-        been boxed for later, but this was my birthday and I was looking to fuel
-        a three hour birthday nap. Finally, after the all the pates were
-        finished, we ordered the check and sat for a short time conversing and
-        sipping our coffees. When I arrived home, I went straight for my napping
-        couch and proceeded to sleep for half the day. It was one of my favorite
-        birthdays.
+        <strong>Personal Testimony:</strong> It was my birthday and one of my
+        best friends took me to the Original Pancake House in Fort Collins for a
+        birthday breakfast. We went early on a weekday, and were met with no
+        wait time, which was a welcome birthday surprise. Attempting to do the
+        same on a weekend is a near impossible feat unless you're arriving in
+        the morning darkness when they just unlock the doors. We were seated and
+        promptly offered coffee, and we happily accepted. It has become
+        tradition for this friend and I to order 3 different plates and split
+        them between the two of us. It can sometimes be a marathon but we have
+        been training for mornings like this our entire lives. We order the
+        banana praline crepes, the Texican, and the Cowboy, a loaded omelet
+        topped with their house gravy. We rotated the plates around the table as
+        we ate and reveled in one another's company. My breath became more
+        labored as we continued to clean plates. The real challenge came when we
+        pushed to finish the different plate's sides. Additional pancakes and
+        bacon could have easily been boxed for later, but this was my birthday
+        and I was looking to fuel a three hour birthday nap. Finally, after the
+        all the pates were finished, we asked for the check and sat for a short
+        time conversing and sipping our coffees. When I arrived home, I went
+        straight for my napping couch and proceeded to sleep for half the day.
+        It was one of my favorite birthdays.
+      </p>
+    </div>
+  );
+};
+
+const HimalayanKabob = () => {
+  return (
+    <div>
+      <p>
+        Himalayan Curry & Kabob is my current favorite restaurant in Loveland.
+        After a long day of work, ordering a couple of different entrees for
+        pickup immediately turns the evening into a celebration of
+        Indian/Nepalese cuisine. My go to dish alternates between the tandoori
+        chicken, butter chicken, tikka masala, and always an order of the garlic
+        naan.{" "}
+      </p>
+      <br />
+      <p>
+        <strong>Personal Testimony:</strong> In November of last year, it was a
+        cold snowy day, and I was working as an Amazon delivery driver. I had
+        decided near the end of my route that I deserved a dinner from Himalayan
+        Curry and Kabob. The snow continued to fall harder, the roads became
+        icier, but the thought of hot buttered chicken over garlic naan acted as
+        my light at the end of the tunnel. I held onto that thought and
+        quickened my pace, delivering packages with efficiency and grace. It was
+        not my intention to begin rhyming in this section, but now I am stuck in
+        this sudden flection. Arriving at dispatch, I turned in my gear, the
+        time for buttered chicken and naan was drawing near. I raced to my car,
+        and drove steadily through snow, until at my destination, I breathed
+        out, my heart finally slow. When I finally parked safely, and opened the
+        door to my home, I changed into my jimjams and began to chow down on
+        supper, that's right I'm not rhyming anymore, I'm tired of it. I
+        couldn't make anything work with 'home'. Anyway, the food was amazing,
+        the creamy thick buttered chicken poured over their basmati rice and
+        paired with the garlic naan, acted as a warm sanctuary in an otherwise
+        cold season of life.
+      </p>
+    </div>
+  );
+};
+
+const KrazyKarls = () => {
+  return (
+    <div>
+      <p>
+        Krazy Karl's became a weekly to biweekly watering hole for me and my
+        friends in late 2012. At this point, it was just the one pizza joint
+        with a small dining area to the right of the counter. Since then, the
+        original restaurant bought out the space next to them and opened a new
+        dining and bar area, as well as adding two more locations, one more in
+        Fort Colins and one in Loveland. Krazy Karl's is still my go to pizza
+        joint with my favorite pies being the Krazy Hawaiian, south of the
+        border, and their chicken bacon ranch. The Krazy Hawaiian and the south
+        of the border both come with dollops of cream cheese atop an already
+        good pizza, and that combination kept me coming back every chance I
+        could. My go to days landed on their happy hour deal on Thursdays for
+        their $3 dollar big ass beers and a Wednesday deal of 5.99 grinders
+        (calzones).{" "}
+      </p>
+      <br />
+      <p>
+        <strong>Personal Testimony:</strong> I've had so many trips to Krazy
+        Karls that I don't think I could single one out, but the early days
+        before they expanded their original location, hold the warmest memories.
+        I spent many a night laughing with friends as we threw back large
+        quantities of beer and pizza. Krazy Karl's became the go to spot for
+        meeting up, and it proved to be a fertile foundation for the growth of
+        many strong relationships. I remember long conversations I had in this
+        place, conversations of young love, of dreams of our futures, of
+        heartaches and heartbreaks, of promotion and opportunity, of
+        disappointment and loss, of theological quandaries, of life and purpose.
+        So yeah, I definitely recommend the Krazy Hawaiian if you like pineapple
+        on pizza.
+      </p>
+    </div>
+  );
+};
+
+const DaeGee = () => {
+  return (
+    <div>
+      <p>
+        Dae Gee was my first introduction to the wonderful world of Korean
+        barbeque. Since then, I attempt to make an annual pilgrimage to
+        Koreatown in Los Angeles to indulge in some of best Korean food in the
+        states. Dae Gee is a growing chain with multiple locations in the Denver
+        area and one that opened in Fort Collins. I've not had a bad experience
+        at any one of the restaurants, and I have gone many times now. The
+        restaurant has a standard menu where you can order various Korean
+        dishes, but the real draw is the all you can eat barbeque option. Once
+        you've selected the barbeque option, the server turns on the grill that
+        is built into your table, and after a short time returns with a plate
+        full of raw meats including spicy pork, pork belly, beef bulgogi,
+        marinaded chicken, and galbi (marinaded beef short ribs). Let your grill
+        heat up some and then begin laying down the meats you'd like to dig into
+        first. Galbi will cost extra to order more, but everything else you can
+        just keep ordering until the fullness has overtaken you.{" "}
+      </p>
+      <br />
+      <p>
+        <strong>Personal Testimony:</strong> My sister and brother in-law were excited to take me
+        to Dae Gee, followed by a viewing of the new Star Wars movie, Solo. It
+        was to be a belated birthday gift, and what a gift it was. I hadn't ever
+        seen this type of restaurant setup before where you could grill the
+        meats at your own table. But I loved it. We ordered a few tall Kloud
+        beers and a bottle of Soju for the table and began adding the spicy pork
+        and beef bulgogi to the grill. I was brimming with joy to have been
+        acquainted with such a unique, delicious, and fun dining experience. We
+        feasted for well over an hour and finished our meal by grilling up a few
+        sliced pineapples. I was all smiles as we left the restaurant and headed
+        towards the movie theater. Solo was fine, albeit a tad forgettable, but
+        Dae Gee had seared its mark on my heart and I became a little Dae Gee
+        evangelist, introducing anyone who would join me, to the church of
+        bulgogi.{" "}
       </p>
     </div>
   );

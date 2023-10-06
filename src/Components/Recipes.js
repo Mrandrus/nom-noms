@@ -18,7 +18,6 @@ import styles from "./Restaurants.module.css";
 import { usePageWidth } from "../hooks";
 import RecipeText from "./RecipeText";
 
-
 const baseUrlRecipes = "/Recipes";
 
 const Recipes = () => {
@@ -57,7 +56,6 @@ const RecipeCuisineFilter = ({ cuisineList, cuisine }) => {
   });
 
   const pageWidth = usePageWidth();
-
 
   return (
     <div className="recipe-page-sideBar">
@@ -180,7 +178,13 @@ const ActualRecipe = ({ recipe }) => {
     <div className="recipe-review-content">
       <h1>{recipe.Recipe}</h1>
       <hr className="rest-line-divider" />
-      <RecipeText props={recipe} />
+      <div className="recipe-main-food-image">
+        <img src={recipe.Image} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instruction-text">
+        <RecipeText props={recipe} />
+      </div>
+      <br />
     </div>
   );
 };
