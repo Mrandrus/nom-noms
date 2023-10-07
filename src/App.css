@@ -948,6 +948,16 @@
   .rest-review-content {
     width: 80%;
   }
+
+  .recipe-stuff {
+    width: 60%;
+  }
+
+  .recipe-page-img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -956,6 +966,16 @@
   }
 
   .restaurant-food-image img {
+    height: 300px;
+    width: 550px;
+  }
+
+  .recipe-main-food-image img{
+    height: 300px;
+    width: 550px;
+  }
+
+  .recipe-ingredients-image img{
     height: 300px;
     width: 550px;
   }
@@ -984,6 +1004,16 @@
     height: 200px;
     width: 350px;
   }
+
+  .recipe-main-food-image img{
+    height: 200px;
+    width: 350px;
+  }
+
+  .recipe-ingredients-image img{
+    height: 200px;
+    width: 350px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -994,5 +1024,10 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+  }
+
+  .recipe-page-img img {
+    height: 125px;
+    width: 225px;
   }
 }

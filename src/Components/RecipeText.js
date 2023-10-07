@@ -11,7 +11,6 @@ import {
 import jsonRecipeData from "../Reviews/foodRecipes.json";
 import NomNomsLogo from "../images/coNomNomsLogo.png";
 
-
 function RecipeText(props) {
   // const location = useLocation();
   // let details = location.state;
@@ -24,10 +23,14 @@ function RecipeText(props) {
   console.log("recipe data,", props);
 
   switch (recipeId.props?.Id) {
-    // case 2:
-    //   return <Gyro />;
+    case 1:
+      return <DrunkenNoodles recipe={recipeId.props} />
+    case 2:
+      return <Gyro />;
     case 3:
       return <Lasagna recipe={recipeId.props} />;
+    case 4:
+      return <ShrimpScampi />
     default:
       return "";
   }
@@ -43,10 +46,18 @@ function getArray(data) {
 const Gyro = () => {
   return (
     <div>
-      <p>I'll have Gyro instruction here</p>
+      <h3>Coming Soon</h3>
     </div>
   );
 };
+
+const ShrimpScampi = () => {
+  return (
+    <div>
+      <h3>Coming Soon</h3>
+    </div>
+  )
+}
 
 const Lasagna = ({ recipe }) => {
   return (
@@ -91,11 +102,59 @@ const Lasagna = ({ recipe }) => {
         </p>
       </div>
       <div className="recipe-instructions-images">
-          {getArray(recipe?.StepImages.map((p,q) => {
-            return (
-              <img src={p} key={q} alt={NomNomsLogo} />
-            )
-          }))}
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const DrunkenNoodles = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          Heat wok, add sesame oil. Mince 4 cloves of garlic, 4 to 5 thai
+          chilis, and ginger. Chop the white ends of the green onion, and add to
+          wok with the garlic, chilis, and ginger. Stir constantly until
+          fragrant, normally a few minutes. Dice chicken and add to wok. Add
+          around a teaspoon of fish sauce.
+        </p>
+        <p>
+          In small mixing bowl, add soy sauce, oyster sauce, sesame oil, and
+          brown sugar. Mix well. I like to add some of that liquid to the wok
+          and let the sauce thicken and coat the chicken thoroughly.
+        </p>
+        <p>
+          Boil rice noodles in salted water for duration instructed on package.
+        </p>
+        <p>
+          Add noodles, the rest of the soy sauce mixture, the chopped greens of
+          the green onion, and the thai basil. I recommend tearing the thai
+          basil into small pieces and then tossing them in. Mix everything
+          together throughly and serve with squeezed lime over top.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
       </div>
     </div>
   );
