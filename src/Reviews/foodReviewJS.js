@@ -59,62 +59,62 @@ const foodReviewJS = [
     Date: "2023-03-11T05:39:14.551Z",
     BlogText: "",
   },
-  {
-    Restaurant: "Young's Cafe",
-    Cuisine: "Vietnamese",
-    State: "Colorado",
-    City: "Fort Collins",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.079071, 40.541981]
-      },
-    Cost: "$-$$",
-    Content: "",
-    Id: 4,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro: "The best Vietnamese in Fort Collins with easily the best pho.",
-    Date: "2023-03-10T05:39:14.551Z",
-    BlogText: "",
-  },
-  {
-    Restaurant: "Lucile's",
-    Cuisine: "Cajun",
-    State: "Colorado",
-    City: "Fort Collins",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.0822335, 40.5826719]
-      },
-    Cost: "$-$$",
-    Content: "",
-    Id: 5,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "With locations in Longmont and Boulder as well, I highly recommend this cajun inspired breakfast joint.  Get there early though, it's always packed.",
-    Date: "2023-03-09T05:39:14.551Z",
-    BlogText: "",
-  },
-  {
-    Restaurant: "Pizza Casbah",
-    Cuisine: "Italian",
-    State: "Colorado",
-    City: "Fort Collins",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.0782122, 40.5781851]
-      },
-    Cost: "$-$$",
-    Content: "",
-    Id: 6,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "This New York pizza style joint was a regular lunch spot for their delicious cheese pizza by the slice.",
-    Date: "2023-03-08T05:39:14.551Z",
-    BlogText: "",
-  },
+  // {
+  //   Restaurant: "Young's Cafe",
+  //   Cuisine: "Vietnamese",
+  //   State: "Colorado",
+  //   City: "Fort Collins",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.079071, 40.541981]
+  //     },
+  //   Cost: "$-$$",
+  //   Content: "",
+  //   Id: 4,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro: "The best Vietnamese in Fort Collins with easily the best pho.",
+  //   Date: "2023-03-10T05:39:14.551Z",
+  //   BlogText: "",
+  // },
+  // {
+  //   Restaurant: "Lucile's",
+  //   Cuisine: "Cajun",
+  //   State: "Colorado",
+  //   City: "Fort Collins",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.0822335, 40.5826719]
+  //     },
+  //   Cost: "$-$$",
+  //   Content: "",
+  //   Id: 5,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro:
+  //     "With locations in Longmont and Boulder as well, I highly recommend this cajun inspired breakfast joint.  Get there early though, it's always packed.",
+  //   Date: "2023-03-09T05:39:14.551Z",
+  //   BlogText: "",
+  // },
+  // {
+  //   Restaurant: "Pizza Casbah",
+  //   Cuisine: "Italian",
+  //   State: "Colorado",
+  //   City: "Fort Collins",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.0782122, 40.5781851]
+  //     },
+  //   Cost: "$-$$",
+  //   Content: "",
+  //   Id: 6,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro:
+  //     "This New York pizza style joint was a regular lunch spot for their delicious cheese pizza by the slice.",
+  //   Date: "2023-03-08T05:39:14.551Z",
+  //   BlogText: "",
+  // },
   {
     Restaurant: "Krazy Karl's",
     Cuisine: "Italian",
@@ -134,44 +134,44 @@ const foodReviewJS = [
     Date: "2023-04-08T05:39:14.551Z",
     BlogText: "",
   },
-  {
-    Restaurant: "Bai Tong",
-    Cuisine: "Thai",
-    State: "Colorado",
-    City: "Loveland",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.0729819, 40.4040528]
-      },
-    Cost: "$$",
-    Content: "",
-    Id: 9,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "A truly unique dining experience with fantastic food and plentiful portions.",
-    Date: "2023-03-06T05:39:14.551Z",
-    BlogText: "",
-  },
-  {
-    Restaurant: "Choice City",
-    Cuisine: "American, Sandwiches",
-    State: "Colorado",
-    City: "Fort Collins",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.0773951, 40.5843979]
-      },
-    Cost: "$$",
-    Content: "",
-    Id: 10,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "Home of some of the best burgers and sandwiches in Fort Collins.",
-    Date: "2023-04-03T05:39:14.551Z",
-    BlogText: "",
-  },
+  // {
+  //   Restaurant: "Bai Tong",
+  //   Cuisine: "Thai",
+  //   State: "Colorado",
+  //   City: "Loveland",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.0729819, 40.4040528]
+  //     },
+  //   Cost: "$$",
+  //   Content: "",
+  //   Id: 9,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro:
+  //     "A truly unique dining experience with fantastic food and plentiful portions.",
+  //   Date: "2023-03-06T05:39:14.551Z",
+  //   BlogText: "",
+  // },
+  // {
+  //   Restaurant: "Choice City",
+  //   Cuisine: "American, Sandwiches",
+  //   State: "Colorado",
+  //   City: "Fort Collins",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.0773951, 40.5843979]
+  //     },
+  //   Cost: "$$",
+  //   Content: "",
+  //   Id: 10,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro:
+  //     "Home of some of the best burgers and sandwiches in Fort Collins.",
+  //   Date: "2023-04-03T05:39:14.551Z",
+  //   BlogText: "",
+  // },
   {
     Restaurant: "Himalayan Curry & Kebob",
     Cuisine: "Indian & Nepalese",
@@ -267,25 +267,25 @@ const foodReviewJS = [
     Date: "2023-03-20T05:39:14.551Z",
     BlogText: "",
   },
-  {
-    Restaurant: "Music City Hot Chicken",
-    Cuisine: "American",
-    State: "Colorado",
-    City: "Fort Collins",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.0786398, 40.5666055]
-      },
-    Cost: "$-$$",
-    Content: "",
-    Id: 17,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "Great place for some Nashville hot chicken and a side of mac and cheese.",
-    Date: "2023-03-27T05:39:14.551Z",
-    BlogText: "",
-  },
+  // {
+  //   Restaurant: "Music City Hot Chicken",
+  //   Cuisine: "American",
+  //   State: "Colorado",
+  //   City: "Fort Collins",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.0786398, 40.5666055]
+  //     },
+  //   Cost: "$-$$",
+  //   Content: "",
+  //   Id: 17,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro:
+  //     "Great place for some Nashville hot chicken and a side of mac and cheese.",
+  //   Date: "2023-03-27T05:39:14.551Z",
+  //   BlogText: "",
+  // },
   {
     Restaurant: "Mo' Betta Gumbo",
     Cuisine: "Cajun",
@@ -305,25 +305,25 @@ const foodReviewJS = [
     Date: "2023-02-12T05:39:14.551Z",
     BlogText: "",
   },
-  {
-    Restaurant: "DGT (Originally Damn Good Tacos)",
-    Cuisine: "Mexican",
-    State: "Colorado",
-    City: "Fort Collins",
-    Geometry: {
-      'type': 'Point',
-      'coordinates': [-105.078188, 40.578647]
-      },
-    Cost: "$-$$",
-    Content: "",
-    Id: 19,
-    ImageOutside: "/images/coNomNomsLogo.png",
-    FoodImages: [""],
-    BlogIntro:
-      "DGT, originally known as Damn Good Tacos (but Torchies got mad), is a great taco stop with a creative variety.",
-    Date: "2023-02-13T05:39:14.551Z",
-    BlogText: "",
-  },
+  // {
+  //   Restaurant: "DGT (Originally Damn Good Tacos)",
+  //   Cuisine: "Mexican",
+  //   State: "Colorado",
+  //   City: "Fort Collins",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': [-105.078188, 40.578647]
+  //     },
+  //   Cost: "$-$$",
+  //   Content: "",
+  //   Id: 19,
+  //   ImageOutside: "/images/coNomNomsLogo.png",
+  //   FoodImages: [""],
+  //   BlogIntro:
+  //     "DGT, originally known as Damn Good Tacos (but Torchies got mad), is a great taco stop with a creative variety.",
+  //   Date: "2023-02-13T05:39:14.551Z",
+  //   BlogText: "",
+  // },
   {
     Restaurant: "Cafe de Bangkok",
     Cuisine: "Thai",
