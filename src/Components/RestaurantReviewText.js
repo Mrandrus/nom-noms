@@ -62,6 +62,10 @@ const RestaurantReviewText = (props) => {
       return <DaeGee />
     case 7:
       return <KrazyKarls />
+    case 20:
+      return <CafeDeBangkok />
+    case 18:
+      return <MoBettaGumbo />
     default:
       return "";
   }
@@ -347,7 +351,7 @@ const BowlIzakaya = () => {
       </p>
       <br />
       <p>
-        Personal Testimony: In 2020, right before the pandemic shut everything
+        <strong>Personal Testimony:</strong> In 2020, right before the pandemic shut everything
         down, I was able to visit Japan, and it was one of the best trips I've
         ever taken. I was blown away at the quality of the cuisine at every
         restaurant we ate at. Asian food just happens to be my favorite genre of
@@ -537,3 +541,19 @@ const DaeGee = () => {
     </div>
   );
 };
+
+const MoBettaGumbo = () => {
+  return(
+    <div>
+      <p>Review Coming Soon.  In the meantime, go here, it's good.</p>
+    </div>
+  )
+}
+
+const CafeDeBangkok = () => {
+  return(
+    <div>
+      <p>Review Coming Soon.  In the meantime, go here, it's good.</p>
+    </div>
+  )
+}

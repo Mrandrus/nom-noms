@@ -583,7 +583,7 @@
 /* //////////////// Map Page //////////////// */
 .map-container {
   height: 400px;
-  width: 90%;
+  width: 80%;
   text-align: center;
   margin: auto;
   border-radius: 25px;
@@ -946,7 +946,11 @@
   }
 
   .rest-review-content {
-    width: 80%;
+    width: 90%;
+  }
+
+  .recipe-review-content {
+    width: 90%;
   }
 
   .recipe-stuff {
@@ -1027,11 +1031,44 @@
   }
 
   .recipe-page-img img {
-    height: 125px;
+    height: 150px;
+    width: 225px;
+  }
+
+  .recipe-main-food-image img {
+    height: 150px;
+    width: 250px;
+  }
+
+  .recipe-ingredients-image img {
+    height: 150px;
+    width: 250px;
+  }
+
+  .restaurant-image img {
+    height: 150px;
     width: 225px;
   }
 
   .NomNoms-logo {
     height: 20vh;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .rest-img {
+    display: none;
+  }
+
+  .rest-stuff {
+    width: 100%;
+  }
+
+  .recipe-page-img {
+    display: none;
+  }
+
+  .recipe-stuff {
+    width: 100%;
   }
 }
