@@ -21,10 +21,13 @@ function App() {
   //     .then((data) => setMessage(data.message));
   // }, []);
 
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
+
   return (
     <div className="App">
       <Header />
-
       <Footer />
     </div>
   );
