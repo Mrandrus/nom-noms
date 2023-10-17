@@ -4,7 +4,6 @@ import NomNomsLogo from "../images/coNomNomsLogo.png";
 import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
 import AppRouter from "./AppRouter";
 
-
 function Header() {
   return (
     <div className="header">
@@ -14,7 +13,7 @@ function Header() {
         </a>
       </div>
         <AppRouter />
-      </div>
+    </div>
   );
 }
 

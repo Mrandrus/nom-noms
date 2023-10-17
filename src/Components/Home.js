@@ -17,17 +17,6 @@ function Home() {
   const baseUrlRecipes = "/Recipes";
 
 
-  function ScrollToTop() {
-    const { pathname } = useLocation();
-  
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-  
-    return null;
-  }
-
-
   useEffect(() => {
     GetLatestReviews();
     GetLatestRecipes();
@@ -147,7 +136,6 @@ function Home() {
           })}
         </div>
       </div>
-      <ScrollToTop />
     </div>
   );
 }
