@@ -287,7 +287,7 @@ const foodReviewJS = [
   //   BlogText: "",
   // },
   {
-    Restaurant: "Mo' Betta Gumbo",
+    Restaurant: "Betta Gumbo",
     Cuisine: "Cajun",
     State: "Colorado",
     City: "Loveland",
