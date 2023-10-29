@@ -59,13 +59,13 @@ const RestaurantReviewText = (props) => {
     case 11:
       return <HimalayanKabob />;
     case 21:
-      return <DaeGee />
+      return <DaeGee />;
     case 7:
-      return <KrazyKarls />
+      return <KrazyKarls />;
     case 20:
-      return <CafeDeBangkok />
+      return <CafeDeBangkok />;
     case 18:
-      return <MoBettaGumbo />
+      return <BettaGumbo />;
     default:
       return "";
   }
@@ -351,20 +351,20 @@ const BowlIzakaya = () => {
       </p>
       <br />
       <p>
-        <strong>Personal Testimony:</strong> In 2020, right before the pandemic shut everything
-        down, I was able to visit Japan, and it was one of the best trips I've
-        ever taken. I was blown away at the quality of the cuisine at every
-        restaurant we ate at. Asian food just happens to be my favorite genre of
-        food, which I know is painting with a very broad brush, but it's hard to
-        pick a frontrunner between Korean, Vietnamese, Thai, Japanese, Chinese,
-        etc. I hadn't delved too deep into the Japanese library of food, but
-        while in Shinjuku and Shibuya, I was able to try pork katsu, Japanese
-        curry, okonomiyaki, Takoyaki, yakisoba, Udon, and the best ramen I've
-        ever had. When I returned to the US, I began compiling a list of
-        Japanese restaurants to check out in hopes of discovering one that could
-        resemble what I experienced in the land of the rising sun.
-        Unfortunately, just a few weeks later, everything shut down and my
-        dreams of food adventures were quelled.
+        <strong>Personal Testimony:</strong> In 2020, right before the pandemic
+        shut everything down, I was able to visit Japan, and it was one of the
+        best trips I've ever taken. I was blown away at the quality of the
+        cuisine at every restaurant we ate at. Asian food just happens to be my
+        favorite genre of food, which I know is painting with a very broad
+        brush, but it's hard to pick a frontrunner between Korean, Vietnamese,
+        Thai, Japanese, Chinese, etc. I hadn't delved too deep into the Japanese
+        library of food, but while in Shinjuku and Shibuya, I was able to try
+        pork katsu, Japanese curry, okonomiyaki, Takoyaki, yakisoba, Udon, and
+        the best ramen I've ever had. When I returned to the US, I began
+        compiling a list of Japanese restaurants to check out in hopes of
+        discovering one that could resemble what I experienced in the land of
+        the rising sun. Unfortunately, just a few weeks later, everything shut
+        down and my dreams of food adventures were quelled.
         <br />
         <br />
         It was probably a year into the pandemic and I began to venture out a
@@ -523,37 +523,82 @@ const DaeGee = () => {
       </p>
       <br />
       <p>
-        <strong>Personal Testimony:</strong> My sister and brother in-law were excited to take me
-        to Dae Gee, followed by a viewing of the new Star Wars movie, Solo. It
-        was to be a belated birthday gift, and what a gift it was. I hadn't ever
-        seen this type of restaurant setup before where you could grill the
-        meats at your own table. But I loved it. We ordered a few tall Kloud
-        beers and a bottle of Soju for the table and began adding the spicy pork
-        and beef bulgogi to the grill. I was brimming with joy to have been
-        acquainted with such a unique, delicious, and fun dining experience. We
-        feasted for well over an hour and finished our meal by grilling up a few
-        sliced pineapples. I was all smiles as we left the restaurant and headed
-        towards the movie theater. Solo was fine, albeit a tad forgettable, but
-        Dae Gee had seared its mark on my heart and I became a little Dae Gee
-        evangelist, introducing anyone who would join me, to the church of
-        bulgogi.{" "}
+        <strong>Personal Testimony:</strong> My sister and brother in-law were
+        excited to take me to Dae Gee, followed by a viewing of the new Star
+        Wars movie, Solo. It was to be a belated birthday gift, and what a gift
+        it was. I hadn't ever seen this type of restaurant setup before where
+        you could grill the meats at your own table. But I loved it. We ordered
+        a few tall Kloud beers and a bottle of Soju for the table and began
+        adding the spicy pork and beef bulgogi to the grill. I was brimming with
+        joy to have been acquainted with such a unique, delicious, and fun
+        dining experience. We feasted for well over an hour and finished our
+        meal by grilling up a few sliced pineapples. I was all smiles as we left
+        the restaurant and headed towards the movie theater. Solo was fine,
+        albeit a tad forgettable, but Dae Gee had seared its mark on my heart
+        and I became a little Dae Gee evangelist, introducing anyone who would
+        join me, to the church of bulgogi.{" "}
       </p>
     </div>
   );
 };
 
-const MoBettaGumbo = () => {
-  return(
-    <div>
-      <p>Review Coming Soon.  In the meantime, go here, it's good.</p>
-    </div>
-  )
-}
-
 const CafeDeBangkok = () => {
-  return(
+  return (
     <div>
-      <p>Review Coming Soon.  In the meantime, go here, it's good.</p>
+      <p>
+        Café De Bangkok is possibly the best Thai restaurant that Fort Collins
+        has to offer; it certainly is home to the best pad thai and drunken
+        noodles. Located on Elizabeth Street just west of Colorado State
+        University's main campus, Café De Bangkok became one of my go-to dinner
+        spots after a long work day. They offer a variety of Pad Thai options,
+        all of which are fantastic, with my personal favorite dish being their
+        spicy drunken noodles.
+      </p>
+      <br />
+      <p>
+        <strong>Personal Testimony:</strong> One cold evening after work, a coworker and I stood
+        outside our office building engaging in a deeper conversation than we
+        would typically have inside or during the workday. After about an hour
+        of shivering but locked in conversation, I suggested continuing the
+        conversation over some Thai food, and off to Café De Bangkok we went.
+        Shuffling inside out of the cold, we sat down at a cozy wooden booth. We
+        both ordered Thai iced teas and an appetizer of Gyoza and Rangoon. My
+        coworker ordered the Panang Curry, and I went for my usual drunken
+        noodles. Our heart-to-heart conversation continued as the aroma from our
+        dishes enveloped our senses. Little did I know that the coworker sitting
+        across the table from me would be my wife. Just kidding, that was
+        a dude, but we are still good friends.
+      </p>
     </div>
-  )
-}
+  );
+};
+
+const BettaGumbo = () => {
+  return (
+    <div>
+      <p>
+        Betta Gumbo, located in downtown Loveland, is a great weekend excursion
+        for some New Orleans-inspired cuisine. Evidently, there is one in
+        Windsor as well, which I just discovered—pretty neat. The restaurant
+        sits right next to Loveland's Metropolitan Metrolux Theatres and is the
+        perfect date night combination. I recommend their house gumbo, seafood
+        gumbo, mac and cheese, and their nawlins pasta.
+      </p>
+      <br />
+      <p>
+        <strong>Personal Testimony:</strong> It was a cool summer night, and my
+        roommate and I decided to go see an earlier showing of the film, “The
+        Green Knight.” The film is based on an old Arthurian poem brought to the
+        big screen and holds the same level of metaphor and complexity as the
+        poem. It was certainly not an action flick, but it did feel like a deep,
+        fantastical epic, and in its depth and strangeness, I found enjoyment.
+        After the movie, we enjoyed a hearty meal at Betta Gumbo. I ordered
+        their gumbo and a chili mule, a spicy take on a Moscow mule. Their drink
+        menu is extensive and diverse, with a collection of mules, hurricanes,
+        and custom cocktails. We sat and pondered the film's meanings and
+        motifs, all the while enjoying our Cajun dishes and cocktails. 10/10
+        would do it again.
+      </p>
+    </div>
+  );
+};
