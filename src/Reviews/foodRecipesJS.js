@@ -103,20 +103,50 @@ const foodRecipesJS = [
     Id: 5,
     Image: "/images/coNomNomsLogo.png",
     IngredientsImage: [""],
-    Ingredients:
-      "A lot of stuff. ",
+    Ingredients: "A lot of stuff. ",
     Description: "Recipe coming soon yo.",
     StepImages: [""],
   },
   {
-    Recipe: "Jalapeno Salsa",
+    Recipe: "Roasted Tomatillo Salsa Version One",
     Cuisine: "Mexican",
     Id: 6,
-    Image: "/images/coNomNomsLogo.png",
-    IngredientsImage: [""],
-    Ingredients: ["Jalapenos, Onion, Garlic, Cilantro, Canola oil, Salt"],
-    Description: "Recipe coming soon broooooo.",
-    StepImages: [""],
+    Image: "/images/tomatillo_salsa_v1.jpg",
+    IngredientsImage: ["/images/tomatillo_salsa_ingredients.jpg"],
+    Ingredients: [
+      "5-6 Tomatillos",
+      "2-3 Jalapenos",
+      "Quarter of an Onion",
+      "4-5 Garlic cloves",
+      "Cilantro",
+      "Canola oil",
+    ],
+    Description:
+      "Roasting all the ingredients under the broiler for a thicker salsa.",
+    StepImages: ["/images/tomatillo_salsa_v1_step.jpg"],
+  },
+  {
+    Recipe: "Roasted Tomatillo Salsa Version Two",
+    Cuisine: "Mexican",
+    Id: 7,
+    Image: "/images/tomatillo_salsa_v2.jpg",
+    IngredientsImage: ["/images/tomatillo_salsa_ingredients.jpg"],
+    Ingredients: [
+      "5-6 Tomatillos",
+      "2-3 Jalapenos",
+      "Quarter of an Onion",
+      "4-5 Garlic cloves",
+      "Cilantro",
+      "Canola oil",
+    ],
+    Description:
+      "Roasted tomatillo salsa where you roast the tomatillos under the broiler and pan fry the jalapenos, garlic, and onion.",
+    StepImages: [
+      "/images/tomatillo_salsa_v2_step1.jpg",
+      "/images/tomatillo_salsa_v2_step2.jpg",
+      "/images/tomatillo_salsa_v2_step3.jpg",
+      "/images/tomatillo_salsa_v2_step4.jpg",
+    ],
   },
 ];
 

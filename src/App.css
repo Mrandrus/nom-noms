@@ -102,7 +102,7 @@
 }
 
 .nom-container-one {
-  background-color: #bf0a30;
+  background-color: #002868;
   color: #ffffff;
   width: 100%;
   display: flex;
@@ -139,6 +139,7 @@
   justify-content: center;
   align-self: center;
   text-align: center;
+  min-height: 45vh;
   /* gap: 5rem; */
 }
 
@@ -147,7 +148,7 @@
   width: 100%;
   text-align: center;
   justify-content: center;
-  background-color: #002868;
+  background-color: #bf0a30;
   color: #ffffff;
   transition: 1s ease-in-out;
 }
@@ -393,6 +394,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  min-height: 45vh;
   /* gap: 5rem; */
 }
 
@@ -659,7 +661,7 @@
 .footer {
   display: flex;
   flex-direction: row;
-  background-color: #bf0a30;
+  background-color: #002868;
   padding: 15px;
 }
 
@@ -700,7 +702,7 @@
 }
 
 .footerMenu a:hover {
-  color: #002868;
+  color: #bf0a30;
   text-decoration: underline;
 }
 
