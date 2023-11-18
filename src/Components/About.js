@@ -1,7 +1,21 @@
 import "../App.css";
-import chefMatt from "../images/matt_chef.jpg";
+import chefMatt from "../images/chef_mert.jpg";
+import mert from "../images/pic_me.jpg";
+import { useState } from "react";
+
 
 function About() {
+
+  const [pic, setPic] = useState(mert)
+
+  const changPic = () => {
+    setPic(chefMatt)
+  }
+
+  const changePicTwo = () => {
+    setPic(mert)
+  }
+
   return (
     <div className="aboutPage">
       <div className="aboutSectionOne">
@@ -17,7 +31,7 @@ function About() {
         </p>
       </div>
       <div className="aboutSectionTwo">
-        <img src={chefMatt} className="chefMert" alt="chefMert" />
+        <img src={pic} onMouseOver={changPic} onMouseLeave={changePicTwo} className="chefMert" alt="chefMert" />
       </div>
     </div>
   );
