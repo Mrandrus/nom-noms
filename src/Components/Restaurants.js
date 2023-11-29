@@ -7,6 +7,7 @@ import jsonReviewData from "../Reviews/foodReviewJS";
 import $ from "jquery";
 import { usePageWidth } from "../hooks";
 import RestaurantReviewText from "./RestaurantReviewText";
+import { Helmet } from "react-helmet";
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
@@ -189,6 +190,10 @@ const RestaurantList = () => {
 };
 
 const RestaurantReview = ({ restaurant }) => {
+  if (!restaurant) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="rest-review-content">
       <h1>{restaurant?.Restaurant}</h1>
@@ -222,6 +227,9 @@ const RestaurantReview = ({ restaurant }) => {
             );
           }
         })}
+      </div>
+      <div>
+        <UpdateMetaTags data={!restaurant ? null : restaurant}/>
       </div>
     </div>
   );
@@ -277,6 +285,29 @@ const CusineDrop = ({ cuisines }) => {
   );
 };
 
+//Uses React Helmet to dynamically alter meta tags based off
+const UpdateMetaTags = (data) => {
+
+  console.log('Data in UpdateMetaTags:', data);
+
+  if (!data) {
+    return null
+  }
+
+  const restData = data
+
+  return (
+    <Helmet>
+      <title>Colorado Nom Noms {restData?.data.Restaurant}</title>
+      <meta name="description" content={restData?.data.BlogIntro} />
+      <meta
+        name="keywords"
+        content={`${restData?.data.Restaurant}, ${restData?.data.Cuisine}, ${restData?.data.State}, ${restData?.data.City}, Colorado Nom Noms, Matt Andrus, Reviews, Restaurants`}
+      />
+    </Helmet>
+  );
+};
+
 /* === JS HELPERS === */
 function getArray(data) {
   return Array.isArray(data) === true ? data : [];
@@ -285,3 +316,4 @@ function getArray(data) {
 function removeDuplicatesByKey(arr, key) {
   return [...new Map(arr.map((item) => [item[key], item])).values()];
 }
+

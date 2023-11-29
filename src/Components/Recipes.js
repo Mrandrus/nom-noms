@@ -17,6 +17,7 @@ import Recipe from "./RecipeText";
 import styles from "./Restaurants.module.css";
 import { usePageWidth } from "../hooks";
 import RecipeText from "./RecipeText";
+import { Helmet } from "react-helmet";
 
 const baseUrlRecipes = "/Recipes";
 
@@ -174,6 +175,10 @@ const RecipeList = () => {
 };
 
 const ActualRecipe = ({ recipe }) => {
+  if (!recipe) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="recipe-review-content">
       <h1>{recipe.Recipe}</h1>
@@ -185,6 +190,9 @@ const ActualRecipe = ({ recipe }) => {
         <RecipeText props={recipe} />
       </div>
       <br />
+      <div>
+        <UpdateMetaTags data={!recipe ? null : recipe}/>
+      </div>
     </div>
   );
 };
@@ -236,6 +244,29 @@ const CuisineDrop = ({ cuisines }) => {
       </div>
       {/* </select> */}
     </>
+  );
+};
+
+//Uses React Helmet to dynamically alter meta tags based off
+const UpdateMetaTags = (data) => {
+
+  console.log('Data in UpdateMetaTags:', data);
+
+  if (!data) {
+    return null
+  }
+
+  const recipe = data
+
+  return (
+    <Helmet>
+      <title>Colorado Nom Noms {recipe?.data.Recipe}</title>
+      <meta name="description" content={recipe?.data.Description} />
+      <meta
+        name="keywords"
+        content={`${recipe?.data.Recipe}, ${recipe?.data.Cuisine}, Colorado Nom Noms, Matt Andrus, Recipes, Food`}
+      />
+    </Helmet>
   );
 };
 
