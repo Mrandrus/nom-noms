@@ -298,7 +298,7 @@ const UpdateMetaTags = (data) => {
 
   return (
     <Helmet>
-      <title>Colorado Nom Noms {restData?.data.Restaurant}</title>
+      {/* <title>Colorado Nom Noms {restData?.data.Restaurant}</title> */}
       <meta name="description" content={restData?.data.BlogIntro} />
       <meta
         name="keywords"
