@@ -7,6 +7,7 @@ import jsonReviewData from "../Reviews/foodReviewJS";
 import $ from "jquery";
 import { usePageWidth } from "../hooks";
 import RestaurantReviewText from "./RestaurantReviewText";
+import { Helmet } from "react-helmet";
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
@@ -189,6 +190,10 @@ const RestaurantList = () => {
 };
 
 const RestaurantReview = ({ restaurant }) => {
+  if (!restaurant) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="rest-review-content">
       <h1>{restaurant?.Restaurant}</h1>
@@ -222,6 +227,9 @@ const RestaurantReview = ({ restaurant }) => {
             );
           }
         })}
+      </div>
+      <div>
+        <UpdateMetaTags data={!restaurant ? null : restaurant} />
       </div>
     </div>
   );
@@ -274,6 +282,39 @@ const CusineDrop = ({ cuisines }) => {
       </div>
       {/* </select> */}
     </>
+  );
+};
+
+//Uses React Helmet to dynamically alter meta tags based off
+const UpdateMetaTags = (data) => {
+  console.log("Data in UpdateMetaTags:", data);
+
+  if (!data) {
+    return null;
+  }
+
+  const restData = data;
+
+  return (
+    <Helmet>
+      {/* <title>Colorado Nom Noms {restData?.data.Restaurant}</title> */}
+      <meta name="description" content={restData?.data.BlogIntro} />
+      <meta
+        name="keywords"
+        content={`${restData?.data.Restaurant}, ${restData?.data.Cuisine}, ${restData?.data.State}, ${restData?.data.City}, Colorado Nom Noms, Matt Andrus, Reviews, Restaurants`}
+      />
+      {/* Open Graph meta tags for better social media sharing */}
+      <meta property="og:title" content={restData?.data.Restaurant} />
+      <meta property="og:description" content={restData?.data.BlogIntro} />
+      <meta property="og:image" content={restData?.data.ImageOutside} />
+      <meta property="og:type" content="restaurant" />
+
+      {/* Twitter Card meta tags for Twitter sharing */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={restData?.data.Restaurant} />
+      <meta name="twitter:description" content={restData?.data.BlogIntro} />
+      <meta name="twitter:image" content={restData?.data.ImageOutside} />
+    </Helmet>
   );
 };
 

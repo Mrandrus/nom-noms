@@ -394,13 +394,31 @@ const foodReviewJS = [
     Content: "",
     Id: 23,
     ImageOutside: "/images/tortilla_factory_outside.jpg",
-    // ImageOutside: Image("regional_outside_img"),
     FoodImages: [""],
     BlogIntro:
       "Located in downtown loveland, this is the best place to get your tortillas and try all their different burritos.",
     Date: "2023-07-12T05:39:14.551Z",
     BlogText: "",
   },
+  // {
+  //   Restaurant: "Tacos El Torito Loko",
+  //   Cuisine: "Mexican",
+  //   State: "Colorado",
+  //   City: "Fort Collins, Loveland",
+  //   Geometry: {
+  //     'type': 'Point',
+  //     'coordinates': []
+  //     },
+  //   Cost: "$-$$",
+  //   Content: "",
+  //   Id: 24,
+  //   ImageOutside: "/images/el_torito_loko.jpg",
+  //   FoodImages: ["/images/el_torito_loko_plate.jpg"],
+  //   BlogIntro:
+  //     "Food truck that operates across the front range providing delicous and unique Mexican plates.",
+  //   Date: "2023-10-12T05:39:14.551Z",
+  //   BlogText: "",
+  // },
 ];
 
 export default foodReviewJS;

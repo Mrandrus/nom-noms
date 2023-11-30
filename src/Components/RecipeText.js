@@ -34,7 +34,9 @@ function RecipeText(props) {
     case 5:
       return <Gyro />;
     case 6:
-      return <JalapenoSalsa />;
+      return <TomatilloSalsaV1 recipe={recipeId.props} />;
+    case 7:
+      return <TomatilloSalsaV2 recipe={recipeId.props} />;
     default:
       return "";
   }
@@ -55,14 +57,101 @@ const Gyro = () => {
   );
 };
 
-const JalapenoSalsa = () => {
+const TomatilloSalsaV1 = ({ recipe }) => {
   return (
     <div>
-      <h3>Coming Soon</h3>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          Cut a quarter of an onion into wedges, halve the jalapenos and
+          tomatillos, and leave the peels on the garlic.
+        </p>
+        <p>
+          Set the oven broiler on high and place tomatillos, garlic, onion, and
+          jalapenos on a baking sheet, and place under broiler on top oven
+          shelf.
+        </p>
+        <p>
+          Wait 3-5 minutes or until contents begin to char, then flip and roast
+          for another 3-5 minutes.
+        </p>
+        <p>
+          Remove the charred garlic peel and add everything to a blender with about a cup of fresh cilantro, 1/4
+          cup of canola oil, and a tablespoon of salt. Blend and add additional
+          salt to taste if necessary. The result will be a thicker smokier
+          salsa. Enjoy with chips or add to tacos.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
     </div>
   );
 };
 
+const TomatilloSalsaV2 = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          Cut a quarter of an onion into wedges, halve the jalapenos and
+          tomatillos, and remove the peels from the garlic cloves.
+        </p>
+        <p>
+          Set the oven broiler on high and place tomatillos on a baking sheet,
+          and place under broiler on top oven shelf.
+        </p>
+        <p>
+          Wait 3-5 minutes or until tomatillos begin to char, then flip and
+          roast for another 3-5 minutes.
+        </p>
+        <p>
+          Pan fry the jalapenos until both sides take on a brownish color.
+          Remove jalapenos and add onion and garlic to pan, remove when onion is
+          translucent and garlic is browned.
+        </p>
+        <p>
+          Add everything to a blender with about a cup of fresh cilantro, 1/4
+          cup of canola oil, and a tablespoon of salt. Blend and add additional
+          salt to taste if necessary. The result will be a lighter and runnier
+          salsa. Enjoy with chips or add to tacos.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
+    </div>
+  );
+};
 const ShrimpScampi = () => {
   return (
     <div>
