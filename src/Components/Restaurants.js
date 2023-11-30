@@ -229,7 +229,7 @@ const RestaurantReview = ({ restaurant }) => {
         })}
       </div>
       <div>
-        <UpdateMetaTags data={!restaurant ? null : restaurant}/>
+        <UpdateMetaTags data={!restaurant ? null : restaurant} />
       </div>
     </div>
   );
@@ -287,14 +287,13 @@ const CusineDrop = ({ cuisines }) => {
 
 //Uses React Helmet to dynamically alter meta tags based off
 const UpdateMetaTags = (data) => {
-
-  console.log('Data in UpdateMetaTags:', data);
+  console.log("Data in UpdateMetaTags:", data);
 
   if (!data) {
-    return null
+    return null;
   }
 
-  const restData = data
+  const restData = data;
 
   return (
     <Helmet>
@@ -304,6 +303,17 @@ const UpdateMetaTags = (data) => {
         name="keywords"
         content={`${restData?.data.Restaurant}, ${restData?.data.Cuisine}, ${restData?.data.State}, ${restData?.data.City}, Colorado Nom Noms, Matt Andrus, Reviews, Restaurants`}
       />
+      {/* Open Graph meta tags for better social media sharing */}
+      <meta property="og:title" content={restData?.data.Restaurant} />
+      <meta property="og:description" content={restData?.data.BlogIntro} />
+      <meta property="og:image" content={restData?.data.ImageOutside} />
+      <meta property="og:type" content="restaurant" />
+
+      {/* Twitter Card meta tags for Twitter sharing */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={restData?.data.Restaurant} />
+      <meta name="twitter:description" content={restData?.data.BlogIntro} />
+      <meta name="twitter:image" content={restData?.data.ImageOutside} />
     </Helmet>
   );
 };
@@ -316,4 +326,3 @@ function getArray(data) {
 function removeDuplicatesByKey(arr, key) {
   return [...new Map(arr.map((item) => [item[key], item])).values()];
 }
-
