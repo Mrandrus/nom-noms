@@ -40,6 +40,7 @@ function Home() {
     const recipeArray = [];
 
     recipeArray.push(...jsonRecipeData);
+    recipeArray.reverse()
     recipeArray.length = 3;
     setRecipes(recipeArray);
   };
@@ -129,7 +130,7 @@ function Home() {
                     height={200}
                     width={350}
                   />
-                  <p>{p?.Description}</p>
+                  <p style={{padding: "15px"}}>{p?.Description}</p>
                 </Link>
               </div>
             );
