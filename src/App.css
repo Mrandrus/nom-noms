@@ -532,6 +532,10 @@
   border-radius: 10px;
 }
 
+.recipe-ingredients-image-none img {
+  display: none;
+}
+
 .recipe-instructions-images {
   display:flex;
   flex-direction:row;

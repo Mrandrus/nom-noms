@@ -195,6 +195,35 @@ const foodRecipesJS = [
       "/images/tomatillo_salsa_v2_step4.jpg",
     ],
   },
+  {
+    Recipe: "Fried Chicken",
+    Cuisine: "American",
+    Id: 8,
+    Image: "/images/fried_chicken_plate.jpg",
+    IngredientsImage: [""],
+    Ingredients: [
+      "Chicken tenders",
+      "Buttermilk",
+      "Mustard",
+      "Pickle juice",
+      "1 egg",
+      "Flour",
+      "Chili powder",
+      "Smoked paprika",
+      "Garlic powder",
+      "Salt",
+      "Pepper",
+      "Canola oil",
+    ],
+    Description:
+      "Fried chicken tenders to rival that of your favorite chicken joint.",
+    StepImages: [
+      "/images/fried_chicken_step1.jpg",
+      "/images/fried_chicken_step2.jpg",
+      "/images/fried_chicken_step3.jpg",
+      "/images/fried_chicken_step4.jpg",
+    ],
+  },
 ];
 
 export default foodRecipesJS;
