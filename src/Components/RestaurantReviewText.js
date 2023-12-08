@@ -66,6 +66,8 @@ const RestaurantReviewText = (props) => {
       return <CafeDeBangkok />;
     case 18:
       return <BettaGumbo />;
+    case 24:
+      return <TacosElToritoLoko />;
     default:
       return "";
   }
@@ -556,18 +558,18 @@ const CafeDeBangkok = () => {
       </p>
       <br />
       <p>
-        <strong>Personal Testimony:</strong> One cold evening after work, a coworker and I stood
-        outside our office building engaging in a deeper conversation than we
-        would typically have inside or during the workday. After about an hour
-        of shivering but locked in conversation, I suggested continuing the
-        conversation over some Thai food, and off to Café De Bangkok we went.
-        Shuffling inside out of the cold, we sat down at a cozy wooden booth. We
-        both ordered Thai iced teas and an appetizer of Gyoza and Rangoon. My
-        coworker ordered the Panang Curry, and I went for my usual drunken
-        noodles. Our heart-to-heart conversation continued as the aroma from our
-        dishes enveloped our senses. Little did I know that the coworker sitting
-        across the table from me would be my wife. Just kidding, that was
-        a dude, but we are still good friends.
+        <strong>Personal Testimony:</strong> One cold evening after work, a
+        coworker and I stood outside our office building engaging in a deeper
+        conversation than we would typically have inside or during the workday.
+        After about an hour of shivering but locked in conversation, I suggested
+        continuing the conversation over some Thai food, and off to Café De
+        Bangkok we went. Shuffling inside out of the cold, we sat down at a cozy
+        wooden booth. We both ordered Thai iced teas and an appetizer of Gyoza
+        and Rangoon. My coworker ordered the Panang Curry, and I went for my
+        usual drunken noodles. Our heart-to-heart conversation continued as the
+        aroma from our dishes enveloped our senses. Little did I know that the
+        coworker sitting across the table from me would be my wife. Just
+        kidding, that was a dude, but we are still good friends.
       </p>
     </div>
   );
@@ -606,9 +608,42 @@ const BettaGumbo = () => {
 const TacosElToritoLoko = () => {
   return (
     <div>
-      <p>Dance with.......</p>
+      <p>
+        Tacos El Torito Loko is a food truck that operates around Northern
+        Colorado, check out their website <a href="https://www.tacostoritoloko.com/schedule.html">HERE</a> for locations and schedule. While I
+        still must work my way through their whole menu, I keep finding myself
+        returning to the burrito banado with spicy green chili and alternating
+        between offered meats. Their asada, pastor, and carnitas are all
+        excellent and it often becomes a formidable dilemma on determining which
+        to include in my entrée. If you're looking to try all their meats
+        however, ordering the street tacos is absolutely the play.
+      </p>
       <br />
-      <p>Me</p>
+      <p>
+        <strong>Personal Testimony:</strong> Tacos El Torito Loko is a food truck I discovered on one of my routes
+        when I worked as an amazon delivery driver, and it turned an otherwise
+        slog of a day into an uplifting excursion into Mexican cuisine. My route
+        took me near the new construction of the Amazon supercenter/death star
+        in Northern Colorado. Parked near the small neighborhood of mobile
+        construction offices was a long line of workers at this red food truck.
+        I thought, as I drove by, perhaps one day I would take my lunch break
+        and try this place out. I weaved through a cluster of businesses and my
+        route took me back around Tacos El Torito Loko, this time there was no
+        line. I parked, started my lunch break, and ordered the burrito banado
+        with carnitas. The staff promptly put my food together, and within
+        minutes I was sitting in my van ready to dig in.
+      </p>
+      <p>
+        I excitedly opened my box of food, and the contents were glorious. The
+        burrito was smothered in green chili and cheese with generous scoops of
+        sour cream and guacamole. With each bite, I ascended to a new plain of
+        reality, I was no longer a delivery driver for the Man with 107 stops
+        remaining on my route, I was eating a delicious meal in a van that
+        operated outside of time. The food completely boosted my mood for the
+        day, and I can't recommend taking a trip to Maxline Brewing, Zwei
+        brewing, or wherever else the food truck posts up to serve the public
+        fantastic Mexican food.
+      </p>
     </div>
-  )
-}
+  );
+};

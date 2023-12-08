@@ -32,7 +32,7 @@ function RecipeText(props) {
     case 4:
       return <ShrimpScampi />;
     case 5:
-      return <Gyro />;
+      return <ChickenGyro recipe={recipeId.props} />;
     case 6:
       return <TomatilloSalsaV1 recipe={recipeId.props} />;
     case 7:
@@ -49,10 +49,102 @@ function getArray(data) {
   return Array.isArray(data) === true ? data : [];
 }
 
-const Gyro = () => {
+const ChickenGyro = ({ recipe }) => {
   return (
     <div>
-      <h3>Coming Soon</h3>
+      <div className="recipe-ingredients">
+        <h3>Chicken Marinade</h3>
+        <ul>
+          {getArray(recipe?.Ingredients)
+            .slice(0, 18)
+            .map((p, q) => {
+              return <li key={q}>{p}</li>;
+            })}
+        </ul>
+        <br />
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-ingredients">
+        <h3>Basmati Rice</h3>
+        <ul>
+          {getArray(recipe?.Ingredients)
+            .slice(18, 27)
+            .map((p, q) => {
+              return <li key={q}>{p}</li>;
+            })}
+        </ul>
+        <br />
+        <h3>White Sauce</h3>
+        <ul>
+          {getArray(recipe?.Ingredients)
+            .slice(27, recipe?.Ingredients.length)
+            .map((p, q) => {
+              return <li key={q}>{p}</li>;
+            })}
+        </ul>
+      </div>
+
+      <div className="recipe-instructions">
+        <h3>Chicken instructions</h3>
+        <p>
+          In a large bowl mix one part mayo and one part greek yogurt, I used
+          about 3 ibs of chicken thighs equating to 1 and one 1/2 cups of mayo
+          and yogurt. Add juice of half a lemon, 1 tbsp olive oil, 2 tbsp garlic
+          powder, 1 tbsp ground cumin, 2 tbsp salt, 1 tbsp pepper, 1 tbsp smoked
+          paprika, 1 tsp onion powder, 1 tsp coriander, and 1 tsp cinnamon. Add
+          thighs to bowl and mix thoroughly. Let the thighs rest in the marinade
+          for a few hours, overnight is my favorite option.
+        </p>
+        <p>
+          Get your cast iron or your griddle ripping hot, then add your chicken
+          thighs. Get a nice char on one side before you flip the thighs.
+          Continue cooking and remove when internal temperature reaches 165
+          degrees.
+        </p>
+        <div className="recipe-instructions-images">
+          {getArray(
+            recipe?.StepImages.slice(0, 5).map((p, q) => {
+              return <img src={p} key={q} alt={NomNomsLogo} />;
+            })
+          )}
+        </div>
+        <h3>Rice instructions</h3>
+        <p>
+          In a deep frying pan, add 2 tsp of butter and set stove heat to
+          medium. Dice half of an onion and to pan. Add 1 tsp of tumeric, 1 tsp
+          ginger, 1 tsp garlic, 2 cups of rice, stir in pan. Add 4 cups of
+          chicken stock and bring to boil, then turn heat down to lowest
+          setting, cover, and let cook for about 15 to 20 minutes. Check to see
+          if rice is done, if it is add another 2 tsp of butter and stir.
+        </p>
+        <div className="recipe-instructions-images">
+          {getArray(
+            recipe?.StepImages.slice(5, 7).map((p, q) => {
+              return <img src={p} key={q} alt={NomNomsLogo} />;
+            })
+          )}
+        </div>
+        <h3>White Sauce instructions</h3>
+        <p>
+          In a bowl mix 1 cup of mayo, 1 cup of greek yogurt, 1 tbsp salt, 1
+          tbsp oregano, juice of half lemon, 1 tsp olive oil, 1 tbsp garlic, 2
+          tsp fresh dill, and mix thoroughly.
+        </p>
+        <p>Dice cucumber, tomato, and lettuce.</p>
+        <p>
+          Heat up pita/gyro in oven or microwave then fill with rice, veggies,
+          diced chicken, and plenty of the sauce. Enjoy.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.slice(7, recipe.StepImages.length).map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
     </div>
   );
 };
@@ -86,10 +178,11 @@ const TomatilloSalsaV1 = ({ recipe }) => {
           for another 3-5 minutes.
         </p>
         <p>
-          Remove the charred garlic peel and add everything to a blender with about a cup of fresh cilantro, 1/4
-          cup of canola oil, and a tablespoon of salt. Blend and add additional
-          salt to taste if necessary. The result will be a thicker smokier
-          salsa. Enjoy with chips or add to tacos.
+          Remove the charred garlic peel and add everything to a blender with
+          about a cup of fresh cilantro, 1/4 cup of canola oil, and a tablespoon
+          of salt. Blend and add additional salt to taste if necessary. The
+          result will be a thicker smokier salsa. Enjoy with chips or add to
+          tacos.
         </p>
       </div>
       <div className="recipe-instructions-images">
