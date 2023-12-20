@@ -146,8 +146,8 @@ const ChickenGyro = ({ recipe }) => {
         <h3>Chicken instructions</h3>
         <p>
           In a large bowl mix one part mayo and one part greek yogurt, I used
-          about 3 ibs of chicken thighs equating to 1 and one 1/2 cups of mayo
-          and yogurt. Add juice of half a lemon, 1 tbsp olive oil, 2 tbsp garlic
+          about 3 ibs of chicken thighs equating to 2/3 cup of mayo and 2/3 cup
+          of yogurt. Add juice of half a lemon, 1 tbsp olive oil, 2 tbsp garlic
           powder, 1 tbsp ground cumin, 2 tbsp salt, 1 tbsp pepper, 1 tbsp smoked
           paprika, 1 tsp onion powder, 1 tsp coriander, and 1 tsp cinnamon. Add
           thighs to bowl and mix thoroughly. Let the thighs rest in the marinade

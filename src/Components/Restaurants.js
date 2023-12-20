@@ -301,7 +301,7 @@ const UpdateMetaTags = (data) => {
       <meta name="description" content={restData?.data.BlogIntro} />
       <meta
         name="keywords"
-        content={`${restData?.data.Restaurant}, ${restData?.data.Cuisine}, ${restData?.data.State}, ${restData?.data.City}, Colorado Nom Noms, Matt Andrus, Reviews, Restaurants`}
+        content={`${restData?.data.Restaurant}, ${restData?.data.Cuisine}, ${restData?.data.State}, ${restData?.data.City}, Colorado Nom Noms, Matt Andrus, Reviews, Restaurants, restaurants, noms, nomnoms`}
       />
       {/* Open Graph meta tags for better social media sharing */}
       <meta property="og:title" content={restData?.data.Restaurant} />

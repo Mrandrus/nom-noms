@@ -411,6 +411,14 @@
   padding-inline-start: 0px;
 }
 
+.recipe-disclaimer {
+  background-color: #bf0a30;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
 .recipe-page-content {
   text-align: left;
   width: 60%;
