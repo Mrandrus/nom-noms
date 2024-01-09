@@ -152,8 +152,8 @@ const RecipeList = () => {
                   <img
                     src={r.Image}
                     alt={`${r.Recipe}-image`}
-                    height={100}
-                    width={200}
+                    // height={100}
+                    // width={200}
                   />
                 </div>
                 <div className="recipe-stuff">

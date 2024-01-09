@@ -29,8 +29,8 @@ function RecipeText(props) {
       return <Spaghetti recipe={recipeId.props} />;
     case 3:
       return <Lasagna recipe={recipeId.props} />;
-    case 4:
-      return <ShrimpScampi />;
+    // case 4:
+    //   return <ShrimpScampi />;
     case 5:
       return <ChickenGyro recipe={recipeId.props} />;
     case 6:
@@ -39,6 +39,8 @@ function RecipeText(props) {
       return <TomatilloSalsaV2 recipe={recipeId.props} />;
     case 8:
       return <FriedChicken recipe={recipeId.props} />;
+    case 9:
+      return <Sundubu recipe={recipeId.props} />;
     default:
       return "";
   }
@@ -451,6 +453,71 @@ const Spaghetti = ({ recipe }) => {
           pepper to taste. You can let sauce simmer for a little longer if
           necessary in order to thicken, if not serve over noodles with grated
           parmesan.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Sundubu = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instructions">
+        <p>First we're going to the make the sundubu paste.</p>
+        <p>
+          In a frying pan or wok heat add sesame oil and heat to medium heat.
+          Add scallions and ground pork to pan, cook until meat starts to cook
+          then add diced yellow onion. Stir consistently until onion is
+          translucent then add minced garlic and ginger, stirring for 1 to 2
+          minutes. Add gochujang and gochugaru and lower heat to medium low.
+          Stir everything together and be prepared to cough, I recommend opening
+          a few windows as the air quality in your kitchen will show a dramatic
+          uptick in spice. When much of the moisture has been absorbed, add
+          salt, sugar, pepper, and soy sauce. Stir everything into a paste. Turn
+          off the heat and set aside the amount of the sundubu paste you'd like
+          to use and put the rest in a freezer bag and store in your freezer.{" "}
+        </p>
+        <p>
+          I like to use 3 to 4 tablespoons of the paste per cup of chicken
+          stock, you can adjust paste ratio you'd like it more or less spicy. If
+          you don't have chicken stock, you can use water. If I don't have
+          chicken stock, I like to add chicken bullion to the water to enhance
+          the flavor. In a pot add 2 cups of chicken stock, add your paste, and
+          bring to a boil, stirring everything together. Lower heat to medium to
+          medium low, I like to let the stew cook down a little, you can always
+          add more or less stock/water to adjust spice level as well. Add silken
+          tofu (14 oz packet) and some additional scallions, you can always add
+          shitake mushrooms or your preference of shellfish. Stir together and
+          let simmer, breaking up the larger pieces of tofu. Taste for salt, add
+          however many eggs to however many bowls you are serving, ladle stew
+          over top of the eggs, careful not to break the yolk. You can also
+          achieve a nice soft-boiled egg by cooking it in water at 150F for 30
+          minutes. Add chopped green onion and ladle over rice.
+        </p>
+        <p>
+          For rice, I personally like to either add coconut oil to the 2 to 1
+          water to rice ratio or use 1 can of coconut milk supplementing the
+          rest of the 2 to 1 ratio with water. I recommend washing your rice
+          thoroughly and adding salt to your rice cooker, instant pot, pot, or
+          however you're cooking rice.
         </p>
       </div>
       <div className="recipe-instructions-images">
