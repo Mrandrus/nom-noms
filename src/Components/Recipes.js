@@ -46,7 +46,7 @@ const Recipes = () => {
       </div>
       <div className="recipe-disclaimer">
         <h4>
-          Disclaimer: these are not always(or ever) authentic recipes and may be
+          Disclaimer: these are not always (or ever) authentic recipes and may be
           subjected to change over time.
         </h4>
       </div>

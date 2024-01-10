@@ -228,7 +228,7 @@ const foodRecipesJS = [
     Recipe: "Sundubu-Jjigae",
     Cuisine: "Korean",
     Id: 9,
-    Image: "/images/sundubu_plate.jpg",
+    Image: "/images/sundubu_step_four.jpg",
     IngredientsImage: ["/images/sundubu_ingredients.jpg"],
     Ingredients: [
       "2 tbsp gochujang paste",
@@ -256,6 +256,7 @@ const foodRecipesJS = [
       "/images/sundubu_step_two.jpg",
       "/images/sundubu_step_three.jpg",
       "/images/sundubu_step_four.jpg",
+      "/images/sundubu_plate.jpg"
     ],
   },
 ];
