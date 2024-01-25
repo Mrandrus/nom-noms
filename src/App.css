@@ -544,8 +544,8 @@
 }
 
 .recipe-instructions-images {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -608,8 +608,8 @@
 }
 
 .map-stuff {
-  font-weight: 500; 
-  padding:6px 12px;
+  font-weight: 500;
+  padding: 6px 12px;
   border-radius: 5px;
 }
 
@@ -622,11 +622,10 @@
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 5px;
-
 }
 
 .map-clicked-data {
-  color:#002868;
+  color: #002868;
   padding: 6px 12px;
   transition: 1s ease-in-out;
 }
@@ -636,7 +635,7 @@
 }
 
 .map-clicked-data a {
-  color:#002868;
+  color: #002868;
   text-decoration: none;
 }
 
@@ -647,7 +646,7 @@
 }
 
 .map-sidebar {
-  background-color:#bf0a30;
+  background-color: #bf0a30;
   color: #fff;
   padding: 6px 12px;
   font-family: monospace;
@@ -666,11 +665,11 @@
   border: 2px solid #002868;
   border-radius: 50%; /* Makes it circular */
   transform: translate(-50%, -50%); /* Center the marker */
-  }
+}
 
-  .customMarker:hover {
-    border:2px solid #ffd700;
-  }
+.customMarker:hover {
+  border: 2px solid #ffd700;
+}
 
 /* //////////////// Footer //////////////// */
 .footer {
@@ -785,21 +784,51 @@
 
   .burger-links.none {
     display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 2s ease, transform 2s ease;
   }
 
-  .burger-links.active {
+  ul.burger-links.active {
     display: flex;
     flex-direction: column;
-    /* position: absolute; */
-    /* top: 70px;
-      right: 10px; */
     background-color: #002868;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
     justify-content: center;
     align-items: center;
     gap: 5px;
     box-shadow: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  ul.buerMenuu.none {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 2s ease, transform 2s ease;
+  }
+
+  .burgerMenuu.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .headerMenu-burger {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #002868;
+  }
+
+  .headerMenu-burger li {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.5rem;
   }
 
   /* .navRestaurants {
@@ -996,12 +1025,12 @@
     width: 550px;
   }
 
-  .recipe-main-food-image img{
+  .recipe-main-food-image img {
     height: 300px;
     width: 550px;
   }
 
-  .recipe-ingredients-image img{
+  .recipe-ingredients-image img {
     height: 300px;
     width: 550px;
   }
@@ -1031,12 +1060,12 @@
     width: 350px;
   }
 
-  .recipe-main-food-image img{
+  .recipe-main-food-image img {
     height: 200px;
     width: 350px;
   }
 
-  .recipe-ingredients-image img{
+  .recipe-ingredients-image img {
     height: 200px;
     width: 350px;
   }

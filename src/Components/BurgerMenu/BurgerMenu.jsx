@@ -21,15 +21,15 @@ const MainMenu = (props) => {
   return (
     <div className="headerMenu">
       {pageWidth > 1000 ? (
-        <ul>
-          {burgerMenuData.map((item, key) => {
-            return (
-              <li key={key} className="navRestaurants">
-                <Link to={item.path}>{item.label}</Link>
-              </li>
-            );
-          })}
-        </ul>
+          <ul>
+            {burgerMenuData.map((item, key) => {
+              return (
+                <li key={key} className="navRestaurants">
+                  <Link to={item.path}>{item.label}</Link>
+                </li>
+              );
+            })}
+          </ul>
       ) : (
         <CusineDrop />
       )}
@@ -58,7 +58,7 @@ const CusineDrop = () => {
         id="menuCusine"
         onChange={(e) => navigate(e.target.value)}
       > */}
-      <div>
+      <div className="burgerMenuu">
         <div className="burger-icon" onClick={toggleBurger}>
           <div className="bar"></div>
           <div className="bar"></div>
