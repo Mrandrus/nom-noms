@@ -888,7 +888,10 @@
   }
 
   .cuisine-links.none {
-    display: none;
+    max-height: 0;
+    border-width: 0;
+    transition: border 5ms ease-in-out, max-height 400ms ease-in-out;
+    transition-delay: 400ms, 0s;
   }
 
   .burger-cuisine {
@@ -904,7 +907,11 @@
     width: 200px;
   }
 
-  .cuisine-links.active {
+  .cuisine-links {
+    overflow: hidden;
+    max-height: 500px;
+    transition: border 10ms ease-in-out, max-height 400ms ease-in-out;
+    /* transition-delay: 3s, 5s; */
     display: flex;
     flex-direction: column;
     /* position: absolute; */
@@ -922,14 +929,14 @@
     width: 100%;
   }
 
-  .cuisine-links.active a {
+  .cuisine-links a {
     list-style-type: none;
     text-decoration: none;
     font-weight: bold;
     color: #002868;
   }
 
-  .cuisine-links.active a:hover {
+  .cuisine-links a:hover {
     color: #bf0a30;
     text-decoration: underline;
     text-decoration-color: #ffd700;
