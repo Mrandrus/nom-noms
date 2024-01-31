@@ -911,7 +911,7 @@
     overflow: hidden;
     max-height: 500px;
     transition: border 10ms ease-in-out, max-height 400ms ease-in-out;
-    /* transition-delay: 3s, 5s; */
+    /* transition-delay: 3s, 5s; You can mess around with these delays to help smooth out transition*/
     display: flex;
     flex-direction: column;
     /* position: absolute; */
