@@ -4,7 +4,11 @@ import Rocky from "../images/Rocky-Mountain-National-Park-Colorado.png";
 import DateObject from "react-date-object";
 import jsonReviewData from "../Reviews/foodReviewJS";
 import jsonRecipeData from "../Reviews/foodRecipesJS.js";
-import { Link, useParams, useLocation } from "react-router-dom";
+import {
+  Link,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import FoodMap from "./FoodMap";
 
@@ -15,7 +19,6 @@ function Home() {
 
   const baseUrlRestaurants = "/Restaurants";
   const baseUrlRecipes = "/Recipes";
-
 
   useEffect(() => {
     GetLatestReviews();
@@ -40,7 +43,7 @@ function Home() {
     const recipeArray = [];
 
     recipeArray.push(...jsonRecipeData);
-    recipeArray.reverse()
+    recipeArray.reverse();
     recipeArray.length = 3;
     setRecipes(recipeArray);
   };
@@ -52,9 +55,10 @@ function Home() {
       <div className="nom-container-one">
         <div className="noms-home-intro-content">
           <p>
-            Join me in my journey across Colorado as I compile a roadmap of some
-            of the best Restaurants this beautiful state has to offer. Also I'll
-            post some of my favorite recipes.
+            Join me in my journey across Colorado as I
+            compile a roadmap of some of the best
+            Restaurants this beautiful state has to offer.
+            Also I'll post some of my favorite recipes.
           </p>
         </div>
       </div>
@@ -98,7 +102,6 @@ function Home() {
             );
           })}
         </div>
-        
       </div>
       <div className="noms-container-three">
         <div className="recipe-content-title">
@@ -123,14 +126,15 @@ function Home() {
                   }}
                 >
                   <h3>{p.Recipe}</h3>
-                  <p>{p.Cuisine}</p>
                   <img
                     src={p?.Image}
                     alt={`${p?.Image}-food-image${p?.id}`}
                     height={200}
                     width={350}
                   />
-                  <p style={{padding: "15px"}}>{p?.Description}</p>
+                  <p style={{ padding: "15px" }}>
+                    {p?.Description}
+                  </p>
                 </Link>
               </div>
             );

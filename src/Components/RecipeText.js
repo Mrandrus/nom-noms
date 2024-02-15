@@ -8,7 +8,6 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
-import jsonRecipeData from "../Reviews/foodRecipes.json";
 import NomNomsLogo from "../images/coNomNomsLogo.png";
 
 function RecipeText(props) {

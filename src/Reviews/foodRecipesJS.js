@@ -86,17 +86,6 @@ const foodRecipesJS = [
       "/images/lasagna-cooked.jpg",
     ],
   },
-  // {
-  //   Recipe: "Shrimp Scampi",
-  //   Cuisine: "Italian",
-  //   Id: 4,
-  //   Image: "/images/coNomNomsLogo.png",
-  //   IngredientsImage: [""],
-  //   Ingredients:
-  //     "Rice noodles, thai basil, chicken thighs, Thai chiles/seranos, etc ",
-  //   Description: "Overcooking shrimp is my middle name.",
-  //   StepImages: [""],
-  // },
   {
     Recipe: "Roasted Tomatillo Salsa Version One",
     Cuisine: "Mexican",
