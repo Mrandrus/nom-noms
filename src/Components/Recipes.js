@@ -1,7 +1,9 @@
 import "../App.css";
-import jsonReviewData from "../Reviews/foodReview.json";
-import React, { Component, useEffect, useState } from "react";
-import jsonRecipeData from "../Reviews/foodRecipes.json";
+import React, {
+  Component,
+  useEffect,
+  useState,
+} from "react";
 import foodRecipesJS from "../Reviews/foodRecipesJS";
 import {
   BrowserRouter,
@@ -23,12 +25,35 @@ const baseUrlRecipes = "/Recipes";
 
 const Recipes = () => {
   const params = useParams();
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    GetLatestRecipes();
+  }, [params]);
+
+  const GetLatestRecipes = () => {
+    let recipeArray = [];
+
+    recipeArray.push(...foodRecipesJS);
+
+    //recipeArray.pop(foodRecipesJS.find((p) => p.Recipe === params.recipe))
+    recipeArray = recipeArray.filter((p) => {
+      return p.Recipe !== params.recipe;
+    });
+
+    recipeArray.reverse();
+    recipeArray.length = 3;
+    setRecipes(recipeArray);
+  };
 
   return (
     <>
       <div className="recipe-page-container">
         <RecipeCuisineFilter
-          cuisineList={removeDuplicatesByKey(foodRecipesJS, "Cuisine")}
+          cuisineList={removeDuplicatesByKey(
+            foodRecipesJS,
+            "Cuisine"
+          )}
           cuisine={params?.cuisine}
         />
         {!params.recipe ? (
@@ -40,16 +65,62 @@ const Recipes = () => {
           />
         ) : (
           <ActualRecipe
-            recipe={foodRecipesJS.find((p) => p.Recipe === params.recipe)}
+            recipe={foodRecipesJS.find(
+              (p) => p.Recipe === params.recipe
+            )}
           />
         )}
       </div>
       <div className="recipe-disclaimer">
         <h4>
-          Disclaimer: these are not always (or ever) authentic recipes and may be
-          subjected to change over time.
+          Disclaimer: these are not always (or ever)
+          authentic recipes and may be subjected to change
+          over time.
         </h4>
       </div>
+      <br />
+      {!params.recipe ? (
+        <div></div>
+      ) : (
+        <div className="noms-container-three">
+          <div className="recipe-content-title">
+            <h2>Check out some other recipes!</h2>
+          </div>
+          <div className="recipe-content">
+            {recipes?.map((p, q) => {
+              return (
+                <div
+                  key={`recipe_id_${p?.Id}_${q}`}
+                  className={`home-recipe-items`}
+                >
+                  <Link
+                    className="recipe-links"
+                    to={`${baseUrlRecipes}/${p.Cuisine}/${p.Recipe}`}
+                    state={{
+                      recipe: p.Recipe,
+                      cuisine: p.Cuisine,
+                      ingredients: p.Ingredients,
+                      image: p.Image,
+                      instructions: p.Instructions,
+                    }}
+                  >
+                    <h3>{p.Recipe}</h3>
+                    <img
+                      src={p?.Image}
+                      alt={`${p?.Image}-food-image${p?.id}`}
+                      height={200}
+                      width={350}
+                    />
+                    <p style={{ padding: "15px" }}>
+                      {p?.Description}
+                    </p>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </>
   );
 };
@@ -70,11 +141,16 @@ const RecipeCuisineFilter = ({ cuisineList, cuisine }) => {
       {pageWidth > 1399 ? (
         <ul>
           {getArray(cuisineList).map((p, i) => (
-            <Link to={`${baseUrlRecipes}/${p.Cuisine}`} key={i}>
+            <Link
+              to={`${baseUrlRecipes}/${p.Cuisine}`}
+              key={i}
+            >
               <li
                 key={p.Id}
                 className={`recipe-sideBar-buttons ${
-                  cuisine === p.Cuisine ? styles.activeCuisine : ""
+                  cuisine === p.Cuisine
+                    ? styles.activeCuisine
+                    : ""
                 }`}
               >
                 {p.Cuisine}
@@ -89,7 +165,10 @@ const RecipeCuisineFilter = ({ cuisineList, cuisine }) => {
   );
 };
 
-const RecipeListByCuisine = ({ recipeByCuisine, cuisine }) => {
+const RecipeListByCuisine = ({
+  recipeByCuisine,
+  cuisine,
+}) => {
   return (
     <div className="recipe-page-content">
       {!cuisine ? (
@@ -102,7 +181,10 @@ const RecipeListByCuisine = ({ recipeByCuisine, cuisine }) => {
                 key={`recipe_id_${p.Id}_${i}`}
                 className={`recipe-page-titles-items`}
               >
-                <Link key={i} to={`${baseUrlRecipes}/${cuisine}/${p.Recipe}`}>
+                <Link
+                  key={i}
+                  to={`${baseUrlRecipes}/${cuisine}/${p.Recipe}`}
+                >
                   <div className="recipe-page-img">
                     <img
                       src={`${p.Image}`}
@@ -115,7 +197,10 @@ const RecipeListByCuisine = ({ recipeByCuisine, cuisine }) => {
                     <h1
                       key={`title_of_reicpe_id_${p.Id}_${i}`}
                       className={`title_of_recipe_${p.Id}`}
-                      style={{ color: "#002868", marginBottom: "5px" }}
+                      style={{
+                        color: "#002868",
+                        marginBottom: "5px",
+                      }}
                     >
                       {p.Recipe}
                     </h1>
@@ -143,7 +228,10 @@ const RecipeList = () => {
       <div className="recipe-page-titles">
         {foodRecipesJS.map((r, i) => {
           return (
-            <Link key={i} to={`${baseUrlRecipes}/${r.Cuisine}/${r.Recipe}`}>
+            <Link
+              key={i}
+              to={`${baseUrlRecipes}/${r.Cuisine}/${r.Recipe}`}
+            >
               <div
                 key={`reicpe_id_${r.Id}_${i}`}
                 className={`recipe-page-titles-items`}
@@ -160,7 +248,10 @@ const RecipeList = () => {
                   <h1
                     key={`title_of_reicpe_id_${r.Id}_${i}`}
                     className={`title_of_recipe_${r.Id}`}
-                    style={{ color: "#002868", marginBottom: "5px" }}
+                    style={{
+                      color: "#002868",
+                      marginBottom: "5px",
+                    }}
                   >
                     {r.Recipe}
                   </h1>
@@ -191,7 +282,10 @@ const ActualRecipe = ({ recipe }) => {
       <h1>{recipe.Recipe}</h1>
       <hr className="rest-line-divider" />
       <div className="recipe-main-food-image">
-        <img src={recipe.Image} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.Image}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instruction-text">
         <RecipeText props={recipe} />
@@ -224,13 +318,20 @@ const CuisineDrop = ({ cuisines }) => {
         onChange={(e) => navigate(e.target.value)}
       > */}
       <div className="burger-container">
-        <div className="burger-cuisine-icon" onClick={toggleBurger}>
+        <div
+          className="burger-cuisine-icon"
+          onClick={toggleBurger}
+        >
           <div className="burger-cuisine">
             <i className="arrow-down"></i> | Cuisines |{" "}
             <i className="arrow-down"></i>
           </div>
         </div>
-        <ul className={`cuisine-links ${burgerActive ? "active" : "none"}`}>
+        <ul
+          className={`cuisine-links ${
+            burgerActive ? "active" : "none"
+          }`}
+        >
           {getArray(cuisines).map((p, k) => {
             return (
               // <option value={p.label} key={k}>
@@ -267,22 +368,46 @@ const UpdateMetaTags = (data) => {
   return (
     <Helmet>
       {/* <title>Colorado Nom Noms {recipe?.data.Recipe}</title> */}
-      <meta name="description" content={recipe?.data.Description} />
+      <meta
+        name="description"
+        content={recipe?.data.Description}
+      />
       <meta
         name="keywords"
         content={`${recipe?.data.Recipe}, ${recipe?.data.Cuisine}, Colorado Nom Noms, Matt Andrus, Recipes, Food, nomnoms, noms, nom, colorado,`}
       />
       {/* Open Graph meta tags for better social media sharing */}
-      <meta property="og:title" content={recipe?.data.Recipe} />
-      <meta property="og:description" content={recipe?.data.Description} />
-      <meta property="og:image" content={recipe?.data.Image} />
+      <meta
+        property="og:title"
+        content={recipe?.data.Recipe}
+      />
+      <meta
+        property="og:description"
+        content={recipe?.data.Description}
+      />
+      <meta
+        property="og:image"
+        content={recipe?.data.Image}
+      />
       <meta property="og:type" content="article" />
 
       {/* Twitter Card meta tags for Twitter sharing */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={recipe?.data.Recipe} />
-      <meta name="twitter:description" content={recipe?.data.Description} />
-      <meta name="twitter:image" content={recipe?.data.Image} />
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <meta
+        name="twitter:title"
+        content={recipe?.data.Recipe}
+      />
+      <meta
+        name="twitter:description"
+        content={recipe?.data.Description}
+      />
+      <meta
+        name="twitter:image"
+        content={recipe?.data.Image}
+      />
     </Helmet>
   );
 };
@@ -293,5 +418,9 @@ function getArray(data) {
 }
 
 function removeDuplicatesByKey(arr, key) {
-  return [...new Map(arr.map((item) => [item[key], item])).values()];
+  return [
+    ...new Map(
+      arr.map((item) => [item[key], item])
+    ).values(),
+  ];
 }

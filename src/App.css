@@ -150,15 +150,14 @@
   justify-content: center;
   background-color: #bf0a30;
   color: #ffffff;
-  transition: 1s ease-in-out;
 }
 
 .home-restaurant-items {
   width: 30%;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s ease-in-out;
 }
 
 .home-restaurant-items a {
@@ -166,11 +165,11 @@
   flex-direction: column;
   color: #002868;
   font-weight: 500;
-  transition: 1s ease-in-out;
+  text-decoration: none;
 }
 
-.home-restaurant-items a:hover {
-  height: auto;
+.home-restaurant-items:hover {
+  background-color: rgba(255, 0, 0, 0.5);
   transition: 1s ease-in-out;
   border-radius: 10px;
 }
@@ -181,7 +180,6 @@
 }
 
 .noms-container-three {
-  height: auto;
   background-color: #ffffff;
   color: #002868;
   width: 100%;
@@ -320,7 +318,7 @@
   border-radius: 10px;
 }
 
-.rest-links {
+/* .rest-links {
   display: flex;
   width: 100%;
   text-decoration: none;
@@ -330,7 +328,7 @@
   background-color: rgba(255, 0, 0, 0.5);
   transition: 1s ease-in-out;
   border-radius: 10px;
-}
+} */
 
 .rest-img {
   order: 1;

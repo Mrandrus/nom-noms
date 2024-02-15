@@ -1,5 +1,4 @@
 import RestaurantReview from "./RestaurantReviewText";
-import jsonReviewData from "../Reviews/foodReview.json";
 import "../App.css";
 //import rev from "../Reviews/HenrysReview.html";
 import { useState, useEffect } from "react";
