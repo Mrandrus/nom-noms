@@ -25,25 +25,32 @@ const Recipes = () => {
   const params = useParams();
 
   return (
-    <div className="recipe-page-container">
-      <RecipeCuisineFilter
-        cuisineList={removeDuplicatesByKey(foodRecipesJS, "Cuisine")}
-        cuisine={params?.cuisine}
-      />
-
-      {!params.recipe ? (
-        <RecipeListByCuisine
-          recipeByCuisine={foodRecipesJS.filter(
-            (p) => p.Cuisine === params.cuisine
-          )}
+    <>
+      <div className="recipe-page-container">
+        <RecipeCuisineFilter
+          cuisineList={removeDuplicatesByKey(foodRecipesJS, "Cuisine")}
           cuisine={params?.cuisine}
         />
-      ) : (
-        <ActualRecipe
-          recipe={foodRecipesJS.find((p) => p.Recipe === params.recipe)}
-        />
-      )}
-    </div>
+        {!params.recipe ? (
+          <RecipeListByCuisine
+            recipeByCuisine={foodRecipesJS.filter(
+              (p) => p.Cuisine === params.cuisine
+            )}
+            cuisine={params?.cuisine}
+          />
+        ) : (
+          <ActualRecipe
+            recipe={foodRecipesJS.find((p) => p.Recipe === params.recipe)}
+          />
+        )}
+      </div>
+      <div className="recipe-disclaimer">
+        <h4>
+          Disclaimer: these are not always (or ever) authentic recipes and may be
+          subjected to change over time.
+        </h4>
+      </div>
+    </>
   );
 };
 
@@ -145,8 +152,8 @@ const RecipeList = () => {
                   <img
                     src={r.Image}
                     alt={`${r.Recipe}-image`}
-                    height={100}
-                    width={200}
+                    // height={100}
+                    // width={200}
                   />
                 </div>
                 <div className="recipe-stuff">
@@ -263,7 +270,7 @@ const UpdateMetaTags = (data) => {
       <meta name="description" content={recipe?.data.Description} />
       <meta
         name="keywords"
-        content={`${recipe?.data.Recipe}, ${recipe?.data.Cuisine}, Colorado Nom Noms, Matt Andrus, Recipes, Food`}
+        content={`${recipe?.data.Recipe}, ${recipe?.data.Cuisine}, Colorado Nom Noms, Matt Andrus, Recipes, Food, nomnoms, noms, nom, colorado,`}
       />
       {/* Open Graph meta tags for better social media sharing */}
       <meta property="og:title" content={recipe?.data.Recipe} />

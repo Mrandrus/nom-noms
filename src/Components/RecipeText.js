@@ -29,14 +29,18 @@ function RecipeText(props) {
       return <Spaghetti recipe={recipeId.props} />;
     case 3:
       return <Lasagna recipe={recipeId.props} />;
-    case 4:
-      return <ShrimpScampi />;
+    // case 4:
+    //   return <ShrimpScampi />;
     case 5:
-      return <Gyro />;
+      return <ChickenGyro recipe={recipeId.props} />;
     case 6:
       return <TomatilloSalsaV1 recipe={recipeId.props} />;
     case 7:
       return <TomatilloSalsaV2 recipe={recipeId.props} />;
+    case 8:
+      return <FriedChicken recipe={recipeId.props} />;
+    case 9:
+      return <Sundubu recipe={recipeId.props} />;
     default:
       return "";
   }
@@ -49,10 +53,156 @@ function getArray(data) {
   return Array.isArray(data) === true ? data : [];
 }
 
-const Gyro = () => {
+const FriedChicken = ({ recipe }) => {
   return (
     <div>
-      <h3>Coming Soon</h3>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div
+        className={
+          !recipe.IngredientsImage
+            ? "recipe-ingredients-image"
+            : "recipe-ingredients-image-none img"
+        }
+      >
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          In a bowl add 2 cups of buttermilk, 1 egg, 1 tbsp mustard, 1 tbsp
+          pickle juice, salt, pepper, chili powder, smoked paprika, and garlic
+          powder. Mix well then add chicken tenders to liquid mixture. Let sit
+          overnight or for at least an hour.
+        </p>
+        <p>
+          In dry mixture add 2 cups of flour, salt, pepper, smoked paprika,
+          chili powder, garlic powder, and mix well.
+        </p>
+        <p>
+          Heat oil in dutch oven. When it reaches 350 degrees add tenders to dry
+          mixture and coat them thoroughly. Add coated tenders to hot oil, make
+          sure not to crowd the pot. Turn chicken after about 3-4 minutes with
+          tongs, the chicken will cook in about 7 minutes.
+        </p>
+        <p>
+          Enjoy with your choice of dipping sauce. I enjoy mixing mayo,
+          worcestershire sauce, ketchup, garlic, chili powder, smoked paprika,
+          salt and pepper, a sauce very similar to Cane's chicken sauce.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const ChickenGyro = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Chicken Marinade</h3>
+        <ul>
+          {getArray(recipe?.Ingredients)
+            .slice(0, 18)
+            .map((p, q) => {
+              return <li key={q}>{p}</li>;
+            })}
+        </ul>
+        <br />
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-ingredients">
+        <h3>Basmati Rice</h3>
+        <ul>
+          {getArray(recipe?.Ingredients)
+            .slice(18, 27)
+            .map((p, q) => {
+              return <li key={q}>{p}</li>;
+            })}
+        </ul>
+        <br />
+        <h3>White Sauce</h3>
+        <ul>
+          {getArray(recipe?.Ingredients)
+            .slice(27, recipe?.Ingredients.length)
+            .map((p, q) => {
+              return <li key={q}>{p}</li>;
+            })}
+        </ul>
+      </div>
+
+      <div className="recipe-instructions">
+        <h3>Chicken instructions</h3>
+        <p>
+          In a large bowl mix one part mayo and one part greek yogurt, I used
+          about 3 ibs of chicken thighs equating to 2/3 cup of mayo and 2/3 cup
+          of yogurt. Add juice of half a lemon, 1 tbsp olive oil, 2 tbsp garlic
+          powder, 1 tbsp ground cumin, 2 tbsp salt, 1 tbsp pepper, 1 tbsp smoked
+          paprika, 1 tsp onion powder, 1 tsp coriander, and 1 tsp cinnamon. Add
+          thighs to bowl and mix thoroughly. Let the thighs rest in the marinade
+          for a few hours, overnight is my favorite option.
+        </p>
+        <p>
+          Get your cast iron or your griddle ripping hot, then add your chicken
+          thighs. Get a nice char on one side before you flip the thighs.
+          Continue cooking and remove when internal temperature reaches 165
+          degrees.
+        </p>
+        <div className="recipe-instructions-images">
+          {getArray(
+            recipe?.StepImages.slice(0, 5).map((p, q) => {
+              return <img src={p} key={q} alt={NomNomsLogo} />;
+            })
+          )}
+        </div>
+        <h3>Rice instructions</h3>
+        <p>
+          In a deep frying pan, add 2 tsp of butter and set stove heat to
+          medium. Dice half of an onion and to pan. Add 1 tsp of tumeric, 1 tsp
+          ginger, 1 tsp garlic, 2 cups of rice, stir in pan. Add 4 cups of
+          chicken stock and bring to boil, then turn heat down to lowest
+          setting, cover, and let cook for about 15 to 20 minutes. Check to see
+          if rice is done, if it is add another 2 tsp of butter and stir.
+        </p>
+        <div className="recipe-instructions-images">
+          {getArray(
+            recipe?.StepImages.slice(5, 7).map((p, q) => {
+              return <img src={p} key={q} alt={NomNomsLogo} />;
+            })
+          )}
+        </div>
+        <h3>White Sauce instructions</h3>
+        <p>
+          In a bowl mix 1 cup of mayo, 1 cup of greek yogurt, 1 tbsp salt, 1
+          tbsp oregano, juice of half lemon, 1 tsp olive oil, 1 tbsp garlic, 2
+          tsp fresh dill, and mix thoroughly.
+        </p>
+        <p>Dice cucumber, tomato, and lettuce.</p>
+        <p>
+          Heat up pita/gyro in oven or microwave then fill with rice, veggies,
+          diced chicken, and plenty of the sauce. Enjoy.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.slice(7, recipe.StepImages.length).map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
     </div>
   );
 };
@@ -86,10 +236,11 @@ const TomatilloSalsaV1 = ({ recipe }) => {
           for another 3-5 minutes.
         </p>
         <p>
-          Remove the charred garlic peel and add everything to a blender with about a cup of fresh cilantro, 1/4
-          cup of canola oil, and a tablespoon of salt. Blend and add additional
-          salt to taste if necessary. The result will be a thicker smokier
-          salsa. Enjoy with chips or add to tacos.
+          Remove the charred garlic peel and add everything to a blender with
+          about a cup of fresh cilantro, 1/4 cup of canola oil, and a tablespoon
+          of salt. Blend and add additional salt to taste if necessary. The
+          result will be a thicker smokier salsa. Enjoy with chips or add to
+          tacos.
         </p>
       </div>
       <div className="recipe-instructions-images">
@@ -302,6 +453,71 @@ const Spaghetti = ({ recipe }) => {
           pepper to taste. You can let sauce simmer for a little longer if
           necessary in order to thicken, if not serve over noodles with grated
           parmesan.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return <img src={p} key={q} alt={NomNomsLogo} />;
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Sundubu = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+      </div>
+      <div className="recipe-instructions">
+        <p>First we're going to the make the sundubu paste.</p>
+        <p>
+          In a frying pan or wok heat add sesame oil and heat to medium heat.
+          Add scallions and ground pork to pan, cook until meat starts to cook
+          then add diced yellow onion. Stir consistently until onion is
+          translucent then add minced garlic and ginger, stirring for 1 to 2
+          minutes. Add gochujang and gochugaru and lower heat to medium low.
+          Stir everything together and be prepared to cough, I recommend opening
+          a few windows as the air quality in your kitchen will show a dramatic
+          uptick in spice. When much of the moisture has been absorbed, add
+          salt, sugar, pepper, and soy sauce. Stir everything into a paste. Turn
+          off the heat and set aside the amount of the sundubu paste you'd like
+          to use and put the rest in a freezer bag and store in your freezer.{" "}
+        </p>
+        <p>
+          I like to use 3 to 4 tablespoons of the paste per cup of chicken
+          stock, you can adjust paste ratio you'd like it more or less spicy. If
+          you don't have chicken stock, you can use water. If I don't have
+          chicken stock, I like to add chicken bullion to the water to enhance
+          the flavor. In a pot add 2 cups of chicken stock, add your paste, and
+          bring to a boil, stirring everything together. Lower heat to medium to
+          medium low, I like to let the stew cook down a little, you can always
+          add more or less stock/water to adjust spice level as well. Add silken
+          tofu (14 oz packet) and some additional scallions, you can always add
+          shitake mushrooms or your preference of shellfish. Stir together and
+          let simmer, breaking up the larger pieces of tofu. Taste for salt, add
+          however many eggs to however many bowls you are serving, ladle stew
+          over top of the eggs, careful not to break the yolk. You can also
+          achieve a nice soft-boiled egg by cooking it in water at 150F for 30
+          minutes. Add chopped green onion and ladle over rice.
+        </p>
+        <p>
+          For rice, I personally like to either add coconut oil to the 2 to 1
+          water to rice ratio or use 1 can of coconut milk supplementing the
+          rest of the 2 to 1 ratio with water. I recommend washing your rice
+          thoroughly and adding salt to your rice cooker, instant pot, pot, or
+          however you're cooking rice.
         </p>
       </div>
       <div className="recipe-instructions-images">

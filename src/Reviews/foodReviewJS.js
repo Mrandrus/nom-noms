@@ -233,7 +233,7 @@ const foodReviewJS = [
     Restaurant: "El Pueblito",
     Cuisine: "Mexican",
     State: "Colorado",
-    City: "Loveland",
+    City: "Loveland, Fort Collins",
     Geometry: {
       'type': 'Point',
       'coordinates': [-105.0985814, 40.4072711]
@@ -400,25 +400,25 @@ const foodReviewJS = [
     Date: "2023-07-12T05:39:14.551Z",
     BlogText: "",
   },
-  // {
-  //   Restaurant: "Tacos El Torito Loko",
-  //   Cuisine: "Mexican",
-  //   State: "Colorado",
-  //   City: "Fort Collins, Loveland",
-  //   Geometry: {
-  //     'type': 'Point',
-  //     'coordinates': []
-  //     },
-  //   Cost: "$-$$",
-  //   Content: "",
-  //   Id: 24,
-  //   ImageOutside: "/images/el_torito_loko.jpg",
-  //   FoodImages: ["/images/el_torito_loko_plate.jpg"],
-  //   BlogIntro:
-  //     "Food truck that operates across the front range providing delicous and unique Mexican plates.",
-  //   Date: "2023-10-12T05:39:14.551Z",
-  //   BlogText: "",
-  // },
+  {
+    Restaurant: "Tacos El Torito Loko",
+    Cuisine: "Mexican",
+    State: "Colorado",
+    City: "Fort Collins, Loveland",
+    Geometry: {
+      'type': 'Point',
+      'coordinates': []
+      },
+    Cost: "$-$$",
+    Content: "",
+    Id: 24,
+    ImageOutside: "/images/el_torito_loko.jpg",
+    FoodImages: ["/images/el_torito_loko_plate.jpg"],
+    BlogIntro:
+      "Food truck that operates across the front range providing delicous and unique Mexican plates.",
+    Date: "2023-10-12T05:39:14.551Z",
+    BlogText: "",
+  },
 ];
 
 export default foodReviewJS;
