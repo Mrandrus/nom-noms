@@ -55,7 +55,7 @@ const foodReviewJS = [
     ImageOutside: "/images/bowl_iz_outside.jpg",
     FoodImages: [""],
     BlogIntro:
-      "A true gem in Loveland, I've spent many a cold winter night slurping down a hot bowl of pork tonkatsu ramen.",
+      "A true gem in Loveland, I've spent many a cold winter night slurping down a hot bowl of tonkatsu ramen.",
     Date: "2023-03-11T05:39:14.551Z",
     BlogText: "",
   },

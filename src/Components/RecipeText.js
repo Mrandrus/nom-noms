@@ -40,6 +40,8 @@ function RecipeText(props) {
       return <FriedChicken recipe={recipeId.props} />;
     case 9:
       return <Sundubu recipe={recipeId.props} />;
+    case 10:
+      return <Tonkatsu recipe={recipeId.props} />;
     default:
       return "";
   }
@@ -51,6 +53,78 @@ export default RecipeText;
 function getArray(data) {
   return Array.isArray(data) === true ? data : [];
 }
+
+const Tonkatsu = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div
+        className={
+          recipe.IngredientsImage
+            ? "recipe-ingredients-image"
+            : "recipe-ingredients-image-none img"
+        }
+      >
+        <img
+          src={recipe?.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          Either with a mallet or place a sheet of plastic
+          wrap over the pork chops and pound with a pan to
+          tenderize. Season pork chops with salt, pepper,
+          garlic powder, and ground ginger
+        </p>
+        <p>
+          Get three bowls. In the first, add all-purpose
+          flour, enough to coat the number of pork chops
+          you're using. In the second bowl, beat two to
+          three eggs. In the third bowl, add the panko
+          breadcrumbs.
+        </p>
+        <p>
+          Heat oil in cast iron skillet to 350-375 degrees
+          Fahrenheit. Place pork chop in flower, coat
+          thoroughly, then coat in egg, then panko
+          breadcrumbs. Place chop gently in oil away from
+          yourself to keep from any backsplash. Cook in oil
+          for about 2 minutes a side or internal temperature
+          of 145.
+        </p>
+        <p>
+          Serve over finely chopped cabbage with tonkatsu
+          sauce, or over rice with Japanese curry.
+        </p>
+        <bre />
+        <h3>Tonkatsu Sauce</h3>
+        <p>
+          In bowl mix 4 tablespoons Worcestershire sauce, 4
+          tablespoons ketchup, 2 tablespoons sugar, 2
+          tablespoons oyster sauce, and 1 teaspoon sesame
+          oil.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
 
 const FriedChicken = ({ recipe }) => {
   return (
@@ -70,35 +144,46 @@ const FriedChicken = ({ recipe }) => {
             : "recipe-ingredients-image-none img"
         }
       >
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
         <p>
-          In a bowl add 2 cups of buttermilk, 1 egg, 1 tbsp mustard, 1 tbsp
-          pickle juice, salt, pepper, chili powder, smoked paprika, and garlic
-          powder. Mix well then add chicken tenders to liquid mixture. Let sit
-          overnight or for at least an hour.
+          In a bowl add 2 cups of buttermilk, 1 egg, 1 tbsp
+          mustard, 1 tbsp pickle juice, salt, pepper, chili
+          powder, smoked paprika, and garlic powder. Mix
+          well then add chicken tenders to liquid mixture.
+          Let sit overnight or for at least an hour.
         </p>
         <p>
-          In dry mixture add 2 cups of flour, salt, pepper, smoked paprika,
-          chili powder, garlic powder, and mix well.
+          In dry mixture add 2 cups of flour, salt, pepper,
+          smoked paprika, chili powder, garlic powder, and
+          mix well.
         </p>
         <p>
-          Heat oil in dutch oven. When it reaches 350 degrees add tenders to dry
-          mixture and coat them thoroughly. Add coated tenders to hot oil, make
-          sure not to crowd the pot. Turn chicken after about 3-4 minutes with
-          tongs, the chicken will cook in about 7 minutes.
+          Heat oil in dutch oven. When it reaches 350
+          degrees add tenders to dry mixture and coat them
+          thoroughly. Add coated tenders to hot oil, make
+          sure not to crowd the pot. Turn chicken after
+          about 3-4 minutes with tongs, the chicken will
+          cook in about 7 minutes.
         </p>
         <p>
-          Enjoy with your choice of dipping sauce. I enjoy mixing mayo,
-          worcestershire sauce, ketchup, garlic, chili powder, smoked paprika,
-          salt and pepper, a sauce very similar to Cane's chicken sauce.
+          Enjoy with your choice of dipping sauce. I enjoy
+          mixing mayo, worcestershire sauce, ketchup,
+          garlic, chili powder, smoked paprika, salt and
+          pepper, a sauce very similar to Cane's chicken
+          sauce.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -121,7 +206,10 @@ const ChickenGyro = ({ recipe }) => {
         <br />
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-ingredients">
         <h3>Basmati Rice</h3>
@@ -146,59 +234,77 @@ const ChickenGyro = ({ recipe }) => {
       <div className="recipe-instructions">
         <h3>Chicken instructions</h3>
         <p>
-          In a large bowl mix one part mayo and one part greek yogurt, I used
-          about 3 ibs of chicken thighs equating to 2/3 cup of mayo and 2/3 cup
-          of yogurt. Add juice of half a lemon, 1 tbsp olive oil, 2 tbsp garlic
-          powder, 1 tbsp ground cumin, 2 tbsp salt, 1 tbsp pepper, 1 tbsp smoked
-          paprika, 1 tsp onion powder, 1 tsp coriander, and 1 tsp cinnamon. Add
-          thighs to bowl and mix thoroughly. Let the thighs rest in the marinade
-          for a few hours, overnight is my favorite option.
+          In a large bowl mix one part mayo and one part
+          greek yogurt, I used about 3 ibs of chicken thighs
+          equating to 2/3 cup of mayo and 2/3 cup of yogurt.
+          Add juice of half a lemon, 1 tbsp olive oil, 2
+          tbsp garlic powder, 1 tbsp ground cumin, 2 tbsp
+          salt, 1 tbsp pepper, 1 tbsp smoked paprika, 1 tsp
+          onion powder, 1 tsp coriander, and 1 tsp cinnamon.
+          Add thighs to bowl and mix thoroughly. Let the
+          thighs rest in the marinade for a few hours,
+          overnight is my favorite option.
         </p>
         <p>
-          Get your cast iron or your griddle ripping hot, then add your chicken
-          thighs. Get a nice char on one side before you flip the thighs.
-          Continue cooking and remove when internal temperature reaches 165
-          degrees.
+          Get your cast iron or your griddle ripping hot,
+          then add your chicken thighs. Get a nice char on
+          one side before you flip the thighs. Continue
+          cooking and remove when internal temperature
+          reaches 165 degrees.
         </p>
         <div className="recipe-instructions-images">
           {getArray(
             recipe?.StepImages.slice(0, 5).map((p, q) => {
-              return <img src={p} key={q} alt={NomNomsLogo} />;
+              return (
+                <img src={p} key={q} alt={NomNomsLogo} />
+              );
             })
           )}
         </div>
         <h3>Rice instructions</h3>
         <p>
-          In a deep frying pan, add 2 tsp of butter and set stove heat to
-          medium. Dice half of an onion and to pan. Add 1 tsp of tumeric, 1 tsp
-          ginger, 1 tsp garlic, 2 cups of rice, stir in pan. Add 4 cups of
-          chicken stock and bring to boil, then turn heat down to lowest
-          setting, cover, and let cook for about 15 to 20 minutes. Check to see
-          if rice is done, if it is add another 2 tsp of butter and stir.
+          In a deep frying pan, add 2 tsp of butter and set
+          stove heat to medium. Dice half of an onion and to
+          pan. Add 1 tsp of tumeric, 1 tsp ginger, 1 tsp
+          garlic, 2 cups of rice, stir in pan. Add 4 cups of
+          chicken stock and bring to boil, then turn heat
+          down to lowest setting, cover, and let cook for
+          about 15 to 20 minutes. Check to see if rice is
+          done, if it is add another 2 tsp of butter and
+          stir.
         </p>
         <div className="recipe-instructions-images">
           {getArray(
             recipe?.StepImages.slice(5, 7).map((p, q) => {
-              return <img src={p} key={q} alt={NomNomsLogo} />;
+              return (
+                <img src={p} key={q} alt={NomNomsLogo} />
+              );
             })
           )}
         </div>
         <h3>White Sauce instructions</h3>
         <p>
-          In a bowl mix 1 cup of mayo, 1 cup of greek yogurt, 1 tbsp salt, 1
-          tbsp oregano, juice of half lemon, 1 tsp olive oil, 1 tbsp garlic, 2
-          tsp fresh dill, and mix thoroughly.
+          In a bowl mix 1 cup of mayo, 1 cup of greek
+          yogurt, 1 tbsp salt, 1 tbsp oregano, juice of half
+          lemon, 1 tsp olive oil, 1 tbsp garlic, 2 tsp fresh
+          dill, and mix thoroughly.
         </p>
         <p>Dice cucumber, tomato, and lettuce.</p>
         <p>
-          Heat up pita/gyro in oven or microwave then fill with rice, veggies,
-          diced chicken, and plenty of the sauce. Enjoy.
+          Heat up pita/gyro in oven or microwave then fill
+          with rice, veggies, diced chicken, and plenty of
+          the sauce. Enjoy.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
-          recipe?.StepImages.slice(7, recipe.StepImages.length).map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+          recipe?.StepImages.slice(
+            7,
+            recipe.StepImages.length
+          ).map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -218,34 +324,41 @@ const TomatilloSalsaV1 = ({ recipe }) => {
         </ul>
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
         <p>
-          Cut a quarter of an onion into wedges, halve the jalapenos and
-          tomatillos, and leave the peels on the garlic.
+          Cut a quarter of an onion into wedges, halve the
+          jalapenos and tomatillos, and leave the peels on
+          the garlic.
         </p>
         <p>
-          Set the oven broiler on high and place tomatillos, garlic, onion, and
-          jalapenos on a baking sheet, and place under broiler on top oven
-          shelf.
+          Set the oven broiler on high and place tomatillos,
+          garlic, onion, and jalapenos on a baking sheet,
+          and place under broiler on top oven shelf.
         </p>
         <p>
-          Wait 3-5 minutes or until contents begin to char, then flip and roast
-          for another 3-5 minutes.
+          Wait 3-5 minutes or until contents begin to char,
+          then flip and roast for another 3-5 minutes.
         </p>
         <p>
-          Remove the charred garlic peel and add everything to a blender with
-          about a cup of fresh cilantro, 1/4 cup of canola oil, and a tablespoon
-          of salt. Blend and add additional salt to taste if necessary. The
-          result will be a thicker smokier salsa. Enjoy with chips or add to
-          tacos.
+          Remove the charred garlic peel and add everything
+          to a blender with about a cup of fresh cilantro,
+          1/4 cup of canola oil, and a tablespoon of salt.
+          Blend and add additional salt to taste if
+          necessary. The result will be a thicker smokier
+          salsa. Enjoy with chips or add to tacos.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -265,37 +378,47 @@ const TomatilloSalsaV2 = ({ recipe }) => {
         </ul>
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
         <p>
-          Cut a quarter of an onion into wedges, halve the jalapenos and
-          tomatillos, and remove the peels from the garlic cloves.
+          Cut a quarter of an onion into wedges, halve the
+          jalapenos and tomatillos, and remove the peels
+          from the garlic cloves.
         </p>
         <p>
-          Set the oven broiler on high and place tomatillos on a baking sheet,
-          and place under broiler on top oven shelf.
+          Set the oven broiler on high and place tomatillos
+          on a baking sheet, and place under broiler on top
+          oven shelf.
         </p>
         <p>
-          Wait 3-5 minutes or until tomatillos begin to char, then flip and
-          roast for another 3-5 minutes.
+          Wait 3-5 minutes or until tomatillos begin to
+          char, then flip and roast for another 3-5 minutes.
         </p>
         <p>
-          Pan fry the jalapenos until both sides take on a brownish color.
-          Remove jalapenos and add onion and garlic to pan, remove when onion is
-          translucent and garlic is browned.
+          Pan fry the jalapenos until both sides take on a
+          brownish color. Remove jalapenos and add onion and
+          garlic to pan, remove when onion is translucent
+          and garlic is browned.
         </p>
         <p>
-          Add everything to a blender with about a cup of fresh cilantro, 1/4
-          cup of canola oil, and a tablespoon of salt. Blend and add additional
-          salt to taste if necessary. The result will be a lighter and runnier
-          salsa. Enjoy with chips or add to tacos.
+          Add everything to a blender with about a cup of
+          fresh cilantro, 1/4 cup of canola oil, and a
+          tablespoon of salt. Blend and add additional salt
+          to taste if necessary. The result will be a
+          lighter and runnier salsa. Enjoy with chips or add
+          to tacos.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -322,40 +445,51 @@ const Lasagna = ({ recipe }) => {
         </ul>
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
         <p>
-          In dutch oven or pot, cook ground beef and sausage to browning. Remove
-          meat. Add chopped yellow onion and garlic. Cook for a couple minutes,
-          stirring consistently. Add Tomato sauce, fill one of the empty cans
-          with water and add to pot. Add cooked meat back to sauce, and add
-          salt, pepper, italian seasoning. Simmer for 2-3 hours.
+          In dutch oven or pot, cook ground beef and sausage
+          to browning. Remove meat. Add chopped yellow onion
+          and garlic. Cook for a couple minutes, stirring
+          consistently. Add Tomato sauce, fill one of the
+          empty cans with water and add to pot. Add cooked
+          meat back to sauce, and add salt, pepper, italian
+          seasoning. Simmer for 2-3 hours.
         </p>
         <p>
-          Bring large pot of salted water to boil. Add Lasagna noodles to
-          boiling water. Cook noodles for half to three quarters of the allotted
-          time so noodles are still somewhat firm.
+          Bring large pot of salted water to boil. Add
+          Lasagna noodles to boiling water. Cook noodles for
+          half to three quarters of the allotted time so
+          noodles are still somewhat firm.
         </p>
         <p>
-          In mixing bowl, add ricotta cheese, egg, chopped basil, and chopped
-          Italian parsley. Mix well.
+          In mixing bowl, add ricotta cheese, egg, chopped
+          basil, and chopped Italian parsley. Mix well.
         </p>
         <p>
-          In deep baking dish, layer bottom of dish with sauce then layer with
-          noodles, followed by sauce, ricotta cheese mixture, and tear off
-          clumps of fresh mozzarella, distributing them evenly. Add one more
-          layer following this formula until you get to the top layer. Spread
-          out the rest of your sauce, add more torn mozzarella, grate parmesan,
-          and place covered into 375 degree oven for 30 minutes. After that 30
-          minutes, remove covering and cook for another 30 minutes. Remove from
-          oven and let sit for 20-30 minutes. Now, you may feast.
+          In deep baking dish, layer bottom of dish with
+          sauce then layer with noodles, followed by sauce,
+          ricotta cheese mixture, and tear off clumps of
+          fresh mozzarella, distributing them evenly. Add
+          one more layer following this formula until you
+          get to the top layer. Spread out the rest of your
+          sauce, add more torn mozzarella, grate parmesan,
+          and place covered into 375 degree oven for 30
+          minutes. After that 30 minutes, remove covering
+          and cook for another 30 minutes. Remove from oven
+          and let sit for 20-30 minutes. Now, you may feast.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -375,35 +509,46 @@ const DrunkenNoodles = ({ recipe }) => {
         </ul>
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
         <p>
-          Heat wok, add sesame oil. Mince 4 cloves of garlic, 4 to 5 thai
-          chilis, and ginger. Chop the white ends of the green onion, and add to
-          wok with the garlic, chilis, and ginger. Stir constantly until
-          fragrant, normally a few minutes. Dice chicken and add to wok. Add
-          around a teaspoon of fish sauce.
+          Heat wok, add sesame oil. Mince 4 cloves of
+          garlic, 4 to 5 thai chilis, and ginger. Chop the
+          white ends of the green onion, and add to wok with
+          the garlic, chilis, and ginger. Stir constantly
+          until fragrant, normally a few minutes. Dice
+          chicken and add to wok. Add around a teaspoon of
+          fish sauce.
         </p>
         <p>
-          In small mixing bowl, add soy sauce, oyster sauce, sesame oil, and
-          brown sugar. Mix well. I like to add some of that liquid to the wok
-          and let the sauce thicken and coat the chicken thoroughly.
+          In small mixing bowl, add soy sauce, oyster sauce,
+          sesame oil, and brown sugar. Mix well. I like to
+          add some of that liquid to the wok and let the
+          sauce thicken and coat the chicken thoroughly.
         </p>
         <p>
-          Boil rice noodles in salted water for duration instructed on package.
+          Boil rice noodles in salted water for duration
+          instructed on package.
         </p>
         <p>
-          Add noodles, the rest of the soy sauce mixture, the chopped greens of
-          the green onion, and the thai basil. I recommend tearing the thai
-          basil into small pieces and then tossing them in. Mix everything
-          together throughly and serve with squeezed lime over top.
+          Add noodles, the rest of the soy sauce mixture,
+          the chopped greens of the green onion, and the
+          thai basil. I recommend tearing the thai basil
+          into small pieces and then tossing them in. Mix
+          everything together throughly and serve with
+          squeezed lime over top.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -423,41 +568,53 @@ const Spaghetti = ({ recipe }) => {
         </ul>
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
         <p>
-          A few of the ingredients missed picture day. Apologies from the
-          kitchen staff.
+          A few of the ingredients missed picture day.
+          Apologies from the kitchen staff.
         </p>
         <p>
-          Heat olive oil in dutch oven. Dice full onion, celery, and mince
-          garlic. Add ground italian sausage to dutch oven. Cook, stirring
-          periodically until meat is browned. Remove meat from dutch oven. Add
-          onion and celery, then garlic. Add around a half cup of white wine and
-          stir until liquid mostly evaporates. Stir in one table spoon of tomato
-          paste. Add salt, pepper, 1 tablespoon of sugar, and Italian seasoning.
-          Pour in 2 cans of crushed tomatoes and quart of chicken stock/broth.
-          Add meat back to sauce. Bring to boil then reduce heat and let it
-          simmer for two to three hours until sauce thickens.
+          Heat olive oil in dutch oven. Dice full onion,
+          celery, and mince garlic. Add ground italian
+          sausage to dutch oven. Cook, stirring periodically
+          until meat is browned. Remove meat from dutch
+          oven. Add onion and celery, then garlic. Add
+          around a half cup of white wine and stir until
+          liquid mostly evaporates. Stir in one table spoon
+          of tomato paste. Add salt, pepper, 1 tablespoon of
+          sugar, and Italian seasoning. Pour in 2 cans of
+          crushed tomatoes and quart of chicken stock/broth.
+          Add meat back to sauce. Bring to boil then reduce
+          heat and let it simmer for two to three hours
+          until sauce thickens.
         </p>
         <p>
-          Bring 4 quarts of salted water to a boil. Add spaghetti or linguine
-          and follow instructions on box for cook time.
+          Bring 4 quarts of salted water to a boil. Add
+          spaghetti or linguine and follow instructions on
+          box for cook time.
         </p>
         <p>
-          Before draining pasta add around one cup of water to sauce mixture.
-          Drain noodles. Add fresh or dried parsley to sauce and finely grate
-          parmesan cheese into sauce, I like to do around a cup. Add salt and
-          pepper to taste. You can let sauce simmer for a little longer if
-          necessary in order to thicken, if not serve over noodles with grated
+          Before draining pasta add around one cup of water
+          to sauce mixture. Drain noodles. Add fresh or
+          dried parsley to sauce and finely grate parmesan
+          cheese into sauce, I like to do around a cup. Add
+          salt and pepper to taste. You can let sauce simmer
+          for a little longer if necessary in order to
+          thicken, if not serve over noodles with grated
           parmesan.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>
@@ -477,52 +634,71 @@ const Sundubu = ({ recipe }) => {
         </ul>
       </div>
       <div className="recipe-ingredients-image">
-        <img src={recipe.IngredientsImage} alt={`${recipe.Recipe}-image`} />
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
       </div>
       <div className="recipe-instructions">
-        <p>First we're going to the make the sundubu paste.</p>
         <p>
-          In a frying pan or wok heat add sesame oil and heat to medium heat.
-          Add scallions and ground pork to pan, cook until meat starts to cook
-          then add diced yellow onion. Stir consistently until onion is
-          translucent then add minced garlic and ginger, stirring for 1 to 2
-          minutes. Add gochujang and gochugaru and lower heat to medium low.
-          Stir everything together and be prepared to cough, I recommend opening
-          a few windows as the air quality in your kitchen will show a dramatic
-          uptick in spice. When much of the moisture has been absorbed, add
-          salt, sugar, pepper, and soy sauce. Stir everything into a paste. Turn
-          off the heat and set aside the amount of the sundubu paste you'd like
-          to use and put the rest in a freezer bag and store in your freezer.{" "}
+          First we're going to the make the sundubu paste.
         </p>
         <p>
-          I like to use 3 to 4 tablespoons of the paste per cup of chicken
-          stock, you can adjust paste ratio you'd like it more or less spicy. If
-          you don't have chicken stock, you can use water. If I don't have
-          chicken stock, I like to add chicken bullion to the water to enhance
-          the flavor. In a pot add 2 cups of chicken stock, add your paste, and
-          bring to a boil, stirring everything together. Lower heat to medium to
-          medium low, I like to let the stew cook down a little, you can always
-          add more or less stock/water to adjust spice level as well. Add silken
-          tofu (14 oz packet) and some additional scallions, you can always add
-          shitake mushrooms or your preference of shellfish. Stir together and
-          let simmer, breaking up the larger pieces of tofu. Taste for salt, add
-          however many eggs to however many bowls you are serving, ladle stew
-          over top of the eggs, careful not to break the yolk. You can also
-          achieve a nice soft-boiled egg by cooking it in water at 150F for 30
-          minutes. Add chopped green onion and ladle over rice.
+          In a frying pan or wok heat add sesame oil and
+          heat to medium heat. Add scallions and ground pork
+          to pan, cook until meat starts to cook then add
+          diced yellow onion. Stir consistently until onion
+          is translucent then add minced garlic and ginger,
+          stirring for 1 to 2 minutes. Add gochujang and
+          gochugaru and lower heat to medium low. Stir
+          everything together and be prepared to cough, I
+          recommend opening a few windows as the air quality
+          in your kitchen will show a dramatic uptick in
+          spice. When much of the moisture has been
+          absorbed, add salt, sugar, pepper, and soy sauce.
+          Stir everything into a paste. Turn off the heat
+          and set aside the amount of the sundubu paste
+          you'd like to use and put the rest in a freezer
+          bag and store in your freezer.{" "}
         </p>
         <p>
-          For rice, I personally like to either add coconut oil to the 2 to 1
-          water to rice ratio or use 1 can of coconut milk supplementing the
-          rest of the 2 to 1 ratio with water. I recommend washing your rice
-          thoroughly and adding salt to your rice cooker, instant pot, pot, or
-          however you're cooking rice.
+          I like to use 3 to 4 tablespoons of the paste per
+          cup of chicken stock, you can adjust paste ratio
+          you'd like it more or less spicy. If you don't
+          have chicken stock, you can use water. If I don't
+          have chicken stock, I like to add chicken bullion
+          to the water to enhance the flavor. In a pot add 2
+          cups of chicken stock, add your paste, and bring
+          to a boil, stirring everything together. Lower
+          heat to medium to medium low, I like to let the
+          stew cook down a little, you can always add more
+          or less stock/water to adjust spice level as well.
+          Add silken tofu (14 oz packet) and some additional
+          scallions, you can always add shitake mushrooms or
+          your preference of shellfish. Stir together and
+          let simmer, breaking up the larger pieces of tofu.
+          Taste for salt, add however many eggs to however
+          many bowls you are serving, ladle stew over top of
+          the eggs, careful not to break the yolk. You can
+          also achieve a nice soft-boiled egg by cooking it
+          in water at 150F for 30 minutes. Add chopped green
+          onion and ladle over rice.
+        </p>
+        <p>
+          For rice, I personally like to either add coconut
+          oil to the 2 to 1 water to rice ratio or use 1 can
+          of coconut milk supplementing the rest of the 2 to
+          1 ratio with water. I recommend washing your rice
+          thoroughly and adding salt to your rice cooker,
+          instant pot, pot, or however you're cooking rice.
         </p>
       </div>
       <div className="recipe-instructions-images">
         {getArray(
           recipe?.StepImages.map((p, q) => {
-            return <img src={p} key={q} alt={NomNomsLogo} />;
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
           })
         )}
       </div>

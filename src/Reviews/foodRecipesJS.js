@@ -4,7 +4,9 @@ const foodRecipesJS = [
     Cuisine: "Thai",
     Id: 1,
     Image: "/images/drunken-noodles-dish.jpg",
-    IngredientsImage: ["/images/drunken-noodles-ingredients.jpg"],
+    IngredientsImage: [
+      "/images/drunken-noodles-ingredients.jpg",
+    ],
     Ingredients: [
       "Rice noodles",
       "Thai basil",
@@ -18,7 +20,8 @@ const foodRecipesJS = [
       "Soy sauce",
       "Oyster sauce",
     ],
-    Description: "One of my favorite Thai dishes that truly slaps.",
+    Description:
+      "One of my favorite Thai dishes that truly slaps.",
     StepImages: [
       "/images/drunken-noodles-step-1.jpg",
       "/images/drunken-noodles-step-2.jpg",
@@ -91,7 +94,9 @@ const foodRecipesJS = [
     Cuisine: "Mexican",
     Id: 6,
     Image: "/images/tomatillo_salsa_v1.jpg",
-    IngredientsImage: ["/images/tomatillo_salsa_ingredients.jpg"],
+    IngredientsImage: [
+      "/images/tomatillo_salsa_ingredients.jpg",
+    ],
     Ingredients: [
       "5-6 Tomatillos",
       "2-3 Jalapenos",
@@ -109,7 +114,9 @@ const foodRecipesJS = [
     Cuisine: "Mexican",
     Id: 7,
     Image: "/images/tomatillo_salsa_v2.jpg",
-    IngredientsImage: ["/images/tomatillo_salsa_ingredients.jpg"],
+    IngredientsImage: [
+      "/images/tomatillo_salsa_ingredients.jpg",
+    ],
     Ingredients: [
       "5-6 Tomatillos",
       "2-3 Jalapenos",
@@ -132,7 +139,9 @@ const foodRecipesJS = [
     Cuisine: "Mediterranean",
     Id: 5,
     Image: "/images/chicken_gyro_plate.jpg",
-    IngredientsImage: ["/images/chicken_gyro_ingredients.jpg"],
+    IngredientsImage: [
+      "/images/chicken_gyro_ingredients.jpg",
+    ],
     Ingredients: [
       "Chicken thighs",
       "Mayo",
@@ -170,7 +179,8 @@ const foodRecipesJS = [
       "Oregano",
       "Dill",
     ],
-    Description: "One of the best recipes for chicken ever.",
+    Description:
+      "One of the best recipes for chicken ever.",
     StepImages: [
       "/images/chicken_gyro_step1.jpg",
       "/images/chicken_gyro_step2.jpg",
@@ -236,7 +246,7 @@ const foodRecipesJS = [
       "Chicken stock",
       "Eggs",
       "Jasmine rice",
-      "Coconut oil, or coconut milk"
+      "Coconut oil, or coconut milk",
     ],
     Description:
       "A classic spicy Korean stew served over rice, perfect dish for a cold day.",
@@ -245,7 +255,39 @@ const foodRecipesJS = [
       "/images/sundubu_step_two.jpg",
       "/images/sundubu_step_three.jpg",
       "/images/sundubu_step_four.jpg",
-      "/images/sundubu_plate.jpg"
+      "/images/sundubu_plate.jpg",
+    ],
+  },
+  {
+    Recipe: "Tonkatsu",
+    Cuisine: "Japanese",
+    Id: 10,
+    Image: "/images/tonkatsu_plate2.jpg",
+    IngredientsImage: ["/images/tonkatsu_ingredients.jpg"],
+    Ingredients: [
+      "Pork Chops",
+      "Eggs",
+      "All purpose flour",
+      "Garlic Powder",
+      "Ground Ginger",
+      "Canola oil",
+      "Salt",
+      "Pepper",
+      "Panko bread crumbs",
+      "Soy sauce",
+      "Oyster sauce",
+      "Sesame oil",
+      "Ketchup",
+      "Worcestershire sauce",
+      "Sugar",
+    ],
+    Description:
+      "A delicious Japanese dish, and one of my favorite ways to do pork chops.",
+    StepImages: [
+      "/images/tonkatsu_step_one.jpg",
+      "/images/tonkatsu_step_three.jpg",
+      "/images/tonkatsu_step_four.jpg",
+      "/images/tonkatsu_curry_plate.jpg",
     ],
   },
 ];
