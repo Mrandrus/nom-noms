@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import NomNomsLogo from "../images/coNomNomsLogo.png";
 
+const baseUrlRecipes = "/Recipes";
+
 function RecipeText(props) {
   // const location = useLocation();
   // let details = location.state;
@@ -42,6 +44,14 @@ function RecipeText(props) {
       return <Sundubu recipe={recipeId.props} />;
     case 10:
       return <Tonkatsu recipe={recipeId.props} />;
+    case 11:
+      return <ChickenBrothStock recipe={recipeId.props} />;
+    case 12:
+      return <JapaneseCurry recipe={recipeId.props} />;
+    case 13:
+      return (
+        <ChickenSausageGumbo recipe={recipeId.props} />
+      );
     default:
       return "";
   }
@@ -53,6 +63,88 @@ export default RecipeText;
 function getArray(data) {
   return Array.isArray(data) === true ? data : [];
 }
+
+const ChickenBrothStock = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div
+        className={
+          recipe.IngredientsImage
+            ? "recipe-ingredients-image"
+            : "recipe-ingredients-image-none img"
+        }
+      >
+        <img
+          src={recipe?.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+        {/* {getArray(
+          recipe?.IngredientsImage.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )} */}
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          Making home-made chicken stock has become a common
+          practice I've adopted in my life. Having homemade
+          stock on hand for various recipes or the option to
+          quickly make a hearty broth on a sick day, are
+          just two reasons why I can't recommend this
+          enough.
+        </p>
+        <p>
+          If you ever pick up a rotisserie chicken from the
+          store for an easy dinner, save the carcass of the
+          chicken for your stock. If you ever smoke a full
+          bird, do the same. For this recipe break down a
+          whole raw bird, bake the spine, excess bones, and
+          neck at 425 for 25 minutes. Store the rest of your
+          chicken in the fridge or the freezer.
+        </p>
+        <p>
+          For the vegetables, you can ballpark the
+          ingredients or add more or less of based off your
+          preference or the recipe you're using the stock
+          for. This has just been my base stock go to as of
+          late. Rough chop 4 large carrots, 4-5 celery
+          stalks, and 1 small to medium sized ginger root.
+          Halve 3-4 yellow onions and break apart 1-2 whole
+          garlic (I used 1 large garlic).
+        </p>
+        <p>
+          In a large stock pot add all your vegetables,
+          baked chicken parts, 4-5 bay leaves, 1 tablespoon
+          of peppercorns, and a handful of fresh thyme. Fill
+          near the top of the stock pot with water and let
+          the stock simmer all day or overnight for 12
+          hours. Store in mason jars in the fridge for 4 to
+          5 days, or in plastic containers in the freezer
+          for 4-6 months.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
 
 const Tonkatsu = ({ recipe }) => {
   return (
@@ -102,7 +194,13 @@ const Tonkatsu = ({ recipe }) => {
         </p>
         <p>
           Serve over finely chopped cabbage with tonkatsu
-          sauce, or over rice with Japanese curry.
+          sauce, or over rice with{" "}
+          <Link
+            to={`${baseUrlRecipes}/${"Japanese"}/${"Japanese Curry"}`}
+          >
+            Japanese curry
+          </Link>
+          .
         </p>
         <bre />
         <h3>Tonkatsu Sauce</h3>
@@ -111,6 +209,172 @@ const Tonkatsu = ({ recipe }) => {
           tablespoons ketchup, 2 tablespoons sugar, 2
           tablespoons oyster sauce, and 1 teaspoon sesame
           oil.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const ChickenSausageGumbo = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div
+        className={
+          recipe.IngredientsImage
+            ? "recipe-ingredients-image"
+            : "recipe-ingredients-image-none img"
+        }
+      >
+        <img
+          src={recipe?.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          {" "}
+          My favorite Cajun dish and my go to on cold snowy
+          days.
+        </p>
+        <p>
+          Have all your ingredients prepped before you start
+          making your roux. Small dice 1 green bell pepper,
+          2 stalks of celery, and 1 yellow onion. Mince 4-5
+          cloves of garlic and gather about 1 tablespoon of
+          fresh thyme. Cut andouille sausage into coins.
+        </p>
+        <p>
+          In a Dutch oven add ½ cup of grapeseed oil and ½
+          cup of all purpose flour and stir constantly at
+          low heat, this is your roux and you do not want to
+          burn it. You can add more or less flour if you
+          would like a thicker or soupier gumbo. This is the
+          amount that works for me, it tends to be a soupier
+          gumbo that naturally thickens after a few hours
+          simmering. On a low heat it will take about 10-15
+          minutes of constant stirring before your roux goes
+          from a blonde to Hershey brown color, this is the
+          color you want.
+        </p>
+        <p>
+          Add your diced bell pepper, celery, and onion to
+          your roux and sweat for a couple of minutes
+          stirring consistently. Add garlic to mixture and
+          stir in until fragrant then add 1 whole amber
+          beer, stirring consistently as you pour. I used a
+          cup of white wine for this recipe, but amber beer
+          is the preferred method. Let it cook down until
+          mixture thickens. Add a quart of{" "}
+          <Link
+            to={`${baseUrlRecipes}/${"Miscellaneous"}/${"Chicken Stock"}`}
+          >
+            chicken stock
+          </Link>{" "}
+          to mixture stirring constantly while pouring.
+        </p>
+        <p>
+          In a stainless-steel oven safe pan, place 4
+          boneless skinless chicken thighs. Turn on broiler,
+          I have an electric stove so I set my broiler to
+          high, but dependent on your oven you may want to
+          start it on low. Place pan on top oven shelf and
+          brown chicken thighs until you get a slight char
+          on both sides of the chicken. Don't forget your
+          oven mit when handling the pan. You can also just
+          brown on the stove. Deglaze pan with amber beer or
+          wine, and add everything to Dutch oven as well as
+          andouille coins.
+        </p>
+        <p>
+          Add thyme, salt, pepper, and two bay leaves. Lower
+          heat to a simmer and let cook for 2 to 3 hours.
+          Add salt and pepper to taste then serve over white
+          rice.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const JapaneseCurry = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div
+        className={
+          recipe.IngredientsImage
+            ? "recipe-ingredients-image"
+            : "recipe-ingredients-image-none img"
+        }
+      >
+        <img
+          src={recipe?.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          A simple yet delicious recipe given that the
+          Japanese curry mix does all the work for you.{" "}
+        </p>
+        <p>
+          Peel 2-3 potatoes, 2 carrots, 1-2 small onions and
+          medium dice. Mince 4-5 cloves of garlic and heat
+          up oil in Dutch oven. Add potatoes, carrots, and
+          onion, cook for 3-4 minutes, then add garlic and
+          stir in for another minute. Add 1 quart of chicken
+          stock, link to my homemade chicken stock{" "}
+          <Link
+            to={`${baseUrlRecipes}/${"Miscellaneous"}/${"Chicken Stock"}`}
+          >
+            here
+          </Link>
+          . Break up the curry mix pieces and add to Dutch
+          oven. Let simmer, stirring occasionally until
+          sauce thickens, normally between 10-20 minutes.{" "}
+        </p>
+        <p>
+          Serve over white rice and highly recommend paring
+          with{" "}
+          <Link
+            to={`${baseUrlRecipes}/${"Japanese"}/${"Tonkatsu"}`}
+          >
+            tonkatsu
+          </Link>
+          .
         </p>
       </div>
       <div className="recipe-instructions-images">

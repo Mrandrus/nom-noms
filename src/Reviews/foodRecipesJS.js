@@ -290,6 +290,98 @@ const foodRecipesJS = [
       "/images/tonkatsu_curry_plate.jpg",
     ],
   },
+  {
+    Recipe: "Chicken Stock",
+    Cuisine: "Miscellaneous",
+    Id: 11,
+    Image: "/images/chicken_broth_main.jpg",
+    IngredientsImage: [
+      "/images/chicken-stock-ingredients.jpg",
+      // "/images/chicken_broth_ingredients_2.jpg"
+    ],
+    Ingredients: [
+      "Onion",
+      "Carrot",
+      "Celery",
+      "Garlic",
+      "Ginger",
+      "Fresh thyme",
+      "Chicken carcass",
+      "Peppercorns",
+      "Bay leaves",
+    ],
+    Description:
+      "Home-made is always better than store-bought.",
+    StepImages: [
+      "/images/chicken-stock1.jpg",
+      "/images/chicken-stock2.jpg",
+      "/images/chicken-stock3.jpg",
+      "/images/chicken-stock4.jpg",
+      "/images/chicken-stock5.jpg",
+      "/images/chicken_broth_step3.jpg",
+    ],
+  },
+  {
+    Recipe: "Japanese Curry",
+    Cuisine: "Japanese",
+    Id: 12,
+    Image: "/images/japanese_curry_plate.jpg",
+    IngredientsImage: [
+      "/images/japanese_curry_ingredients.jpg",
+    ],
+    Ingredients: [
+      "Japanese curry mix",
+      "Chicken stock",
+      "Garlic",
+      "Yellow onion",
+      "Russet potatoes",
+      "Carrots",
+    ],
+    Description:
+      "A warm and hearty Japanese curry that pairs perfectly with Tonkatsu.",
+    StepImages: [
+      "/images/japanese_curry_step_2.jpg",
+      "/images/japanese_curry_step_3.jpg",
+      "/images/japanese_curry_step_4.jpg",
+      "/images/japanese_curry_step_5.jpg",
+    ],
+  },
+  {
+    Recipe: "Chicken and Sausage Gumbo",
+    Cuisine: "Cajun",
+    Id: 13,
+    Image: "/images/gumbo_plate.jpg",
+    IngredientsImage: [
+      "/images/gumbo_ingredients.jpg",
+    ],
+    Ingredients: [
+      "Andouille sausage",
+      "Chicken thighs",
+      "Chicken stock",
+      "Garlic",
+      "Yellow onion",
+      "Green bell pepper",
+      "Celery",
+      "Amber beer",
+      "All purpose flour",
+      "Grape seed oil",
+      "Fresh thyme",
+      "Bay leaves",
+      "Salt",
+      "Pepper",
+    ],
+    Description:
+      "A warm and hearty Japanese curry that pairs perfectly with Tonkatsu.",
+    StepImages: [
+      "/images/gumbo_step1.jpg",
+      "/images/gumbo_step2.jpg",
+      "/images/gumbo_step3.jpg",
+      "/images/gumbo_step4.jpg",
+      "/images/gumbo_step5.jpg",
+      "/images/gumbo_step6.jpg",
+      "/images/gumbo_step7.jpg",
+    ],
+  },
 ];
 
 export default foodRecipesJS;

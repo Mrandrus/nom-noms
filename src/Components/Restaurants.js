@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "./Restaurants.module.css";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 /* == IMPORT RAW DATA (mimicking fetch to DB)== */
 import jsonReviewData from "../Reviews/foodReviewJS";
@@ -8,6 +12,9 @@ import $ from "jquery";
 import { usePageWidth } from "../hooks";
 import RestaurantReviewText from "./RestaurantReviewText";
 import { Helmet } from "react-helmet";
+import foodReviewJS from "../Reviews/foodReviewJS";
+import "../App.css";
+
 
 /**
  * @baseUrlRestaurants is needed to maintain correct structure of url in <Link to={} />
@@ -36,11 +43,35 @@ const Restaurants = () => {
   // }
 
   const params = useParams();
+  const [restie, setRestie] = useState([]);
+
+  useEffect(() => {
+    GetLatestResties();
+  }, [params]);
+
+  const GetLatestResties = () => {
+    let restieArray = [];
+
+    restieArray.push(...foodReviewJS);
+
+    //recipeArray.pop(foodRecipesJS.find((p) => p.Recipe === params.recipe))
+    restieArray = restieArray.filter((p) => {
+      return p.Restaurant !== params.restaurant;
+    });
+
+    restieArray.reverse();
+    restieArray.length = 3;
+    setRestie(restieArray);
+  };
 
   return (
+    <>
     <div className="restaurant-content">
       <RestaurantCuisineFilter
-        cuisineList={removeDuplicatesByKey(jsonReviewData, "Cuisine")}
+        cuisineList={removeDuplicatesByKey(
+          jsonReviewData,
+          "Cuisine"
+        )}
         cuisine={params?.cuisine}
       />
 
@@ -59,6 +90,52 @@ const Restaurants = () => {
         />
       )}
     </div>
+      {!params.restaurant ? (
+        <div></div>
+      ) : (
+        <div className="noms-container-two">
+          <div className="restaurant-content-title">
+            <h2>Check out some other restaurants!</h2>
+          </div>
+          <div className="restaurant-content">
+            {restie?.map((p, q) => {
+              return (
+                <div
+                  key={`restaurant_id_${p?.Id}_${q}`}
+                  className={`home-restaurant-items`}
+                >
+                  <Link
+                    className="rest-links"
+                    // to={`/Reviews/${r.Restaurant}`}
+                    to={`${baseUrlRestaurants}/${p.Cuisine}/${p.Restaurant}`}
+                    state={{
+                      restaurant: p.Restaurant,
+                      cuisine: p.Cuisine,
+                      city: p.City,
+                      id: p.Id,
+                      outsidePic: p.ImageOutside,
+                      foodPic: p.FoodImages,
+                      blogIntro: p.BlogIntro,
+                      blogText: p.BlogText,
+                    }}
+                  >
+                    <h3>{p?.Restaurant}</h3>
+                    <img
+                      src={p?.ImageOutside}
+                      alt={`${p?.Restaurant}-food-image${p.id}`}
+                      height={200}
+                      width={350}
+                    />
+                    <p>{p?.Cuisine}</p>
+                    <p>{p?.City}</p>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
@@ -68,7 +145,10 @@ export default Restaurants;
  * They Only receive props. There is no state inside them
  */
 
-const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
+const RestaurantCuisineFilter = ({
+  cuisineList,
+  cuisine,
+}) => {
   cuisineList.sort((a, b) => {
     let textA = a.Cuisine.toUpperCase();
     let textB = b.Cuisine.toUpperCase();
@@ -82,11 +162,16 @@ const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
       {pageWidth > 1399 ? (
         <ul>
           {getArray(cuisineList).map((p, i) => (
-            <Link to={`${baseUrlRestaurants}/${p.Cuisine}`} key={i}>
+            <Link
+              to={`${baseUrlRestaurants}/${p.Cuisine}`}
+              key={i}
+            >
               <li
                 key={p.Id}
                 className={`restaurant-sideBar-buttons ${
-                  cuisine === p.Cuisine ? styles.activeCuisine : ""
+                  cuisine === p.Cuisine
+                    ? styles.activeCuisine
+                    : ""
                 }`}
               >
                 {p.Cuisine}
@@ -101,7 +186,10 @@ const RestaurantCuisineFilter = ({ cuisineList, cuisine }) => {
   );
 };
 
-const RestaurantListByCuisine = ({ restaurantListByCuisine, cuisine }) => {
+const RestaurantListByCuisine = ({
+  restaurantListByCuisine,
+  cuisine,
+}) => {
   return (
     <div className="restaurant-page-content">
       {!cuisine ? (
@@ -129,7 +217,10 @@ const RestaurantListByCuisine = ({ restaurantListByCuisine, cuisine }) => {
                   <div className="rest-stuff">
                     <h1
                       className={`title_of_rest_${p.id}`}
-                      style={{ color: "#002868", marginBottom: "5px" }}
+                      style={{
+                        color: "#002868",
+                        marginBottom: "5px",
+                      }}
                     >
                       {p.Restaurant}
                     </h1>
@@ -172,7 +263,10 @@ const RestaurantList = () => {
               <div className="rest-stuff">
                 <h1
                   className={`title_of_rest_${p.id}`}
-                  style={{ color: "#002868", marginBottom: "5px" }}
+                  style={{
+                    color: "#002868",
+                    marginBottom: "5px",
+                  }}
                 >
                   {p.Restaurant}
                 </h1>
@@ -200,7 +294,10 @@ const RestaurantReview = ({ restaurant }) => {
       <hr className="rest-line-divider" />
 
       <div className="restaurant-image">
-        <img src={restaurant?.ImageOutside} alt={restaurant?.Restaurant} />
+        <img
+          src={restaurant?.ImageOutside}
+          alt={restaurant?.Restaurant}
+        />
       </div>
       {/* <p>{restaurant?.BlogText}</p> */}
       <div className="restaurant-review">
@@ -219,7 +316,9 @@ const RestaurantReview = ({ restaurant }) => {
                 alt={`${restaurant?.Restaurant}-food-image${x}`}
                 // height={200}
                 // width={350}
-                className={x != "" ? "allFoodImages" : "noFoodImages"}
+                className={
+                  x != "" ? "allFoodImages" : "noFoodImages"
+                }
                 // onClick={(e) =>
                 //   e.target.classList.toggle("allFoodImages-clicked")
                 // }
@@ -229,7 +328,9 @@ const RestaurantReview = ({ restaurant }) => {
         })}
       </div>
       <div>
-        <UpdateMetaTags data={!restaurant ? null : restaurant} />
+        <UpdateMetaTags
+          data={!restaurant ? null : restaurant}
+        />
       </div>
     </div>
   );
@@ -255,13 +356,20 @@ const CusineDrop = ({ cuisines }) => {
         onChange={(e) => navigate(e.target.value)}
       > */}
       <div className="burger-container">
-        <div className="burger-cuisine-icon" onClick={toggleBurger}>
+        <div
+          className="burger-cuisine-icon"
+          onClick={toggleBurger}
+        >
           <div className="burger-cuisine">
             <i className="arrow-down"></i> | Cuisines |{" "}
             <i className="arrow-down"></i>
           </div>
         </div>
-        <ul className={`cuisine-links ${burgerActive ? "active" : "none"}`}>
+        <ul
+          className={`cuisine-links ${
+            burgerActive ? "active" : "none"
+          }`}
+        >
           {getArray(cuisines).map((p, k) => {
             return (
               // <option value={p.label} key={k}>
@@ -298,22 +406,46 @@ const UpdateMetaTags = (data) => {
   return (
     <Helmet>
       {/* <title>Colorado Nom Noms {restData?.data.Restaurant}</title> */}
-      <meta name="description" content={restData?.data.BlogIntro} />
+      <meta
+        name="description"
+        content={restData?.data.BlogIntro}
+      />
       <meta
         name="keywords"
         content={`${restData?.data.Restaurant}, ${restData?.data.Cuisine}, ${restData?.data.State}, ${restData?.data.City}, Colorado Nom Noms, Matt Andrus, Reviews, Restaurants, restaurants, noms, nomnoms`}
       />
       {/* Open Graph meta tags for better social media sharing */}
-      <meta property="og:title" content={restData?.data.Restaurant} />
-      <meta property="og:description" content={restData?.data.BlogIntro} />
-      <meta property="og:image" content={restData?.data.ImageOutside} />
+      <meta
+        property="og:title"
+        content={restData?.data.Restaurant}
+      />
+      <meta
+        property="og:description"
+        content={restData?.data.BlogIntro}
+      />
+      <meta
+        property="og:image"
+        content={restData?.data.ImageOutside}
+      />
       <meta property="og:type" content="restaurant" />
 
       {/* Twitter Card meta tags for Twitter sharing */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={restData?.data.Restaurant} />
-      <meta name="twitter:description" content={restData?.data.BlogIntro} />
-      <meta name="twitter:image" content={restData?.data.ImageOutside} />
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <meta
+        name="twitter:title"
+        content={restData?.data.Restaurant}
+      />
+      <meta
+        name="twitter:description"
+        content={restData?.data.BlogIntro}
+      />
+      <meta
+        name="twitter:image"
+        content={restData?.data.ImageOutside}
+      />
     </Helmet>
   );
 };
@@ -324,5 +456,9 @@ function getArray(data) {
 }
 
 function removeDuplicatesByKey(arr, key) {
-  return [...new Map(arr.map((item) => [item[key], item])).values()];
+  return [
+    ...new Map(
+      arr.map((item) => [item[key], item])
+    ).values(),
+  ];
 }
