@@ -46,6 +46,7 @@ const Recipes = () => {
     setRecipes(recipeArray);
   };
 
+
   return (
     <>
       <div className="recipe-page-container">
@@ -223,10 +224,11 @@ const RecipeListByCuisine = ({
 };
 
 const RecipeList = () => {
+  const newestRecipies = foodRecipesJS.reverse()
   return (
     <>
       <div className="recipe-page-titles">
-        {foodRecipesJS.map((r, i) => {
+        {newestRecipies.map((r, i) => {
           return (
             <Link
               key={i}

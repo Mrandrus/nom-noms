@@ -371,7 +371,7 @@ const foodRecipesJS = [
       "Pepper",
     ],
     Description:
-      "A warm and hearty Japanese curry that pairs perfectly with Tonkatsu.",
+      "My favorite Cajun meal and perfect for a cold weather day.",
     StepImages: [
       "/images/gumbo_step1.jpg",
       "/images/gumbo_step2.jpg",
