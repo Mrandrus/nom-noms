@@ -362,6 +362,7 @@ const foodRecipesJS = [
       "Yellow onion",
       "Green bell pepper",
       "Celery",
+      "Jalapeno",
       "Amber beer",
       "All purpose flour",
       "Grape seed oil",
@@ -371,7 +372,7 @@ const foodRecipesJS = [
       "Pepper",
     ],
     Description:
-      "My favorite Cajun meal and perfect for a cold weather day.",
+      "An essential cold weather meal to add to your cooking repertoire.",
     StepImages: [
       "/images/gumbo_step1.jpg",
       "/images/gumbo_step2.jpg",

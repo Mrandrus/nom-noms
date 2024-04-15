@@ -43,7 +43,7 @@ function Home() {
     const recipeArray = [];
 
     recipeArray.push(...jsonRecipeData);
-    recipeArray.reverse();
+    //recipeArray.reverse();
     recipeArray.length = 3;
     setRecipes(recipeArray);
   };

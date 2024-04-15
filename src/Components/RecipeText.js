@@ -256,9 +256,10 @@ const ChickenSausageGumbo = ({ recipe }) => {
         <p>
           Have all your ingredients prepped before you start
           making your roux. Small dice 1 green bell pepper,
-          2 stalks of celery, and 1 yellow onion. Mince 4-5
-          cloves of garlic and gather about 1 tablespoon of
-          fresh thyme. Cut andouille sausage into coins.
+          2 stalks of celery, 1 yellow onion, and 1
+          jalapeno. Mince 4-5 cloves of garlic and gather
+          about 1 tablespoon of fresh thyme. Cut andouille
+          sausage into coins.
         </p>
         <p>
           In a Dutch oven add ½ cup of grapeseed oil and ½
@@ -274,14 +275,15 @@ const ChickenSausageGumbo = ({ recipe }) => {
           color you want.
         </p>
         <p>
-          Add your diced bell pepper, celery, and onion to
-          your roux and sweat for a couple of minutes
-          stirring consistently. Add garlic to mixture and
-          stir in until fragrant then add 1 whole amber
-          beer, stirring consistently as you pour. I used a
-          cup of white wine for this recipe, but amber beer
-          is the preferred method. Let it cook down until
-          mixture thickens. Add a quart of{" "}
+          Add your diced bell pepper, celery, jalapeno, and
+          onion to your roux and sweat for a couple of
+          minutes stirring consistently. Add garlic to
+          mixture and stir in until fragrant then add 1
+          whole amber beer, stirring consistently as you
+          pour. I used a cup of white wine for this recipe,
+          but amber beer is the preferred method. Let it
+          cook for a coupel minutes, stirring consistently.
+          Add a quart of{" "}
           <Link
             to={`${baseUrlRecipes}/${"Miscellaneous"}/${"Chicken Stock"}`}
           >

@@ -23,8 +23,12 @@ import { Helmet } from "react-helmet";
 
 const baseUrlRecipes = "/Recipes";
 
+const newestRecipies = foodRecipesJS.reverse()
+
+
 const Recipes = () => {
   const params = useParams();
+  
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -34,14 +38,14 @@ const Recipes = () => {
   const GetLatestRecipes = () => {
     let recipeArray = [];
 
-    recipeArray.push(...foodRecipesJS);
+    recipeArray.push(...newestRecipies);
 
     //recipeArray.pop(foodRecipesJS.find((p) => p.Recipe === params.recipe))
     recipeArray = recipeArray.filter((p) => {
       return p.Recipe !== params.recipe;
     });
 
-    recipeArray.reverse();
+    //recipeArray.reverse();
     recipeArray.length = 3;
     setRecipes(recipeArray);
   };
@@ -52,7 +56,7 @@ const Recipes = () => {
       <div className="recipe-page-container">
         <RecipeCuisineFilter
           cuisineList={removeDuplicatesByKey(
-            foodRecipesJS,
+            newestRecipies,
             "Cuisine"
           )}
           cuisine={params?.cuisine}
@@ -66,7 +70,7 @@ const Recipes = () => {
           />
         ) : (
           <ActualRecipe
-            recipe={foodRecipesJS.find(
+            recipe={newestRecipies.find(
               (p) => p.Recipe === params.recipe
             )}
           />
@@ -224,7 +228,6 @@ const RecipeListByCuisine = ({
 };
 
 const RecipeList = () => {
-  const newestRecipies = foodRecipesJS.reverse()
   return (
     <>
       <div className="recipe-page-titles">
