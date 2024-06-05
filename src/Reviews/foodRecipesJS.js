@@ -104,6 +104,7 @@ const foodRecipesJS = [
       "4-5 Garlic cloves",
       "Cilantro",
       "Canola oil",
+      "1 tsp kosher salt",
     ],
     Description:
       "Roasting all the ingredients under the broiler for a thicker salsa.",
@@ -124,6 +125,7 @@ const foodRecipesJS = [
       "4-5 Garlic cloves",
       "Cilantro",
       "Canola oil",
+      "1 tsp kosher salt",
     ],
     Description:
       "Roasted tomatillo salsa where you roast the tomatillos under the broiler and pan fry the jalapenos, garlic, and onion.",
@@ -351,9 +353,7 @@ const foodRecipesJS = [
     Cuisine: "Cajun",
     Id: 13,
     Image: "/images/gumbo_plate.jpg",
-    IngredientsImage: [
-      "/images/gumbo_ingredients.jpg",
-    ],
+    IngredientsImage: ["/images/gumbo_ingredients.jpg"],
     Ingredients: [
       "Andouille sausage",
       "Chicken thighs",
@@ -381,6 +381,93 @@ const foodRecipesJS = [
       "/images/gumbo_step5.jpg",
       "/images/gumbo_step6.jpg",
       "/images/gumbo_step7.jpg",
+    ],
+  },
+  {
+    Recipe: "Spicy Mexican Chicken",
+    Cuisine: "Mexican",
+    Id: 14,
+    Image: "/images/spicy_mexican_main.jpg",
+    IngredientsImage: [
+      "/images/spicy_mex_chicken_ingredients.jpg",
+    ],
+    Ingredients: [
+      "10-12 chile de arbol",
+      "2-3 chile de ristra",
+      "2 ibs chicken thighs",
+      "1 Half yellow Onion, or 1 whole small yellow onion",
+      "4-5 Garlic cloves",
+      "1 tbsp salt",
+      "1 tbsp pepper",
+      "1 tsp ground cumin",
+      "1 tsp chili powder",
+      "Juice of 1 naval orange",
+      "2 tbsp chicken bullion",
+      "2 tbsp oregano",
+      "1 tbsp avocado oil"
+    ],
+    Description:
+      "A nice mixture of sweet and savory with a little bite.",
+    StepImages: [
+      "/images/spicy_mexican_step1.jpg",
+      "/images/spicy_mexican_step2.jpg",
+      "/images/spicy_mexican_step3.jpg",
+      "/images/spicy_mexican_step4.jpg",
+    ],
+  },
+  {
+    Recipe: "Jalapeno Salsa",
+    Cuisine: "Mexican",
+    Id: 15,
+    Image: "/images/jalapeno_salsa_main.jpg",
+    IngredientsImage: [
+      "/images/jalapeno_salsa_ingredients.jpg",
+    ],
+    Ingredients: [
+      "6-7 jalapenos",
+      "Quarter of an Onion",
+      "4-5 Garlic cloves",
+      "1/2 cup cilantro",
+      "1/3 cup canola oil",
+      "1 tsp kosher salt",
+    ],
+    Description:
+      "One of my all time favorite salsas and the springboard for the roasted tomatillo salsas.",
+    StepImages: [
+      "/images/jalapeno_salsa_step1.jpg",
+      "/images/jalapeno_salsa_step2.jpg",
+    ],
+  },
+  {
+    Recipe: "Carne Asada",
+    Cuisine: "Mexican",
+    Id: 16,
+    Image: "/images/carne_asada_main.jpg",
+    IngredientsImage: [
+      "/images/carne_asada_ingredients.jpg",
+    ],
+    Ingredients: [
+      "Flank Steak",
+      "1 orange",
+      "1 lime",
+      "4-5 minced garlic cloves",
+      "1/2 cup of chopped cilantro",
+      "1/3 cup Olive oil",
+      "1/4 cup soy sauce",
+      "2 tbsp balsamic vinaigrette",
+      "2 tbsp oregano",
+      "1 tbsp onion powder",
+      "1 tsp cayenne",
+      "1 tsp ground cumin",
+      "1 tsp chipotle powder",
+      "1 tsp chili powder",
+    ],
+    Description:
+      "A delicious carne asada recipe with a couple unique ingredients.",
+    StepImages: [
+      "/images/carne_asada_step1.jpg",
+      "/images/carne_asada_step2.jpg",
+      "/images/carne_asada_step3.jpg",
     ],
   },
 ];

@@ -52,6 +52,14 @@ function RecipeText(props) {
       return (
         <ChickenSausageGumbo recipe={recipeId.props} />
       );
+    case 14:
+      return (
+        <SpicyMexicanChicken recipe={recipeId.props} />
+      );
+    case 15:
+      return <JalapenoSalsa recipe={recipeId.props} />;
+    case 16:
+      return <CarneAsada recipe={recipeId.props} />;
     default:
       return "";
   }
@@ -63,6 +71,163 @@ export default RecipeText;
 function getArray(data) {
   return Array.isArray(data) === true ? data : [];
 }
+
+const CarneAsada = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          In a mixing bowl add the juice of an orange, juice
+          of a lime, minced garlic, cilantro, olive oil, soy
+          sauce, balsamic vinaigrette, oregano, onion
+          powder, cayenne, cumin, chipotle powder, and chili
+          powder. Stir everything together.
+        </p>
+        <p>
+          Mix marinade in with flank steak in bag or bowl.
+          Marinade for a few hours ideally overnight.
+        </p>
+        <p>
+          Heat up grill or griddle(I used a griddle and
+          heated it up to 500 Fahrenheit). Char both sides
+          about 4 minutes a side, monitor internal temp with
+          meat thermometer and remove at 130 Fahrenheit
+          internal for medium rare. Let rest between 5-10
+          minutes.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const SpicyMexicanChicken = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          To a pot, add 1 tbsp avocado oil and set to medium
+          heat. Cut onion into wedges and add to pot, sweat
+          the onions for a couple minutes then add minced
+          garlic. Stir consistently and when garlic becomes
+          fragrant, add 1 cup of water to pot. Remove chile
+          stems and seeds and add to pot. Add salt, pepper,
+          chicken bullion, cumin, chili powder, juice of an
+          orange, and oregano. If you would like a spicier
+          marinade add more chile de arbol and some cayenne.
+        </p>
+        <p>
+          Add everything to blender and liquefy. Add
+          marinade to bowl or bag with chicken thighs.
+          Marinade for a few hours or ideally overnight.
+        </p>
+        <p>
+          Heat griddle or grill. Char both sides of chicken
+          thighs and remove at internal temperature of 165
+          Fahrenheit.
+        </p>
+        <p>
+          Let rest for a couple minutes, then serve as is or
+          add to tacos, burritos, etc.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
+
+const JalapenoSalsa = ({ recipe }) => {
+  return (
+    <div>
+      <div className="recipe-ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          {getArray(recipe?.Ingredients).map((p, q) => {
+            return <li key={q}>{p}</li>;
+          })}
+        </ul>
+      </div>
+      <div className="recipe-ingredients-image">
+        <img
+          src={recipe.IngredientsImage}
+          alt={`${recipe.Recipe}-image`}
+        />
+      </div>
+      <div className="recipe-instructions">
+        <p>
+          Cut a quarter of an onion into wedges, halve the
+          jalapenos, and remove the peels from the garlic
+          cloves.
+        </p>
+        <p>
+          Add a drizzle of oil to a griddle or cast iron,
+          set to medium heat. Let jalapenos blister on both
+          sides. Let garlic and onion brown on both sides.
+        </p>
+        <p>
+          Add everything to a blender with about a 1 cup of
+          fresh cilantro, 1/3 cup of canola oil, and a
+          teaspoon of salt. Blend and add additional salt to
+          taste if necessary. Blend until liquified and
+          enjoy with chips, tacos, burritos, etc.
+        </p>
+      </div>
+      <div className="recipe-instructions-images">
+        {getArray(
+          recipe?.StepImages.map((p, q) => {
+            return (
+              <img src={p} key={q} alt={NomNomsLogo} />
+            );
+          })
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ChickenBrothStock = ({ recipe }) => {
   return (
@@ -613,7 +778,7 @@ const TomatilloSalsaV1 = ({ recipe }) => {
         <p>
           Remove the charred garlic peel and add everything
           to a blender with about a cup of fresh cilantro,
-          1/4 cup of canola oil, and a tablespoon of salt.
+          1/4 cup of canola oil, and a teaspoon of salt.
           Blend and add additional salt to taste if
           necessary. The result will be a thicker smokier
           salsa. Enjoy with chips or add to tacos.
@@ -673,10 +838,10 @@ const TomatilloSalsaV2 = ({ recipe }) => {
         <p>
           Add everything to a blender with about a cup of
           fresh cilantro, 1/4 cup of canola oil, and a
-          tablespoon of salt. Blend and add additional salt
-          to taste if necessary. The result will be a
-          lighter and runnier salsa. Enjoy with chips or add
-          to tacos.
+          teaspoon of salt. Blend and add additional salt to
+          taste if necessary. The result will be a lighter
+          and runnier salsa. Enjoy with chips or add to
+          tacos.
         </p>
       </div>
       <div className="recipe-instructions-images">
@@ -691,6 +856,7 @@ const TomatilloSalsaV2 = ({ recipe }) => {
     </div>
   );
 };
+
 const ShrimpScampi = () => {
   return (
     <div>
