@@ -26,8 +26,9 @@ function RecipeText(props) {
   switch (recipeId.props?.Id) {
     case 1:
       return <DrunkenNoodles recipe={recipeId.props} />;
-    case 2:
-      return <Spaghetti recipe={recipeId.props} />;
+      //Fix Spaghetti recipe then add it again, too watery.
+    // case 2:
+    //   return <Spaghetti recipe={recipeId.props} />;
     case 3:
       return <Lasagna recipe={recipeId.props} />;
     // case 4:
