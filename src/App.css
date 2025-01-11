@@ -95,11 +95,11 @@
 .noms-image-container {
   display: flex;
   width: 100%;
-  height: 20vmin;
-  background-image: url("./images/newcastle_scenic.jpg");
+  height: 30vmin;
+  background-image: url("./images/littleton_foothills.jpg");
   background-repeat: no-repeat;
   background-size:cover;
-  background-position: center center;
+  /* background-position:inherit; */
 }
 
 .nom-container-one {
